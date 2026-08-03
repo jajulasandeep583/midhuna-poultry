@@ -38,6 +38,12 @@ GLYPHS = {
 	         '<rect x="13.4" y="12.6" width="8" height="8" rx="1.2"/>'
 	         '<rect x="8" y="3.4" width="8" height="8" rx="1.2"/>'
 	         '<path d="M4.8 12.6v-1M18.6 12.6v-1M12 12.6v-1.2"/>',
+	"hatchery": '<rect x="3.4" y="4.2" width="17.2" height="16.4" rx="2.4"/>'
+	            '<path d="M12 8.4c1.7 0 3.1 2.1 3.1 4.3 0 2.3-1.4 3.8-3.1 3.8s-3.1-1.5-3.1-3.8c0-2.2 1.4-4.3 3.1-4.3Z"/>'
+	            '<path d="M3.4 8.6h17.2"/><path d="M7 6.4h.01M9.6 6.4h.01"/>',
+	"hen": '<path d="M8.8 6.4c.9-1.3 2.7-1.3 3.6 0 1-1.1 2.8-.6 3 1"/>'
+	       '<circle cx="11.4" cy="13.4" r="6.2"/>'
+	       '<path d="M17.6 12.6 21.8 13.8 17.6 15"/><circle cx="14.2" cy="11.6" r="1"/>',
 }
 
 TILES = [
@@ -57,6 +63,10 @@ TILES = [
 	 "Doses due, overdue, and what cannot be sold"),
 	("poultry-cost-hub", "cost", "#1F9254", "Cost &amp; Profitability",
 	 "Cost per bird and per kilogram, by flock"),
+	("hatchery", "hatchery", "#D9694B", "Hatchery",
+	 "Setting, candling, hatch and chick dispatch"),
+	("flock-operations", "hen", "#E8A33D", "Flock Operations",
+	 "Flocks, daily entries, weighings and closure"),
 	("poultry-guide", "guide", "#3E7BB6", "How to Use Poultry",
 	 "The guide, with a button to every screen"),
 ]

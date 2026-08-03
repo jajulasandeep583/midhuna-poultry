@@ -149,9 +149,21 @@
    "link_type": "Report",
    "show_arrow": 0,
    "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-guide",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "How to Use Poultry",
+   "link_to": "poultry-guide",
+   "link_type": "Page",
+   "show_arrow": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-08-03 20:14:44.621343",
+ "modified": "2026-08-03 20:29:18.407076",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Analytics",

@@ -95,6 +95,10 @@ def install():
 		doc.icon_type = "Link"
 		doc.standard = 1
 		doc.hidden = 0
+		# Each workspace stands on its own on the desk. Left nested under the
+		# app tile they never appear there at all - only the three that
+		# happened to have no parent were showing.
+		doc.parent_icon = None
 		# Desktop Icon links to a Workspace Sidebar, not to a Workspace
 		if frappe.db.exists("Workspace Sidebar", label):
 			doc.link_type = "Workspace Sidebar"

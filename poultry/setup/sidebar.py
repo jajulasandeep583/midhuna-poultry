@@ -52,6 +52,7 @@ SIDEBARS = {
 			("Farm", "DocType", "Farm", "poultry-farm"),
 			("Broiler Batch Summary", "Report", "Broiler Batch Summary", "poultry-broiler"),
 			("Layer Production Curve", "Report", "Layer Production Curve", "poultry-layer"),
+			("How to Use Poultry", "Page", "poultry-guide", "poultry-guide"),
 		],
 	},
 	"Poultry Health": {
@@ -67,6 +68,7 @@ SIDEBARS = {
 			("Poultry Disease", "DocType", "Poultry Disease", "poultry-virus"),
 			("Vaccination Compliance", "Report", "Vaccination Compliance", "poultry-chart"),
 			("Withdrawal Period Alert", "Report", "Withdrawal Period Alert", "poultry-withdrawal"),
+			("How to Use Poultry", "Page", "poultry-guide", "poultry-guide"),
 		],
 	},
 	"Hatchery": {
@@ -79,6 +81,7 @@ SIDEBARS = {
 			("Chick Dispatch", "DocType", "Chick Dispatch", "poultry-dispatch"),
 			("Hatchery Machine", "DocType", "Hatchery Machine", "poultry-hatchery"),
 			("Hatchery Performance", "Report", "Hatchery Performance", "poultry-chart"),
+			("How to Use Poultry", "Page", "poultry-guide", "poultry-guide"),
 		],
 	},
 	"Poultry Setup": {
@@ -95,6 +98,7 @@ SIDEBARS = {
 			("Mortality Reason", "DocType", "Mortality Reason", "poultry-mortality"),
 			("Hatchery Machine", "DocType", "Hatchery Machine", "poultry-hatchery"),
 			("Poultry Settings", "DocType", "Poultry Settings", "poultry-settings"),
+			("How to Use Poultry", "Page", "poultry-guide", "poultry-guide"),
 		],
 	},
 	"Poultry Analytics": {
@@ -115,6 +119,7 @@ SIDEBARS = {
 			 "poultry-shed"),
 			("Stock Ledger", "Report", "Stock Ledger", "poultry-stock"),
 			("Profit and Loss Statement", "Report", "Profit and Loss Statement", "poultry-trend-up"),
+			("How to Use Poultry", "Page", "poultry-guide", "poultry-guide"),
 		],
 	},
 }
