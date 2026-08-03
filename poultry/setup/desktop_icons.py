@@ -99,10 +99,17 @@ def install():
 		# app tile they never appear there at all - only the three that
 		# happened to have no parent were showing.
 		doc.parent_icon = None
-		# Desktop Icon links to a Workspace Sidebar, not to a Workspace
+
+		# Route explicitly rather than through a Workspace Sidebar link.
+		# desktop.js resolves a "Workspace Sidebar" icon by looking the label up
+		# in frappe.boot.workspace_sidebar_item and reading its first link; if
+		# that lookup misses on a given site there is NO fallback and clicking
+		# the tile only says "Icon is not correctly configured". An External
+		# link needs no boot lookup and works on any site.
+		doc.link_type = "External"
+		doc.link = f"/app/{frappe.scrub(label).replace('_', '-')}"
+		doc.link_to = None
 		if frappe.db.exists("Workspace Sidebar", label):
-			doc.link_type = "Workspace Sidebar"
-			doc.link_to = label
 			doc.sidebar = label
 		doc.flags.ignore_permissions = True
 		doc.save()
