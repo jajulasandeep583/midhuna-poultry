@@ -9,7 +9,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-syringe",
+   "icon": "home",
    "indent": 0,
    "keep_closed": 0,
    "label": "Home",
@@ -21,7 +21,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-syringe",
+   "icon": "poultry-alert",
    "indent": 0,
    "keep_closed": 0,
    "label": "Vaccination & Health",
@@ -57,7 +57,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-pill",
+   "icon": "poultry-water",
    "indent": 0,
    "keep_closed": 0,
    "label": "Medication Entry",
@@ -69,7 +69,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-syringe",
+   "icon": "poultry-biosecurity",
    "indent": 0,
    "keep_closed": 0,
    "label": "Vaccine",
@@ -105,7 +105,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-schedule",
+   "icon": "poultry-chart",
    "indent": 0,
    "keep_closed": 0,
    "label": "Vaccination Compliance",
@@ -127,7 +127,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 19:48:10.101555",
+ "modified": "2026-08-03 20:01:37.783258",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Health",

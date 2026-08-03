@@ -9,7 +9,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-manage",
+   "icon": "home",
    "indent": 0,
    "keep_closed": 0,
    "label": "Home",
@@ -93,7 +93,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-sales",
+   "icon": "poultry-customer",
    "indent": 0,
    "keep_closed": 0,
    "label": "Sales Invoice",
@@ -117,7 +117,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-stock",
+   "icon": "poultry-silo",
    "indent": 0,
    "keep_closed": 0,
    "label": "Stock Entry",
@@ -139,7 +139,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 19:48:10.029906",
+ "modified": "2026-08-03 20:01:37.725189",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Management",

@@ -12,7 +12,7 @@ SIDEBARS = {
 	"Poultry": {
 		"icon": "poultry-farm",
 		"items": [
-			("Home", "Workspace", "Poultry", "poultry-farm"),
+			("Home", "Workspace", "Poultry", "home"),
 			("Management", "Workspace", "Management", "poultry-manage"),
 			("Flock Operations", "Workspace", "Flock Operations", "poultry-hen"),
 			("Health", "Workspace", "Poultry Health", "poultry-syringe"),
@@ -25,23 +25,23 @@ SIDEBARS = {
 	"Management": {
 		"icon": "poultry-manage",
 		"items": [
-			("Home", "Workspace", "Management", "poultry-manage"),
+			("Home", "Workspace", "Management", "home"),
 			("Management", "Page", "poultry-manage", "poultry-manage"),
 			("Control Tower", "Page", "poultry-tower", "poultry-alert"),
 			("Sales & Purchases", "Page", "poultry-trade", "poultry-sales"),
 			("Stock on Hand", "Page", "poultry-stock", "poultry-stock"),
 			("Cost & Profitability", "Page", "poultry-cost-hub", "poultry-cost"),
 			("Daily Entry Board", "Page", "poultry-entry-board", "poultry-board"),
-			("Sales Invoice", "DocType", "Sales Invoice", "poultry-sales"),
+			("Sales Invoice", "DocType", "Sales Invoice", "poultry-customer"),
 			("Purchase Receipt", "DocType", "Purchase Receipt", "poultry-purchase"),
-			("Stock Entry", "DocType", "Stock Entry", "poultry-stock"),
+			("Stock Entry", "DocType", "Stock Entry", "poultry-silo"),
 			("How to Use Poultry", "Page", "poultry-guide", "poultry-guide"),
 		],
 	},
 	"Flock Operations": {
 		"icon": "poultry-hen",
 		"items": [
-			("Home", "Workspace", "Flock Operations", "poultry-hen"),
+			("Home", "Workspace", "Flock Operations", "home"),
 			("Flock 360", "Page", "poultry-flock-360", "poultry-target"),
 			("Daily Entry Board", "Page", "poultry-entry-board", "poultry-board"),
 			("Daily Flock Entry", "DocType", "Daily Flock Entry", "poultry-clipboard"),
@@ -57,22 +57,22 @@ SIDEBARS = {
 	"Poultry Health": {
 		"icon": "poultry-syringe",
 		"items": [
-			("Home", "Workspace", "Poultry Health", "poultry-syringe"),
-			("Vaccination & Health", "Page", "poultry-health-hub", "poultry-syringe"),
+			("Home", "Workspace", "Poultry Health", "home"),
+			("Vaccination & Health", "Page", "poultry-health-hub", "poultry-alert"),
 			("Flock Vaccination Plan", "DocType", "Flock Vaccination Plan", "poultry-schedule"),
 			("Vaccination Entry", "DocType", "Vaccination Entry", "poultry-syringe"),
-			("Medication Entry", "DocType", "Medication Entry", "poultry-pill"),
-			("Vaccine", "DocType", "Vaccine", "poultry-syringe"),
+			("Medication Entry", "DocType", "Medication Entry", "poultry-water"),
+			("Vaccine", "DocType", "Vaccine", "poultry-biosecurity"),
 			("Poultry Medication", "DocType", "Poultry Medication", "poultry-pill"),
 			("Poultry Disease", "DocType", "Poultry Disease", "poultry-virus"),
-			("Vaccination Compliance", "Report", "Vaccination Compliance", "poultry-schedule"),
+			("Vaccination Compliance", "Report", "Vaccination Compliance", "poultry-chart"),
 			("Withdrawal Period Alert", "Report", "Withdrawal Period Alert", "poultry-withdrawal"),
 		],
 	},
 	"Hatchery": {
 		"icon": "poultry-hatchery",
 		"items": [
-			("Home", "Workspace", "Hatchery", "poultry-hatchery"),
+			("Home", "Workspace", "Hatchery", "home"),
 			("Egg Setting", "DocType", "Egg Setting", "poultry-egg"),
 			("Candling Entry", "DocType", "Candling Entry", "poultry-search"),
 			("Hatch Entry", "DocType", "Hatch Entry", "poultry-chick"),
@@ -84,7 +84,7 @@ SIDEBARS = {
 	"Poultry Setup": {
 		"icon": "poultry-settings",
 		"items": [
-			("Home", "Workspace", "Poultry Setup", "poultry-settings"),
+			("Home", "Workspace", "Poultry Setup", "home"),
 			("Farm", "DocType", "Farm", "poultry-farm"),
 			("Shed", "DocType", "Shed", "poultry-shed"),
 			("Breed", "DocType", "Breed", "poultry-dna"),
@@ -100,7 +100,7 @@ SIDEBARS = {
 	"Poultry Analytics": {
 		"icon": "poultry-chart",
 		"items": [
-			("Home", "Workspace", "Poultry Analytics", "poultry-chart"),
+			("Home", "Workspace", "Poultry Analytics", "home"),
 			("Cost & Profitability", "Page", "poultry-cost-hub", "poultry-cost"),
 			("Sales & Purchases", "Page", "poultry-trade", "poultry-sales"),
 			("Flock Performance vs Standard", "Report", "Flock Performance vs Standard",
@@ -114,7 +114,7 @@ SIDEBARS = {
 			("Shed Utilisation and Downtime", "Report", "Shed Utilisation and Downtime",
 			 "poultry-shed"),
 			("Stock Ledger", "Report", "Stock Ledger", "poultry-stock"),
-			("Profit and Loss Statement", "Report", "Profit and Loss Statement", "poultry-cost"),
+			("Profit and Loss Statement", "Report", "Profit and Loss Statement", "poultry-trend-up"),
 		],
 	},
 }

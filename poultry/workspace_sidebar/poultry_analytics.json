@@ -9,7 +9,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-chart",
+   "icon": "home",
    "indent": 0,
    "keep_closed": 0,
    "label": "Home",
@@ -141,7 +141,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-cost",
+   "icon": "poultry-trend-up",
    "indent": 0,
    "keep_closed": 0,
    "label": "Profit and Loss Statement",
@@ -151,7 +151,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 19:48:10.201724",
+ "modified": "2026-08-03 20:01:37.852581",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Analytics",
