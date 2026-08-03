@@ -191,6 +191,16 @@ def make_settings():
 	s.flags.ignore_permissions = True
 	s.save()
 
+	# Without this a user logs in to a blank desk: the landing app has no
+	# workspaces resolved, so nothing at all is shown until they navigate to
+	# /app/poultry by hand.
+	for user in frappe.get_all("User", filters={"enabled": 1, "user_type": "System User"},
+	                           pluck="name"):
+		if user == "Guest":
+			continue
+		frappe.db.set_value("User", user, "default_workspace", "Poultry",
+		                    update_modified=False)
+
 
 def install():
 	from poultry.setup import masters as reference
