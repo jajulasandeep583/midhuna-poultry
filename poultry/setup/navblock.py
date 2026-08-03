@@ -121,7 +121,8 @@ def install():
 	doc.save()
 	print(f"  + custom html block: {BLOCK}")
 
-	for ws in ("Poultry", "Poultry Setup", "Poultry Health", "Poultry Analytics"):
+	for ws in ("Poultry", "Management", "Flock Operations", "Poultry Health",
+	           "Hatchery", "Poultry Setup", "Poultry Analytics"):
 		if not frappe.db.exists("Workspace", ws):
 			continue
 		w = frappe.get_doc("Workspace", ws)

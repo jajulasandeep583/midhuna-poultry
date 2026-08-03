@@ -1,7 +1,7 @@
 {
  "app": "poultry",
  "charts": [],
- "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Health and Biosecurity</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Vaccinations\", \"col\": 4}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds Lost (30 Days)\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Alerts (7 Days)\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Vaccination\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Medication and Withdrawal\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Health Reports\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Health</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Vaccinations\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds Lost (30 Days)\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Alerts (7 Days)\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Screens\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Vaccination\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Medication and Withdrawal\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Health Reports\", \"col\": 4}}]",
  "creation": "2026-08-03 12:24:57.575023",
  "custom_blocks": [
   {
@@ -19,6 +19,28 @@
  "label": "Poultry Health",
  "link_type": "DocType",
  "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Screens",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Doses due, overdue, and which flocks cannot be sold",
+   "hidden": 0,
+   "icon": "poultry-syringe",
+   "is_query_report": 0,
+   "label": "Vaccination & Health",
+   "link_count": 0,
+   "link_to": "poultry-health-hub",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -103,6 +125,32 @@
    "type": "Link"
   },
   {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-syringe",
+   "is_query_report": 0,
+   "label": "Vaccine",
+   "link_count": 0,
+   "link_to": "Vaccine",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-virus",
+   "is_query_report": 0,
+   "label": "Poultry Disease",
+   "link_count": 0,
+   "link_to": "Poultry Disease",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
    "hidden": 0,
    "is_query_report": 0,
    "label": "Health Reports",
@@ -151,7 +199,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 18:54:45.687007",
+ "modified": "2026-08-03 19:25:36.046510",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Health",
@@ -174,8 +222,16 @@
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 15.2,
+ "sequence_id": 15.3,
  "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "poultry-syringe",
+   "label": "Vaccination & Health",
+   "link_to": "poultry-health-hub",
+   "type": "Page"
+  },
   {
    "color": "Orange",
    "doc_view": "",
@@ -199,15 +255,6 @@
    "label": "Withdrawal Period Alert",
    "link_to": "Withdrawal Period Alert",
    "report_ref_doctype": "Medication Entry",
-   "type": "Report"
-  },
-  {
-   "color": "Blue",
-   "doc_view": "",
-   "icon": "poultry-schedule",
-   "label": "Vaccination Compliance",
-   "link_to": "Vaccination Compliance",
-   "report_ref_doctype": "Flock Vaccination Plan",
    "type": "Report"
   }
  ],

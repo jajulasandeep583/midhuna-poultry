@@ -1,0 +1,101 @@
+{
+ "app": "poultry",
+ "creation": "2026-08-03 19:19:38.371421",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "poultry-hatchery",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-hatchery",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Home",
+   "link_to": "Hatchery",
+   "link_type": "Workspace",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-egg",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Egg Setting",
+   "link_to": "Egg Setting",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-search",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Candling Entry",
+   "link_to": "Candling Entry",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-chick",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Hatch Entry",
+   "link_to": "Hatch Entry",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-dispatch",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Chick Dispatch",
+   "link_to": "Chick Dispatch",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-hatchery",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Hatchery Machine",
+   "link_to": "Hatchery Machine",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-hatchery",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Hatchery Performance",
+   "link_to": "Hatchery Performance",
+   "link_type": "Report",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-03 19:25:36.648308",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Hatchery",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Hatchery"
+}

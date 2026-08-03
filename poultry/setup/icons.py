@@ -3,6 +3,11 @@
 import frappe
 
 DOCTYPE_ICONS = {
+	"Egg Setting": "poultry-egg",
+	"Candling Entry": "poultry-search",
+	"Hatch Entry": "poultry-chick",
+	"Chick Dispatch": "poultry-dispatch",
+	"Hatchery Machine": "poultry-hatchery",
 	"Farm": "poultry-farm",
 	"Shed": "poultry-shed",
 	"Flock": "poultry-hen",
@@ -27,8 +32,11 @@ DOCTYPE_ICONS = {
 
 WORKSPACE_ICONS = {
 	"Poultry": "poultry-hen",
-	"Poultry Setup": "poultry-settings",
+	"Management": "poultry-manage",
+	"Flock Operations": "poultry-layer",
 	"Poultry Health": "poultry-syringe",
+	"Hatchery": "poultry-hatchery",
+	"Poultry Setup": "poultry-settings",
 	"Poultry Analytics": "poultry-chart",
 }
 
@@ -60,6 +68,12 @@ EXTRA_ICONS = {
 	"Stock on Hand": "poultry-stock",
 	"Customer": "poultry-customer",
 	"Supplier": "poultry-dispatch",
+	"Egg Setting": "poultry-egg",
+	"Candling Entry": "poultry-search",
+	"Hatch Entry": "poultry-chick",
+	"Chick Dispatch": "poultry-dispatch",
+	"Hatchery Machine": "poultry-hatchery",
+	"Hatchery Performance": "poultry-hatchery",
 	"Flock Vaccination Plan": "poultry-schedule",
 	"Bird Weighing": "poultry-scale",
 	"Flock Closure": "poultry-closure",

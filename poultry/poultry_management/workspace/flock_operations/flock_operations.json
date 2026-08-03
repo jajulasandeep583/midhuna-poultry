@@ -1,0 +1,292 @@
+{
+ "app": "poultry",
+ "charts": [],
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Flock Operations</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds on Hand\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Flocks in Production\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Sheds Occupied\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Screens\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Housing\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock Reports\", \"col\": 4}}]",
+ "creation": "2026-08-03 19:19:06.241443",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Poultry Navigator",
+   "label": "Poultry Navigator"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "poultry-layer",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Flock Operations",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "icon": "poultry-hen",
+   "is_query_report": 0,
+   "label": "Flock",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "The spine - everything hangs off it",
+   "hidden": 0,
+   "icon": "poultry-hen",
+   "is_query_report": 0,
+   "label": "Flock",
+   "link_count": 0,
+   "link_to": "Flock",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Mortality and feed. Everything else is derived",
+   "hidden": 0,
+   "icon": "poultry-clipboard",
+   "is_query_report": 0,
+   "label": "Daily Flock Entry",
+   "link_count": 0,
+   "link_to": "Daily Flock Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-scale",
+   "is_query_report": 0,
+   "label": "Bird Weighing",
+   "link_count": 0,
+   "link_to": "Bird Weighing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-closure",
+   "is_query_report": 0,
+   "label": "Flock Closure",
+   "link_count": 0,
+   "link_to": "Flock Closure",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Screens",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "One flock, end to end, against its standard",
+   "hidden": 0,
+   "icon": "poultry-hen",
+   "is_query_report": 0,
+   "label": "Flock 360",
+   "link_count": 0,
+   "link_to": "poultry-flock-360",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-board",
+   "is_query_report": 0,
+   "label": "Daily Entry Board",
+   "link_count": 0,
+   "link_to": "poultry-entry-board",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-alert",
+   "is_query_report": 0,
+   "label": "Poultry Control Tower",
+   "link_count": 0,
+   "link_to": "poultry-tower",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Housing",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "One shed, one warehouse, one flock",
+   "hidden": 0,
+   "icon": "poultry-shed",
+   "is_query_report": 0,
+   "label": "Shed",
+   "link_count": 0,
+   "link_to": "Shed",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-farm",
+   "is_query_report": 0,
+   "label": "Farm",
+   "link_count": 0,
+   "link_to": "Farm",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Flock Reports",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-standard",
+   "is_query_report": 1,
+   "label": "Flock Performance vs Standard",
+   "link_count": 0,
+   "link_to": "Flock Performance vs Standard",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-hen",
+   "is_query_report": 1,
+   "label": "Broiler Batch Summary",
+   "link_count": 0,
+   "link_to": "Broiler Batch Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-egg",
+   "is_query_report": 1,
+   "label": "Layer Production Curve",
+   "link_count": 0,
+   "link_to": "Layer Production Curve",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-shed",
+   "is_query_report": 1,
+   "label": "Shed Utilisation and Downtime",
+   "link_count": 0,
+   "link_to": "Shed Utilisation and Downtime",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-03 19:25:35.992182",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Flock Operations",
+ "number_cards": [
+  {
+   "label": "Birds on Hand",
+   "number_card_name": "Birds on Hand"
+  },
+  {
+   "label": "Flocks in Production",
+   "number_card_name": "Flocks in Production"
+  },
+  {
+   "label": "Sheds Occupied",
+   "number_card_name": "Sheds Occupied"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "Poultry",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 15.2,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "icon": "poultry-clipboard",
+   "label": "Daily Flock Entry",
+   "link_to": "Daily Flock Entry",
+   "stats_filter": "{\"docstatus\": 1}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "poultry-hen",
+   "label": "Flock",
+   "link_to": "Flock",
+   "stats_filter": "{\"status\": [\"in\", [\"Placed\", \"Growing\", \"Laying\", \"Depleting\"]]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "",
+   "icon": "poultry-shed",
+   "label": "Shed",
+   "link_to": "Shed",
+   "stats_filter": "{\"status\": \"Occupied\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "",
+   "icon": "poultry-hen",
+   "label": "Flock 360",
+   "link_to": "poultry-flock-360",
+   "type": "Page"
+  }
+ ],
+ "title": "Flock Operations",
+ "type": "Workspace"
+}

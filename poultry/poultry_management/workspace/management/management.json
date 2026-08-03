@@ -1,0 +1,249 @@
+{
+ "app": "poultry",
+ "charts": [],
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Management</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"card\", \"data\": {\"card_name\": \"Daily Screens\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Commercial\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Documents\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Help\", \"col\": 4}}]",
+ "creation": "2026-08-03 19:25:05.930580",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Poultry Navigator",
+   "label": "Poultry Navigator"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "poultry-manage",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Management",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Daily Screens",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Sales, purchases, stock and every other screen in one place",
+   "hidden": 0,
+   "icon": "poultry-manage",
+   "is_query_report": 0,
+   "label": "Management",
+   "link_count": 0,
+   "link_to": "poultry-manage",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Every flock ranked by what needs attention",
+   "hidden": 0,
+   "icon": "poultry-alert",
+   "is_query_report": 0,
+   "label": "Poultry Control Tower",
+   "link_count": 0,
+   "link_to": "poultry-tower",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Days across, flocks down. Fill the gaps",
+   "hidden": 0,
+   "icon": "poultry-board",
+   "is_query_report": 0,
+   "label": "Daily Entry Board",
+   "link_count": 0,
+   "link_to": "poultry-entry-board",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Commercial",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Sold and bought today, this week, this month",
+   "hidden": 0,
+   "icon": "poultry-sales",
+   "is_query_report": 0,
+   "label": "Sales & Purchases",
+   "link_count": 0,
+   "link_to": "poultry-trade",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Birds, eggs and feed by item and location",
+   "hidden": 0,
+   "icon": "poultry-stock",
+   "is_query_report": 0,
+   "label": "Stock on Hand",
+   "link_count": 0,
+   "link_to": "poultry-stock",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Cost per bird and per kilogram, closed-batch margin",
+   "hidden": 0,
+   "icon": "poultry-cost",
+   "is_query_report": 0,
+   "label": "Cost & Profitability",
+   "link_count": 0,
+   "link_to": "poultry-cost-hub",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-egg-tray",
+   "is_query_report": 0,
+   "label": "Sales Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-feed-bag",
+   "is_query_report": 0,
+   "label": "Purchase Receipt",
+   "link_count": 0,
+   "link_to": "Purchase Receipt",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-feed-bag",
+   "is_query_report": 0,
+   "label": "Stock Entry",
+   "link_count": 0,
+   "link_to": "Stock Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-egg-tray",
+   "is_query_report": 0,
+   "label": "Item",
+   "link_count": 0,
+   "link_to": "Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Help",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "The guide, with a button to every screen",
+   "hidden": 0,
+   "icon": "poultry-guide",
+   "is_query_report": 0,
+   "label": "How to Use Poultry",
+   "link_count": 0,
+   "link_to": "poultry-guide",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-03 19:25:35.924815",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Poultry",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 15.1,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "",
+   "icon": "poultry-manage",
+   "label": "Management",
+   "link_to": "poultry-manage",
+   "type": "Page"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "poultry-sales",
+   "label": "Sales & Purchases",
+   "link_to": "poultry-trade",
+   "type": "Page"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "icon": "poultry-stock",
+   "label": "Stock on Hand",
+   "link_to": "poultry-stock",
+   "type": "Page"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "",
+   "icon": "poultry-cost",
+   "label": "Cost & Profitability",
+   "link_to": "poultry-cost-hub",
+   "type": "Page"
+  }
+ ],
+ "title": "Management",
+ "type": "Workspace"
+}

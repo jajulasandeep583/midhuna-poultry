@@ -1,0 +1,319 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 19:10:43.353080",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "set_date",
+  "source_flock",
+  "breeder_age_weeks",
+  "cb1",
+  "setter",
+  "company",
+  "egg_item",
+  "sec_qty",
+  "eggs_set",
+  "egg_age_days",
+  "cb2",
+  "storage_temp_c",
+  "sec_dates",
+  "candling_date",
+  "transfer_date",
+  "cb3",
+  "hatch_date",
+  "sec_res",
+  "fertile_eggs",
+  "fertility_pct",
+  "cb4",
+  "chicks_hatched",
+  "hatchability_set_pct",
+  "hatchability_fertile_pct",
+  "status",
+  "sec_notes",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "SET-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "SET-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "set_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Set Date",
+   "reqd": 1
+  },
+  {
+   "description": "Breeder or layer flock the hatching eggs came from",
+   "fieldname": "source_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Source Flock",
+   "options": "Flock"
+  },
+  {
+   "description": "The standard explanation for hatchability variation",
+   "fieldname": "breeder_age_weeks",
+   "fieldtype": "Float",
+   "label": "Breeder Age (weeks)"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "setter",
+   "fieldtype": "Link",
+   "label": "Setter",
+   "options": "Hatchery Machine",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "egg_item",
+   "fieldtype": "Link",
+   "label": "Hatching Egg Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "sec_qty",
+   "fieldtype": "Section Break",
+   "label": "Eggs"
+  },
+  {
+   "fieldname": "eggs_set",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Eggs Set",
+   "reqd": 1
+  },
+  {
+   "fieldname": "egg_age_days",
+   "fieldtype": "Int",
+   "label": "Egg Age at Set (days)"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "storage_temp_c",
+   "fieldtype": "Float",
+   "label": "Storage Temp (C)"
+  },
+  {
+   "fieldname": "sec_dates",
+   "fieldtype": "Section Break",
+   "label": "Derived Dates"
+  },
+  {
+   "fieldname": "candling_date",
+   "fieldtype": "Date",
+   "label": "Candling Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transfer_date",
+   "fieldtype": "Date",
+   "label": "Transfer Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hatch_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Hatch Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_res",
+   "fieldtype": "Section Break",
+   "label": "Result"
+  },
+  {
+   "fieldname": "fertile_eggs",
+   "fieldtype": "Int",
+   "label": "Fertile Eggs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fertility_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Fertility %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chicks_hatched",
+   "fieldtype": "Int",
+   "label": "Chicks Hatched",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hatchability_set_pct",
+   "fieldtype": "Percent",
+   "label": "Hatchability of Set %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hatchability_fertile_pct",
+   "fieldtype": "Percent",
+   "label": "Hatchability of Fertile %",
+   "read_only": 1
+  },
+  {
+   "default": "Set",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Set\nCandled\nTransferred\nHatched",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Egg Setting",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 19:10:43.353080",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Egg Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "source_flock,setter,set_date",
+ "sort_field": "set_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

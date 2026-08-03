@@ -6,7 +6,7 @@
    "label": "Flocks by Status"
   }
  ],
- "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Analytics</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Flocks by Status\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock Performance\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Cost\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Health and Compliance\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Standard ERPNext\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Analytics</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Flocks by Status\", \"col\": 12}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock Performance\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Cost\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Health and Compliance\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Hatchery and Operations\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Standard ERPNext\", \"col\": 4}}]",
  "creation": "2026-08-03 12:24:57.607704",
  "custom_blocks": [
   {
@@ -95,6 +95,32 @@
    "type": "Link"
   },
   {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-cost",
+   "is_query_report": 0,
+   "label": "Cost & Profitability",
+   "link_count": 0,
+   "link_to": "poultry-cost-hub",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-sales",
+   "is_query_report": 0,
+   "label": "Sales & Purchases",
+   "link_count": 0,
+   "link_to": "poultry-trade",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
    "hidden": 0,
    "is_query_report": 0,
    "label": "Health and Compliance",
@@ -145,11 +171,24 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Operations",
+   "label": "Hatchery and Operations",
    "link_count": 0,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-hatchery",
+   "is_query_report": 1,
+   "label": "Hatchery Performance",
+   "link_count": 0,
+   "link_to": "Hatchery Performance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "dependencies": "",
@@ -213,7 +252,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 18:54:45.745138",
+ "modified": "2026-08-03 19:25:36.234599",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Analytics",
@@ -223,7 +262,7 @@
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 15.3,
+ "sequence_id": 15.6,
  "shortcuts": [
   {
    "color": "Purple",
@@ -235,21 +274,12 @@
    "type": "Report"
   },
   {
-   "color": "Blue",
+   "color": "Yellow",
    "doc_view": "",
-   "icon": "poultry-standard",
-   "label": "Flock Performance vs Standard",
-   "link_to": "Flock Performance vs Standard",
-   "report_ref_doctype": "Flock",
-   "type": "Report"
-  },
-  {
-   "color": "Orange",
-   "doc_view": "",
-   "icon": "poultry-egg",
-   "label": "Layer Production Curve",
-   "link_to": "Layer Production Curve",
-   "report_ref_doctype": "Flock",
+   "icon": "poultry-hatchery",
+   "label": "Hatchery Performance",
+   "link_to": "Hatchery Performance",
+   "report_ref_doctype": "Egg Setting",
    "type": "Report"
   },
   {
@@ -260,6 +290,14 @@
    "link_to": "Mortality Analysis",
    "report_ref_doctype": "Daily Flock Entry",
    "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "poultry-cost",
+   "label": "Cost & Profitability",
+   "link_to": "poultry-cost-hub",
+   "type": "Page"
   }
  ],
  "title": "Poultry Analytics",

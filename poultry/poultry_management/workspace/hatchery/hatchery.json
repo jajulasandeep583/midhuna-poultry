@@ -1,0 +1,198 @@
+{
+ "app": "poultry",
+ "charts": [
+  {
+   "chart_name": "Eggs Set per Week",
+   "label": "Eggs Set per Week"
+  }
+ ],
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hatchery</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Eggs Set (30 Days)\", \"col\": 6}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Chicks Hatched (30 Days)\", \"col\": 6}}, {\"id\": \"pltry004\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Eggs Set per Week\", \"col\": 12}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Incubation\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Dispatch\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Machines\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Hatchery Reports\", \"col\": 4}}]",
+ "creation": "2026-08-03 19:19:06.783974",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Poultry Navigator",
+   "label": "Poultry Navigator"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "poultry-hatchery",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Hatchery",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Incubation",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Day 0. Records breeder age, which explains hatchability",
+   "hidden": 0,
+   "icon": "poultry-egg",
+   "is_query_report": 0,
+   "label": "Egg Setting",
+   "link_count": 0,
+   "link_to": "Egg Setting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Day 18. Gives fertility %",
+   "hidden": 0,
+   "icon": "poultry-search",
+   "is_query_report": 0,
+   "label": "Candling Entry",
+   "link_count": 0,
+   "link_to": "Candling Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Day 21. Hatchability of set and of fertile",
+   "hidden": 0,
+   "icon": "poultry-chick",
+   "is_query_report": 0,
+   "label": "Hatch Entry",
+   "link_count": 0,
+   "link_to": "Hatch Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dispatch",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Boxes, transit temperature, in-ovo vaccination",
+   "hidden": 0,
+   "icon": "poultry-dispatch",
+   "is_query_report": 0,
+   "label": "Chick Dispatch",
+   "link_count": 0,
+   "link_to": "Chick Dispatch",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Machines",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Setters and hatchers, capacity and staging",
+   "hidden": 0,
+   "icon": "poultry-hatchery",
+   "is_query_report": 0,
+   "label": "Hatchery Machine",
+   "link_count": 0,
+   "link_to": "Hatchery Machine",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Hatchery Reports",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-hatchery",
+   "is_query_report": 1,
+   "label": "Hatchery Performance",
+   "link_count": 0,
+   "link_to": "Hatchery Performance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-03 19:25:36.100143",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Hatchery",
+ "number_cards": [
+  {
+   "label": "Eggs Set (30 Days)",
+   "number_card_name": "Eggs Set (30 Days)"
+  },
+  {
+   "label": "Chicks Hatched (30 Days)",
+   "number_card_name": "Chicks Hatched (30 Days)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "Poultry",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 15.4,
+ "shortcuts": [
+  {
+   "color": "Yellow",
+   "doc_view": "",
+   "icon": "poultry-egg",
+   "label": "Egg Setting",
+   "link_to": "Egg Setting",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "icon": "poultry-search",
+   "label": "Candling Entry",
+   "link_to": "Candling Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "poultry-chick",
+   "label": "Hatch Entry",
+   "link_to": "Hatch Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "",
+   "icon": "poultry-dispatch",
+   "label": "Chick Dispatch",
+   "link_to": "Chick Dispatch",
+   "type": "DocType"
+  }
+ ],
+ "title": "Hatchery",
+ "type": "Workspace"
+}

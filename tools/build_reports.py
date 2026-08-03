@@ -87,6 +87,17 @@ REPORTS = [
 """,
 	},
 	{
+		"name": "Hatchery Performance",
+		"file": "hatchery_performance",
+		"ref": "Egg Setting",
+		"js": DATE_RANGE + """
+		{fieldname: "source_flock", label: __("Source Flock"), fieldtype: "Link",
+		 options: "Flock"},
+		{fieldname: "setter", label: __("Setter"), fieldtype: "Link",
+		 options: "Hatchery Machine"},
+""",
+	},
+	{
 		"name": "Shed Utilisation and Downtime",
 		"file": "shed_utilisation_and_downtime",
 		"ref": "Shed",

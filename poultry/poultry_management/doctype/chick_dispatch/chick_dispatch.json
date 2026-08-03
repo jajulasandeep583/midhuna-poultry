@@ -1,0 +1,258 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 19:10:44.714454",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "hatch_entry",
+  "posting_date",
+  "destination_type",
+  "cb1",
+  "customer",
+  "to_farm",
+  "company",
+  "sec_qty",
+  "boxes",
+  "chicks_per_box",
+  "extras",
+  "cb2",
+  "chicks_dispatched",
+  "transit_temp_c",
+  "in_ovo_vaccinated",
+  "sec_notes",
+  "vehicle_no",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "CHD-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "CHD-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "hatch_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Hatch Entry",
+   "options": "Hatch Entry",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Dispatch Date",
+   "reqd": 1
+  },
+  {
+   "default": "Own Farm",
+   "fieldname": "destination_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Destination",
+   "options": "\nOwn Farm\nCustomer"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.destination_type=='Customer'",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.destination_type=='Own Farm'",
+   "fieldname": "to_farm",
+   "fieldtype": "Link",
+   "label": "To Farm",
+   "options": "Farm"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_qty",
+   "fieldtype": "Section Break",
+   "label": "Load"
+  },
+  {
+   "fieldname": "boxes",
+   "fieldtype": "Int",
+   "label": "Boxes"
+  },
+  {
+   "default": "100",
+   "fieldname": "chicks_per_box",
+   "fieldtype": "Int",
+   "label": "Chicks per Box"
+  },
+  {
+   "fieldname": "extras",
+   "fieldtype": "Int",
+   "label": "Extras"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chicks_dispatched",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Chicks Dispatched",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transit_temp_c",
+   "fieldtype": "Float",
+   "label": "Transit Temp (C)"
+  },
+  {
+   "default": "0",
+   "fieldname": "in_ovo_vaccinated",
+   "fieldtype": "Check",
+   "label": "In-Ovo / Hatchery Vaccinated"
+  },
+  {
+   "fieldname": "sec_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Chick Dispatch",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 19:10:44.714454",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Chick Dispatch",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
