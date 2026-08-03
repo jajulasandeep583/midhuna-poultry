@@ -283,6 +283,187 @@ def entry_board(days=14):
 
 
 @frappe.whitelist()
+def health_hub():
+	"""Everything a vet or farm manager needs to keep vaccination and
+	withdrawal under control, in one call."""
+	today = getdate(nowdate())
+	week = add_days(today, 7)
+
+	plan_rows = frappe.db.sql(
+		"""
+		select p.flock, p.farm, f.flock_name, f.flock_type, f.current_qty,
+		       d.vaccine, d.route, d.due_date, d.status, d.age_days
+		from `tabFlock Vaccination Plan` p
+		join `tabFlock Vaccination Plan Detail` d on d.parent = p.name
+		join `tabFlock` f on f.name = p.flock
+		where f.status in %(active)s and d.status != 'Done'
+		order by d.due_date asc
+		""", {"active": tuple(ACTIVE)}, as_dict=True)
+
+	overdue, due_today, due_soon = [], [], []
+	for r in plan_rows:
+		if not r.due_date:
+			continue
+		d = getdate(r.due_date)
+		r["days"] = (d - today).days
+		if d < today:
+			overdue.append(r)
+		elif d == today:
+			due_today.append(r)
+		elif d <= week:
+			due_soon.append(r)
+
+	done = frappe.db.sql(
+		"""
+		select count(*) from `tabFlock Vaccination Plan Detail` d
+		join `tabFlock Vaccination Plan` p on p.name = d.parent
+		join `tabFlock` f on f.name = p.flock
+		where f.status in %(active)s and d.status = 'Done'
+		""", {"active": tuple(ACTIVE)})[0][0]
+	planned_to_date = done + len(overdue) + len(due_today)
+	compliance = round(100.0 * done / planned_to_date, 1) if planned_to_date else 100.0
+
+	withdrawals = []
+	for f in frappe.get_all("Flock", filters={"status": ["in", ACTIVE]},
+	                        fields=["name", "flock_name", "farm", "shed", "current_qty"]):
+		for w in active_withdrawals(f.name, today):
+			withdrawals.append({
+				"flock": f.name, "flock_name": f.flock_name, "farm": f.farm, "shed": f.shed,
+				"birds": f.current_qty, "medication": w.medication,
+				"clears_on": str(w.withdrawal_clear_date),
+				"days_left": (getdate(w.withdrawal_clear_date) - today).days,
+			})
+
+	meds = frappe.db.sql(
+		"""
+		select m.name, m.flock, f.flock_name, m.medication, m.start_date, m.end_date,
+		       m.withdrawal_clear_date, m.reason, m.birds_treated
+		from `tabMedication Entry` m join `tabFlock` f on f.name = m.flock
+		where m.docstatus = 1 order by m.start_date desc limit 10
+		""", as_dict=True)
+
+	reasons = frappe.db.sql(
+		"""
+		select coalesce(md.reason, 'Not specified') as reason, sum(md.qty) as qty
+		from `tabFlock Mortality Detail` md
+		join `tabDaily Flock Entry` e on e.name = md.parent
+		where e.docstatus = 1 and e.posting_date >= %(since)s
+		group by md.reason order by qty desc limit 8
+		""", {"since": add_days(today, -30)}, as_dict=True)
+
+	return {
+		"totals": {
+			"overdue": len(overdue),
+			"due_today": len(due_today),
+			"due_soon": len(due_soon),
+			"compliance_pct": compliance,
+			"under_withdrawal": len(withdrawals),
+			"birds_blocked": sum(cint(w["birds"]) for w in withdrawals),
+		},
+		"overdue": overdue[:15],
+		"due_today": due_today[:15],
+		"due_soon": due_soon[:15],
+		"withdrawals": sorted(withdrawals, key=lambda w: w["days_left"]),
+		"medications": meds,
+		"mortality_reasons": reasons,
+	}
+
+
+@frappe.whitelist()
+def cost_hub():
+	"""Where the money went, per flock and per kilogram."""
+	today = getdate(nowdate())
+
+	flocks = frappe.get_all(
+		"Flock",
+		fields=["name", "flock_name", "farm", "shed", "flock_type", "status", "age_days",
+		        "opening_qty", "current_qty", "cumulative_feed_kg", "avg_body_weight_g",
+		        "total_cost", "cost_per_bird", "cost_per_kg_live", "fcr", "cumulative_eggs"],
+		filters={"status": ["!=", "Draft"]},
+		order_by="status asc, name asc",
+	)
+
+	feed_cost = {}
+	for r in frappe.db.sql(
+		"""
+		select se.poultry_flock as flock, sum(se.total_outgoing_value) as val
+		from `tabStock Entry` se
+		where se.docstatus = 1 and se.purpose = 'Material Issue'
+		  and se.poultry_flock is not null group by se.poultry_flock
+		""", as_dict=True):
+		feed_cost[r.flock] = flt(r.val)
+
+	rows = []
+	for f in flocks:
+		live_kg = flt(f.current_qty) * flt(f.avg_body_weight_g) / 1000.0
+		rows.append({
+			"flock": f.name, "flock_name": f.flock_name, "farm": f.farm, "shed": f.shed,
+			"flock_type": f.flock_type, "status": f.status, "age_days": f.age_days,
+			"birds": f.current_qty, "total_cost": flt(f.total_cost, 2),
+			"feed_cost": flt(feed_cost.get(f.name, 0), 2),
+			"feed_share_pct": round(100.0 * flt(feed_cost.get(f.name, 0)) / flt(f.total_cost), 1)
+			if flt(f.total_cost) else 0,
+			"cost_per_bird": flt(f.cost_per_bird, 2),
+			"cost_per_kg_live": flt(f.cost_per_kg_live, 2),
+			"fcr": flt(f.fcr, 3), "live_kg": round(live_kg, 1),
+			"eggs": f.cumulative_eggs,
+		})
+
+	weeks = frappe.db.sql(
+		"""
+		select yearweek(e.posting_date, 3) as wk, min(e.posting_date) as start,
+		       sum(fd.qty_kg) as kg
+		from `tabDaily Flock Entry` e
+		join `tabFlock Feed Detail` fd on fd.parent = e.name
+		where e.docstatus = 1 and e.posting_date >= %(since)s
+		group by yearweek(e.posting_date, 3) order by wk
+		""", {"since": add_days(today, -70)}, as_dict=True)
+	rates = {i.name: flt(i.valuation_rate) for i in frappe.get_all(
+		"Item", filters={"item_group": "Poultry"}, fields=["name", "valuation_rate"])}
+	avg_rate = (sum(rates.values()) / len(rates)) if rates else 0
+	feed_trend = [{"label": str(w.start), "kg": flt(w.kg, 0),
+	               "cost": round(flt(w.kg) * avg_rate, 0)} for w in weeks]
+
+	closed = frappe.get_all(
+		"Flock Closure", filters={"docstatus": 1},
+		fields=["flock", "closure_date", "total_cost", "total_revenue", "margin",
+		        "cost_per_kg_live", "fcr", "eef", "total_live_weight_kg"],
+		order_by="closure_date desc", limit=10)
+
+	revenue_30 = flt(frappe.db.sql(
+		"""select coalesce(sum(base_grand_total),0) from `tabSales Invoice`
+		   where docstatus=1 and posting_date >= %s""", add_days(today, -30))[0][0])
+	feed_spend_30 = flt(frappe.db.sql(
+		"""select coalesce(sum(total_outgoing_value),0) from `tabStock Entry`
+		   where docstatus=1 and purpose='Material Issue' and posting_date >= %s
+		     and poultry_flock is not null""", add_days(today, -30))[0][0])
+
+	return {
+		"totals": {
+			"birds_value": round(sum(r["total_cost"] for r in rows
+			                         if r["status"] not in ("Closed",)), 0),
+			"feed_spend_30": round(feed_spend_30, 0),
+			"revenue_30": round(revenue_30, 0),
+			# Weighted across broilers only: a layer's cost per kg of liveweight
+			# is not a number anyone manages on, and a plain mean lets a
+			# 12-day-old flock (still carrying its chick cost over almost no
+			# weight) drag the figure somewhere meaningless.
+			"avg_cost_per_kg": _weighted_cost_per_kg(rows),
+		},
+		"rows": rows,
+		"feed_trend": feed_trend,
+		"closed": closed,
+	}
+
+
+def _weighted_cost_per_kg(rows):
+	broilers = [r for r in rows if r["flock_type"] == "Broiler" and r["live_kg"]]
+	kg = sum(r["live_kg"] for r in broilers)
+	cost = sum(r["total_cost"] for r in broilers)
+	return round(cost / kg, 2) if kg else 0.0
+
+
+@frappe.whitelist()
 def flock_options():
 	return frappe.get_all(
 		"Flock",

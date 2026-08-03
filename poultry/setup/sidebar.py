@@ -15,6 +15,8 @@ SIDEBARS = {
 			("Control Tower", "Page", "poultry-tower", "poultry-alert"),
 			("Flock 360", "Page", "poultry-flock-360", "poultry-target"),
 			("Daily Entry Board", "Page", "poultry-entry-board", "poultry-board"),
+			("Vaccination & Health", "Page", "poultry-health-hub", "poultry-syringe"),
+			("Cost & Profitability", "Page", "poultry-cost-hub", "poultry-cost"),
 			("Daily Flock Entry", "DocType", "Daily Flock Entry", "poultry-clipboard"),
 			("Flock", "DocType", "Flock", "poultry-layer"),
 			("Shed", "DocType", "Shed", "poultry-shed"),
@@ -46,6 +48,7 @@ SIDEBARS = {
 		"icon": "poultry-syringe",
 		"items": [
 			("Home", "Workspace", "Poultry Health", "poultry-syringe"),
+			("Vaccination & Health", "Page", "poultry-health-hub", "poultry-syringe"),
 			("Flock Vaccination Plan", "DocType", "Flock Vaccination Plan", "poultry-schedule"),
 			("Vaccination Entry", "DocType", "Vaccination Entry", "poultry-syringe"),
 			("Medication Entry", "DocType", "Medication Entry", "poultry-pill"),
@@ -60,6 +63,7 @@ SIDEBARS = {
 		"icon": "poultry-chart",
 		"items": [
 			("Home", "Workspace", "Poultry Analytics", "poultry-chart"),
+			("Cost & Profitability", "Page", "poultry-cost-hub", "poultry-cost"),
 			("Flock Performance vs Standard", "Report", "Flock Performance vs Standard",
 			 "poultry-standard"),
 			("Broiler Batch Summary", "Report", "Broiler Batch Summary", "poultry-broiler"),

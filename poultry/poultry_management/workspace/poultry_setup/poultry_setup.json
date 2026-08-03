@@ -1,9 +1,14 @@
 {
  "app": "poultry",
  "charts": [],
- "content": "[{\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Setup</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"card\", \"data\": {\"card_name\": \"Farm Structure\", \"col\": 4}}, {\"id\": \"pltry002\", \"type\": \"card\", \"data\": {\"card_name\": \"Birds\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Eggs\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Health Masters\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Configuration\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Setup</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"card\", \"data\": {\"card_name\": \"Farm Structure\", \"col\": 4}}, {\"id\": \"pltry002\", \"type\": \"card\", \"data\": {\"card_name\": \"Birds\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Eggs\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Health Masters\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Configuration\", \"col\": 4}}]",
  "creation": "2026-08-03 12:24:57.511944",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "Poultry Navigator",
+   "label": "Poultry Navigator"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "hide_custom": 0,
@@ -229,7 +234,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 14:05:18.869702",
+ "modified": "2026-08-03 14:45:08.113320",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Setup",

@@ -53,6 +53,8 @@ EXTRA_ICONS = {
 	"Flock 360": "poultry-hen",
 	"Daily Entry Board": "poultry-board",
 	"How to Use Poultry": "poultry-guide",
+	"Vaccination & Health": "poultry-syringe",
+	"Cost & Profitability": "poultry-cost",
 	"Flock Vaccination Plan": "poultry-schedule",
 	"Bird Weighing": "poultry-scale",
 	"Flock Closure": "poultry-closure",

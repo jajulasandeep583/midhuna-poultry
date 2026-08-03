@@ -28,6 +28,18 @@ PAGES = [
 		"icon": "poultry-guide",
 	},
 	{
+		"name": "poultry-health-hub",
+		"file": "poultry_health_hub",
+		"title": "Vaccination & Health",
+		"icon": "poultry-syringe",
+	},
+	{
+		"name": "poultry-cost-hub",
+		"file": "poultry_cost_hub",
+		"title": "Cost & Profitability",
+		"icon": "poultry-cost",
+	},
+	{
 		"name": "poultry-flock-360",
 		"file": "poultry_flock_360",
 		"title": "Flock 360",

@@ -1,16 +1,16 @@
 {
  "content": null,
- "creation": "2026-08-03 13:22:12.559974",
+ "creation": "2026-08-03 14:22:28.374759",
  "docstatus": 0,
  "doctype": "Page",
- "icon": "poultry-hen",
+ "icon": "poultry-syringe",
  "idx": 0,
- "modified": "2026-08-03 14:22:28.778412",
+ "modified": "2026-08-03 14:22:28.374759",
  "modified_by": "Administrator",
  "module": "Poultry Management",
- "name": "poultry-flock-360",
+ "name": "poultry-health-hub",
  "owner": "Administrator",
- "page_name": "poultry-flock-360",
+ "page_name": "poultry-health-hub",
  "roles": [
   {
    "role": "Poultry Manager"
@@ -35,5 +35,5 @@
  "standard": "Yes",
  "style": null,
  "system_page": 0,
- "title": "Flock 360"
+ "title": "Vaccination & Health"
 }

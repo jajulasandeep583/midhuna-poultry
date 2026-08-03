@@ -6,9 +6,14 @@
    "label": "Flocks by Status"
   }
  ],
- "content": "[{\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Analytics</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Flocks by Status\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock Performance\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Cost\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Health and Compliance\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Standard ERPNext\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Analytics</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Flocks by Status\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock Performance\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Cost\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Health and Compliance\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Standard ERPNext\", \"col\": 4}}]",
  "creation": "2026-08-03 12:24:57.607704",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "Poultry Navigator",
+   "label": "Poultry Navigator"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "hide_custom": 0,
@@ -208,7 +213,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 14:05:18.973961",
+ "modified": "2026-08-03 14:45:08.286469",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Analytics",
