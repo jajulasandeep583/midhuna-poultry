@@ -4,7 +4,9 @@ authors = [
     { name = "Midhuna Tech", email = "aimidhunatech@gmail.com"}
 ]
 description = "Poultry farm management for Frappe/ERPNext v16"
-requires-python = ">=3.14"
+# The bench that builds this may not be on 3.14. Frappe v16 supports 3.11 and
+# up; pinning to the version this was developed on blocks the install.
+requires-python = ">=3.11"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
@@ -14,6 +16,13 @@ dependencies = [
 [build-system]
 requires = ["flit_core >=3.4,<4"]
 build-backend = "flit_core.buildapi"
+
+# Frappe Cloud and newer bench refuse to install an app that does not declare
+# which framework versions it runs on. Without this block the install stops with
+# "Could not find compatible Frappe version in pyproject.toml file".
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0,<17.0.0"
+erpnext = ">=16.0.0,<17.0.0"
 
 # These dependencies are only installed when developer mode is enabled
 [tool.bench.dev-dependencies]
