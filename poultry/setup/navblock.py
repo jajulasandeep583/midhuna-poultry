@@ -115,9 +115,10 @@ def html():
 	return '<div class="pnav">' + "".join(tiles) + "</div>"
 
 
-def install():
-	import json
-
+def make_block():
+	"""Just the record. Attaching it to the workspaces is setup/desk.py's job,
+	because a workspace must not be saved before the block it references
+	exists - that is what aborts a fresh install."""
 	if frappe.db.exists("Custom HTML Block", BLOCK):
 		doc = frappe.get_doc("Custom HTML Block", BLOCK)
 	else:
@@ -130,6 +131,12 @@ def install():
 	doc.flags.ignore_permissions = True
 	doc.save()
 	print(f"  + custom html block: {BLOCK}")
+
+
+def install():
+	import json
+
+	make_block()
 
 	for ws in ("Poultry", "Management", "Flock Operations", "Poultry Health",
 	           "Hatchery", "Poultry Setup", "Poultry Analytics"):

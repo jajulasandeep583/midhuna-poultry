@@ -29,7 +29,6 @@
    "is_query_report": 0,
    "label": "Screens",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -51,7 +50,6 @@
    "is_query_report": 0,
    "label": "Egg Intake",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -86,7 +84,6 @@
    "is_query_report": 0,
    "label": "Incubation",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -134,7 +131,6 @@
    "is_query_report": 0,
    "label": "Dispatch",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -156,7 +152,6 @@
    "is_query_report": 0,
    "label": "Machines",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -191,7 +186,6 @@
    "is_query_report": 0,
    "label": "Hatchery Reports",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -209,7 +203,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 21:54:04.136696",
+ "modified": "2026-08-03 22:23:52.462707",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Hatchery",

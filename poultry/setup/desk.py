@@ -184,7 +184,19 @@ def upsert(name, doc):
 		w.name = name
 	w.update(doc)
 	w.flags.ignore_permissions = True
-	w.save()
+
+	# Do NOT let this re-export the workspace json. The number cards, charts and
+	# the navigator block are created by after_install, which runs AFTER frappe
+	# has already synced the json - so a json carrying those child rows fails
+	# link validation on a fresh install and aborts it before after_install ever
+	# runs. The committed json therefore stays free of them and they are
+	# attached here at runtime.
+	prev = frappe.flags.in_import
+	frappe.flags.in_import = True
+	try:
+		w.save()
+	finally:
+		frappe.flags.in_import = prev
 	print("  + workspace:", name)
 
 

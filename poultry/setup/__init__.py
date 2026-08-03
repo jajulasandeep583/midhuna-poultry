@@ -34,7 +34,10 @@ def after_install():
 
 	custom_fields.install()
 	masters.install()
-	navblock.install()
+	# order matters: the block record must exist before any workspace that
+	# references it is saved, and desk.install() creates the number cards and
+	# charts before attaching them - otherwise link validation aborts the install
+	navblock.make_block()
 	desk.install()
 	sidebar.install()
 	icons.install()
@@ -49,7 +52,7 @@ def after_migrate():
 	from poultry.setup import desk, desktop_icons, icons, navblock, sidebar
 
 	try:
-		navblock.install()
+		navblock.make_block()
 		desk.install()
 		sidebar.install()
 		icons.install()

@@ -29,7 +29,6 @@
    "is_query_report": 0,
    "label": "Flock Performance",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -77,7 +76,6 @@
    "is_query_report": 0,
    "label": "Feed and Cost",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -125,7 +123,6 @@
    "is_query_report": 0,
    "label": "Health and Compliance",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -173,7 +170,6 @@
    "is_query_report": 0,
    "label": "Hatchery and Operations",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -208,7 +204,6 @@
    "is_query_report": 0,
    "label": "Standard ERPNext",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -252,7 +247,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 21:54:04.277226",
+ "modified": "2026-08-03 22:23:52.605525",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Analytics",

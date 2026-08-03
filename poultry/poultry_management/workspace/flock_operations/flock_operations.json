@@ -25,7 +25,6 @@
    "is_query_report": 0,
    "label": "Flock",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -86,7 +85,6 @@
    "is_query_report": 0,
    "label": "Screens",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -134,7 +132,6 @@
    "is_query_report": 0,
    "label": "Housing",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -169,7 +166,6 @@
    "is_query_report": 0,
    "label": "Flock Reports",
    "link_count": 0,
-   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -226,7 +222,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 21:54:03.965382",
+ "modified": "2026-08-03 22:23:52.330502",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Flock Operations",
