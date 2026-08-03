@@ -15,6 +15,7 @@ class PoultryControlTower {
 	constructor(page) {
 		this.page = page;
 		this.inject_styles();
+		this.add_filters();
 		this.$body = $('<div class="pt-tower"></div>').appendTo(this.page.main);
 		this.page.set_primary_action(__("Refresh"), () => this.refresh(), "refresh");
 		this.page.add_menu_item(__("New Daily Entry"), () =>
@@ -101,9 +102,20 @@ class PoultryControlTower {
 		</style>`).appendTo(document.head);
 	}
 
+	add_filters() {
+		this.farm = this.page.add_field({
+			fieldname: "farm", label: __("Farm"), fieldtype: "Link", options: "Farm",
+			change: () => this.refresh(),
+		});
+	}
+
+	args() {
+		return { farm: this.farm ? this.farm.get_value() : null };
+	}
+
 	refresh() {
 		this.$body.html(`<div class="text-muted" style="padding:2rem 0">${__("Loading...")}</div>`);
-		frappe.call({ method: "poultry.dashboard.control_tower" }).then((r) => {
+		frappe.call({ method: "poultry.dashboard.control_tower", args: this.args() }).then((r) => {
 			if (!r || !r.message) return;
 			this.data = r.message;
 			this.render();

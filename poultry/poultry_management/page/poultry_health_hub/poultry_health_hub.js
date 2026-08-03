@@ -15,6 +15,7 @@ class HealthHub {
 	constructor(page) {
 		this.page = page;
 		this.inject_styles();
+		this.add_filters();
 		this.$body = $('<div class="hh"></div>').appendTo(this.page.main);
 		this.page.set_primary_action(__("Refresh"), () => this.load(), "refresh");
 		this.page.add_menu_item(__("Record a Vaccination"), () =>
@@ -87,9 +88,25 @@ class HealthHub {
 		</style>`).appendTo(document.head);
 	}
 
+	add_filters() {
+		this.farm = this.page.add_field({
+			fieldname: "farm", label: __("Farm"), fieldtype: "Link", options: "Farm",
+			change: () => this.load(),
+		});
+		this.as_on = this.page.add_field({
+			fieldname: "as_on", label: __("As On"), fieldtype: "Date",
+			change: () => this.load(),
+		});
+		this.as_on.set_value(frappe.datetime.get_today());
+	}
+
+	args() {
+		return { farm: this.farm.get_value(), as_on: this.as_on.get_value() };
+	}
+
 	load() {
 		this.$body.html(`<div class="text-muted" style="padding:2rem 0">${__("Loading...")}</div>`);
-		frappe.call({ method: "poultry.dashboard.health_hub" }).then((r) => {
+		frappe.call({ method: "poultry.dashboard.health_hub", args: this.args() }).then((r) => {
 			if (!r || !r.message) return;
 			this.data = r.message;
 			this.render();

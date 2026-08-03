@@ -34,6 +34,7 @@ class PoultryManage {
 	constructor(page) {
 		this.page = page;
 		this.inject_styles();
+		this.add_filters();
 		this.$body = $('<div class="pm"></div>').appendTo(this.page.main);
 		this.page.set_primary_action(__("Refresh"), () => this.load(), "refresh");
 		this.load();
@@ -76,9 +77,25 @@ class PoultryManage {
 		</style>`).appendTo(document.head);
 	}
 
+	add_filters() {
+		this.as_on = this.page.add_field({
+			fieldname: "as_on", label: __("As On"), fieldtype: "Date",
+			change: () => this.load(),
+		});
+		this.farm = this.page.add_field({
+			fieldname: "farm", label: __("Farm"), fieldtype: "Link", options: "Farm",
+			change: () => this.load(),
+		});
+		this.as_on.set_value(frappe.datetime.get_today());
+	}
+
+	args() {
+		return { as_on: this.as_on.get_value(), farm: this.farm.get_value() };
+	}
+
 	load() {
 		this.$body.html(`<div class="text-muted" style="padding:2rem 0">${__("Loading...")}</div>`);
-		frappe.call({ method: "poultry.dashboard.management" }).then((r) => {
+		frappe.call({ method: "poultry.dashboard.management", args: this.args() }).then((r) => {
 			this.data = (r && r.message) || {};
 			this.render();
 		});

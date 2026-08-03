@@ -18,6 +18,7 @@ class TradeBoard {
 	constructor(page) {
 		this.page = page;
 		this.inject_styles();
+		this.add_filters();
 		this.$body = $('<div class="tb"></div>').appendTo(this.page.main);
 		this.page.set_primary_action(__("Refresh"), () => this.load(), "refresh");
 		this.page.add_menu_item(__("New Sales Invoice"), () => frappe.new_doc("Sales Invoice"));
@@ -77,9 +78,28 @@ class TradeBoard {
 		</style>`).appendTo(document.head);
 	}
 
+	add_filters() {
+		this.from = this.page.add_field({
+			fieldname: "from_date", label: __("From Date"), fieldtype: "Date",
+			default: frappe.datetime.add_days(frappe.datetime.get_today(), -29),
+			change: () => this.load(),
+		});
+		this.to = this.page.add_field({
+			fieldname: "to_date", label: __("To Date"), fieldtype: "Date",
+			default: frappe.datetime.get_today(),
+			change: () => this.load(),
+		});
+		this.from.set_value(frappe.datetime.add_days(frappe.datetime.get_today(), -29));
+		this.to.set_value(frappe.datetime.get_today());
+	}
+
+	args() {
+		return { from_date: this.from.get_value(), to_date: this.to.get_value() };
+	}
+
 	load() {
 		this.$body.html(`<div class="text-muted" style="padding:2rem 0">${__("Loading...")}</div>`);
-		frappe.call({ method: "poultry.dashboard.trade_board" }).then((r) => {
+		frappe.call({ method: "poultry.dashboard.trade_board", args: this.args() }).then((r) => {
 			if (!r || !r.message) return;
 			this.data = r.message;
 			this.render();
@@ -97,7 +117,7 @@ class TradeBoard {
 			<div class="sub">${__("{0} invoices", [d.sales.today.docs])}</div>
 			<div class="split">
 				<div><div class="l">${__("Last 7 days")}</div><div class="v">${rup(d.sales.week.amount)}</div></div>
-				<div><div class="l">${__("Last 30 days")}</div><div class="v">${rup(d.sales.month.amount)}</div></div>
+				<div><div class="l">${__("Selected range")}</div><div class="v">${rup(d.sales.month.amount)}</div></div>
 				<div><div class="l">${__("Outstanding")}</div><div class="v">${rup(d.receivable)}</div></div>
 			</div>
 			<div class="bg">${frappe.utils.icon("poultry-sales", "lg")}</div>
@@ -109,14 +129,14 @@ class TradeBoard {
 			<div class="sub">${__("{0} documents", [d.purchases.today.docs])}</div>
 			<div class="split">
 				<div><div class="l">${__("Last 7 days")}</div><div class="v">${rup(d.purchases.week.amount)}</div></div>
-				<div><div class="l">${__("Last 30 days")}</div><div class="v">${rup(d.purchases.month.amount)}</div></div>
+				<div><div class="l">${__("Selected range")}</div><div class="v">${rup(d.purchases.month.amount)}</div></div>
 			</div>
 			<div class="bg">${frappe.utils.icon("poultry-purchase", "lg")}</div>
 		</div>`).appendTo($t);
 
 		if (d.sales_trend.length) {
 			const $c = $(`<div class="tb-card"><h5>${frappe.utils.icon("poultry-trend-up", "md")}
-				${__("Sales, last 30 days")}</h5><div class="c" style="padding:6px"></div></div>`)
+				${__("Sales, {0} to {1}", [frappe.datetime.str_to_user(d.range.from_date), frappe.datetime.str_to_user(d.range.to_date)])}</h5><div class="c" style="padding:6px"></div></div>`)
 				.appendTo(this.$body);
 			new frappe.Chart($c.find(".c")[0], {
 				data: {
@@ -133,14 +153,14 @@ class TradeBoard {
 		const $l = $("<div></div>").appendTo($g);
 		const $r = $("<div></div>").appendTo($g);
 
-		this.item_card($l, __("What we sold — 30 days"), "poultry-egg-tray", d.sold_items,
+		this.item_card($l, __("What we sold"), "poultry-egg-tray", d.sold_items,
 			"#2CA58D", "Sales Invoice");
 		this.party_card($l, __("Top customers"), "poultry-customer", d.customers,
 			"customer", "invoices", "#7C5CFC");
 		this.doc_card($l, __("Recent invoices"), "poultry-sales", d.recent_sales,
 			"customer", "Sales Invoice");
 
-		this.item_card($r, __("What we bought — 30 days"), "poultry-feed-bag", d.bought_items,
+		this.item_card($r, __("What we bought"), "poultry-feed-bag", d.bought_items,
 			"#D97757", "Purchase Receipt");
 		this.party_card($r, __("Top suppliers"), "poultry-dispatch", d.suppliers,
 			"supplier", "receipts", "#D97757");
