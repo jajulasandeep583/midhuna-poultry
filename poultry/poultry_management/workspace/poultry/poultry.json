@@ -25,7 +25,7 @@
  "docstatus": 0,
  "doctype": "Workspace",
  "hide_custom": 0,
- "icon": "poultry-hen",
+ "icon": "poultry-farm",
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
@@ -203,7 +203,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 19:25:34.097211",
+ "modified": "2026-08-03 19:48:05.900790",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry",

@@ -93,7 +93,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-egg-tray",
+   "icon": "poultry-sales",
    "indent": 0,
    "keep_closed": 0,
    "label": "Sales Invoice",
@@ -105,7 +105,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-feed-bag",
+   "icon": "poultry-purchase",
    "indent": 0,
    "keep_closed": 0,
    "label": "Purchase Receipt",
@@ -117,7 +117,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-feed-bag",
+   "icon": "poultry-stock",
    "indent": 0,
    "keep_closed": 0,
    "label": "Stock Entry",
@@ -139,7 +139,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 19:25:36.595292",
+ "modified": "2026-08-03 19:48:10.029906",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Management",

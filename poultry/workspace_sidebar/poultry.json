@@ -3,13 +3,13 @@
  "creation": "2026-08-03 13:07:02.435954",
  "docstatus": 0,
  "doctype": "Workspace Sidebar",
- "header_icon": "poultry-hen",
+ "header_icon": "poultry-farm",
  "idx": 0,
  "items": [
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-hen",
+   "icon": "poultry-farm",
    "indent": 0,
    "keep_closed": 0,
    "label": "Home",
@@ -33,7 +33,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "poultry-layer",
+   "icon": "poultry-hen",
    "indent": 0,
    "keep_closed": 0,
    "label": "Flock Operations",
@@ -103,7 +103,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 19:25:36.557148",
+ "modified": "2026-08-03 19:48:09.915549",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry",

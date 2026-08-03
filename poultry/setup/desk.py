@@ -362,7 +362,7 @@ def make_workspaces():
 			("header", {"text": '<span class="h4"><b>Go To</b></span>', "col": 12}),
 		] + cards_from(links)
 		return {
-			"label": "Poultry", "title": "Poultry", "module": MODULE, "icon": "poultry-hen",
+			"label": "Poultry", "title": "Poultry", "module": MODULE, "icon": "poultry-farm",
 			"public": 1, "is_hidden": 0, "sequence_id": 15.0, "content": content(blocks),
 			"links": links,
 			"shortcuts": [
@@ -418,7 +418,7 @@ def make_workspaces():
 		shortcut("Cost & Profitability", "poultry-cost-hub", "Page", "Purple"),
 	])
 
-	child("Flock Operations", "poultry-layer", 15.2, FLOCK_LINKS, [
+	child("Flock Operations", "poultry-hen", 15.2, FLOCK_LINKS, [
 		shortcut("Daily Flock Entry", "Daily Flock Entry", color="Blue",
 		         filters={"docstatus": 1}),
 		shortcut("Flock", "Flock", color="Green", filters={"status": ["in", ACTIVE]}),

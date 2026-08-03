@@ -76,7 +76,9 @@ def run(path):
 		if not colour:
 			return tag
 		tag = re.sub(r'\s+stroke="[^"]*"', "", tag)
-		return tag[:-1] + f' stroke="{colour}">'
+		tag = re.sub(r'\s+stroke-width="[^"]*"', "", tag)
+		# 1.5px (frappe's default) is too thin for these shapes at 16px
+		return tag[:-1] + f' stroke="{colour}" stroke-width="1.8">'
 
 	out = re.sub(r'<symbol[^>]*id="icon-([a-z0-9-]+)"[^>]*>', repl, src)
 	missing = [i for i in re.findall(r'id="icon-([a-z0-9-]+)"', out) if i not in COLOURS]

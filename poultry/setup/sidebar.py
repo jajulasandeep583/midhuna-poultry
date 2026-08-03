@@ -10,11 +10,11 @@ import frappe
 
 SIDEBARS = {
 	"Poultry": {
-		"icon": "poultry-hen",
+		"icon": "poultry-farm",
 		"items": [
-			("Home", "Workspace", "Poultry", "poultry-hen"),
+			("Home", "Workspace", "Poultry", "poultry-farm"),
 			("Management", "Workspace", "Management", "poultry-manage"),
-			("Flock Operations", "Workspace", "Flock Operations", "poultry-layer"),
+			("Flock Operations", "Workspace", "Flock Operations", "poultry-hen"),
 			("Health", "Workspace", "Poultry Health", "poultry-syringe"),
 			("Hatchery", "Workspace", "Hatchery", "poultry-hatchery"),
 			("Analytics", "Workspace", "Poultry Analytics", "poultry-chart"),
@@ -39,9 +39,9 @@ SIDEBARS = {
 		],
 	},
 	"Flock Operations": {
-		"icon": "poultry-layer",
+		"icon": "poultry-hen",
 		"items": [
-			("Home", "Workspace", "Flock Operations", "poultry-layer"),
+			("Home", "Workspace", "Flock Operations", "poultry-hen"),
 			("Flock 360", "Page", "poultry-flock-360", "poultry-target"),
 			("Daily Entry Board", "Page", "poultry-entry-board", "poultry-board"),
 			("Daily Flock Entry", "DocType", "Daily Flock Entry", "poultry-clipboard"),
@@ -51,7 +51,7 @@ SIDEBARS = {
 			("Shed", "DocType", "Shed", "poultry-shed"),
 			("Farm", "DocType", "Farm", "poultry-farm"),
 			("Broiler Batch Summary", "Report", "Broiler Batch Summary", "poultry-broiler"),
-			("Layer Production Curve", "Report", "Layer Production Curve", "poultry-egg"),
+			("Layer Production Curve", "Report", "Layer Production Curve", "poultry-layer"),
 		],
 	},
 	"Poultry Health": {

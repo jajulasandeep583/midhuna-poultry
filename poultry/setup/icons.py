@@ -31,9 +31,9 @@ DOCTYPE_ICONS = {
 }
 
 WORKSPACE_ICONS = {
-	"Poultry": "poultry-hen",
+	"Poultry": "poultry-farm",
 	"Management": "poultry-manage",
-	"Flock Operations": "poultry-layer",
+	"Flock Operations": "poultry-hen",
 	"Poultry Health": "poultry-syringe",
 	"Hatchery": "poultry-hatchery",
 	"Poultry Setup": "poultry-settings",
@@ -124,6 +124,11 @@ def run():
 		doc = frappe.get_doc("Workspace Sidebar", sb)
 		doc.header_icon = icon
 		for row in doc.items:
+			# setup/sidebar.py chooses these deliberately, per item and per
+			# sidebar. Filling in by label would flatten them - four rows in
+			# Flock Operations all became the same hen.
+			if row.icon:
+				continue
 			ic = icon_for(row.label)
 			if ic:
 				row.icon = ic
