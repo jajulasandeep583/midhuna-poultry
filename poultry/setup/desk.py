@@ -259,6 +259,14 @@ HEALTH_LINKS = [
 ]
 
 HATCHERY_LINKS = [
+	card_break("Screens"),
+	link("Hatchery Board", "Page", "poultry-hatch-board",
+	     description="Egg store, machines, hatch results and breakouts"),
+	card_break("Egg Intake"),
+	link("Hatching Egg Receipt", "DocType", "Hatching Egg Receipt",
+	     description="Graded and fumigated on arrival"),
+	link("Chick Type", "DocType", "Chick Type",
+	     description="Broiler, layer and the desi birds"),
 	card_break("Incubation"),
 	link("Egg Setting", "DocType", "Egg Setting",
 	     description="Day 0. Records breeder age, which explains hatchability"),
@@ -271,6 +279,8 @@ HATCHERY_LINKS = [
 	card_break("Machines"),
 	link("Hatchery Machine", "DocType", "Hatchery Machine",
 	     description="Setters and hatchers, capacity and staging"),
+	link("Breakout Analysis", "DocType", "Breakout Analysis",
+	     description="Break out the residue and it tells you what went wrong"),
 	card_break("Hatchery Reports"),
 	link("Hatchery Performance", "Report", "Hatchery Performance"),
 ]

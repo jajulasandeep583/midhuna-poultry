@@ -21,6 +21,30 @@
   {
    "child": 0,
    "collapsible": 1,
+   "icon": "poultry-hatchery",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Hatchery Board",
+   "link_to": "poultry-hatch-board",
+   "link_type": "Page",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-egg-tray",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Hatching Egg Receipt",
+   "link_to": "Hatching Egg Receipt",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
    "icon": "poultry-egg",
    "indent": 0,
    "keep_closed": 0,
@@ -69,6 +93,30 @@
   {
    "child": 0,
    "collapsible": 1,
+   "icon": "poultry-search",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Breakout Analysis",
+   "link_to": "Breakout Analysis",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "poultry-rearing",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Chick Type",
+   "link_to": "Chick Type",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
    "icon": "poultry-hatchery",
    "indent": 0,
    "keep_closed": 0,
@@ -103,7 +151,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 20:29:18.367300",
+ "modified": "2026-08-03 21:54:04.688245",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Hatchery",

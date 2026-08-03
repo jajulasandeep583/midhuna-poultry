@@ -1,0 +1,289 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 21:46:11.055608",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "egg_setting",
+  "posting_date",
+  "cb1",
+  "eggs_broken",
+  "company",
+  "sec_class",
+  "infertile",
+  "early_dead",
+  "mid_dead",
+  "cb2",
+  "late_dead",
+  "pipped_not_hatched",
+  "contaminated",
+  "malpositioned",
+  "sec_pct",
+  "infertile_pct",
+  "early_dead_pct",
+  "cb3",
+  "late_dead_pct",
+  "contamination_pct",
+  "sec_find",
+  "likely_cause",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "BRK-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "BRK-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "egg_setting",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Egg Setting",
+   "options": "Egg Setting",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "The unhatched residue, opened and classified",
+   "fieldname": "eggs_broken",
+   "fieldtype": "Int",
+   "label": "Eggs Broken Out",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_class",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "description": "Blames the breeder flock, not the machine",
+   "fieldname": "infertile",
+   "fieldtype": "Int",
+   "label": "Infertile (true clears)"
+  },
+  {
+   "fieldname": "early_dead",
+   "fieldtype": "Int",
+   "label": "Early Dead (day 1-7)"
+  },
+  {
+   "fieldname": "mid_dead",
+   "fieldtype": "Int",
+   "label": "Mid Dead (day 8-14)"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "late_dead",
+   "fieldtype": "Int",
+   "label": "Late Dead (day 15-18)"
+  },
+  {
+   "description": "Usually humidity or ventilation in the hatcher",
+   "fieldname": "pipped_not_hatched",
+   "fieldtype": "Int",
+   "label": "Pipped, Not Hatched"
+  },
+  {
+   "fieldname": "contaminated",
+   "fieldtype": "Int",
+   "label": "Contaminated / Exploders"
+  },
+  {
+   "fieldname": "malpositioned",
+   "fieldtype": "Int",
+   "label": "Malpositioned"
+  },
+  {
+   "fieldname": "sec_pct",
+   "fieldtype": "Section Break",
+   "label": "Percentages"
+  },
+  {
+   "fieldname": "infertile_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Infertile %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "early_dead_pct",
+   "fieldtype": "Percent",
+   "label": "Early Dead %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "late_dead_pct",
+   "fieldtype": "Percent",
+   "label": "Late Dead %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contamination_pct",
+   "fieldtype": "Percent",
+   "label": "Contamination %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_find",
+   "fieldtype": "Section Break",
+   "label": "Reading"
+  },
+  {
+   "fieldname": "likely_cause",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Likely Cause",
+   "options": "\nBreeder flock fertility\nEgg storage / age\nSetter temperature\nHatcher humidity\nTurning\nEgg handling / cracks\nContamination / hygiene\nNutrition of breeders\nInconclusive",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Breakout Analysis",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 21:46:11.055608",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Breakout Analysis",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

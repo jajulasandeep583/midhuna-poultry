@@ -701,6 +701,101 @@ def management(as_on=None, farm=None):
 	}
 
 
+@frappe.whitelist()
+def hatch_board(chick_type=None):
+	"""The hatchery floor: what is in store, what is incubating and when it is
+	due, how the finished hatches performed, and what the breakouts say."""
+	today = getdate(nowdate())
+
+	store = frappe.db.sql(
+		"""
+		select r.name, r.posting_date, r.supplier, r.chick_type, r.breeder_age_weeks,
+		       r.settable_eggs, r.eggs_set, r.eggs_in_store, r.settable_pct,
+		       r.avg_egg_weight_g, r.store_room
+		from `tabHatching Egg Receipt` r
+		where r.docstatus = 1 and r.eggs_in_store > 0
+		  and (%(ct)s is null or r.chick_type = %(ct)s)
+		order by r.posting_date asc
+		""", {"ct": chick_type or None}, as_dict=True)
+	for r in store:
+		r["storage_days"] = (today - getdate(r.posting_date)).days
+		# hatchability falls roughly a point a day past the first week
+		r["ageing"] = "old" if r["storage_days"] > 7 else (
+			"warn" if r["storage_days"] > 5 else "ok")
+
+	incubating = frappe.db.sql(
+		"""
+		select s.name, s.set_date, s.eggs_set, s.setter, s.chick_type, s.source_flock,
+		       s.breeder_age_weeks, s.candling_date, s.transfer_date, s.hatch_date,
+		       s.status, s.fertility_pct, s.setter_temp_c, s.setter_humidity_pct
+		from `tabEgg Setting` s
+		where s.docstatus = 1 and s.status != 'Hatched'
+		  and (%(ct)s is null or s.chick_type = %(ct)s)
+		order by s.hatch_date asc
+		""", {"ct": chick_type or None}, as_dict=True)
+	for s in incubating:
+		s["day"] = (today - getdate(s.set_date)).days + 1
+		s["days_to_hatch"] = (getdate(s.hatch_date) - today).days
+		s["next"] = ("Candling" if s["day"] < 18 else
+		             "Transfer" if s["day"] == 18 else "Hatch")
+
+	hatched = frappe.db.sql(
+		"""
+		select s.name, s.set_date, s.hatch_date, s.chick_type, s.breeder_age_weeks,
+		       s.eggs_set, s.fertile_eggs, s.chicks_hatched, s.fertility_pct,
+		       s.hatchability_set_pct, s.hatchability_fertile_pct
+		from `tabEgg Setting` s
+		where s.docstatus = 1 and s.status = 'Hatched'
+		  and (%(ct)s is null or s.chick_type = %(ct)s)
+		order by s.hatch_date desc limit 12
+		""", {"ct": chick_type or None}, as_dict=True)
+
+	breakouts = frappe.db.sql(
+		"""
+		select b.name, b.egg_setting, b.posting_date, b.eggs_broken, b.infertile_pct,
+		       b.early_dead_pct, b.late_dead_pct, b.contamination_pct, b.likely_cause,
+		       b.infertile, b.early_dead, b.mid_dead, b.late_dead,
+		       b.pipped_not_hatched, b.contaminated, b.malpositioned
+		from `tabBreakout Analysis` b
+		where b.docstatus = 1 order by b.posting_date desc limit 8
+		""", as_dict=True)
+
+	spread = {"Infertile": 0, "Early dead": 0, "Mid dead": 0, "Late dead": 0,
+	          "Pipped": 0, "Contaminated": 0, "Malpositioned": 0}
+	for b in breakouts:
+		spread["Infertile"] += cint(b.infertile)
+		spread["Early dead"] += cint(b.early_dead)
+		spread["Mid dead"] += cint(b.mid_dead)
+		spread["Late dead"] += cint(b.late_dead)
+		spread["Pipped"] += cint(b.pipped_not_hatched)
+		spread["Contaminated"] += cint(b.contaminated)
+		spread["Malpositioned"] += cint(b.malpositioned)
+
+	done = [h for h in hatched if flt(h.hatchability_set_pct)]
+	return {
+		"totals": {
+			"eggs_in_store": sum(cint(r.eggs_in_store) for r in store),
+			"receipts_in_store": len(store),
+			"eggs_incubating": sum(cint(s.eggs_set) for s in incubating),
+			"settings_incubating": len(incubating),
+			"hatching_this_week": sum(
+				cint(s.eggs_set) for s in incubating if 0 <= s["days_to_hatch"] <= 7),
+			"avg_fertility": round(
+				sum(flt(h.fertility_pct) for h in done) / len(done), 1) if done else 0,
+			"avg_hatch_of_set": round(
+				sum(flt(h.hatchability_set_pct) for h in done) / len(done), 1) if done else 0,
+			"ageing_receipts": sum(1 for r in store if r["ageing"] != "ok"),
+		},
+		"store": store,
+		"incubating": incubating,
+		"hatched": hatched,
+		"breakouts": breakouts,
+		"spread": [{"label": k, "qty": v} for k, v in spread.items() if v],
+		"chick_types": frappe.get_all("Chick Type", fields=["name", "category"],
+		                              order_by="category, name"),
+	}
+
+
 def _weighted_cost_per_kg(rows):
 	broilers = [r for r in rows if r["flock_type"] == "Broiler" and r["live_kg"]]
 	kg = sum(r["live_kg"] for r in broilers)

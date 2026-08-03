@@ -6,7 +6,7 @@
    "label": "Eggs Set per Week"
   }
  ],
- "content": "[{\"id\": \"pltry000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hatchery</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Eggs Set (30 Days)\", \"col\": 6}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Chicks Hatched (30 Days)\", \"col\": 6}}, {\"id\": \"pltry004\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Eggs Set per Week\", \"col\": 12}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Incubation\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Dispatch\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Machines\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Hatchery Reports\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pltry000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hatchery</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Eggs Set (30 Days)\", \"col\": 6}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Chicks Hatched (30 Days)\", \"col\": 6}}, {\"id\": \"pltry004\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Eggs Set per Week\", \"col\": 12}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Screens\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Egg Intake\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Incubation\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Dispatch\", \"col\": 4}}, {\"id\": \"pltry009\", \"type\": \"card\", \"data\": {\"card_name\": \"Machines\", \"col\": 4}}, {\"id\": \"pltry010\", \"type\": \"card\", \"data\": {\"card_name\": \"Hatchery Reports\", \"col\": 4}}]",
  "creation": "2026-08-03 19:19:06.783974",
  "custom_blocks": [
   {
@@ -24,6 +24,63 @@
  "label": "Hatchery",
  "link_type": "DocType",
  "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Screens",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Egg store, machines, hatch results and breakouts",
+   "hidden": 0,
+   "icon": "poultry-hatchery",
+   "is_query_report": 0,
+   "label": "Hatchery Board",
+   "link_count": 0,
+   "link_to": "poultry-hatch-board",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Egg Intake",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Graded and fumigated on arrival",
+   "hidden": 0,
+   "icon": "poultry-egg-tray",
+   "is_query_report": 0,
+   "label": "Hatching Egg Receipt",
+   "link_count": 0,
+   "link_to": "Hatching Egg Receipt",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Broiler, layer and the desi birds",
+   "hidden": 0,
+   "icon": "poultry-rearing",
+   "is_query_report": 0,
+   "label": "Chick Type",
+   "link_count": 0,
+   "link_to": "Chick Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -117,6 +174,19 @@
    "type": "Link"
   },
   {
+   "dependencies": "",
+   "description": "Break out the residue and it tells you what went wrong",
+   "hidden": 0,
+   "icon": "poultry-search",
+   "is_query_report": 0,
+   "label": "Breakout Analysis",
+   "link_count": 0,
+   "link_to": "Breakout Analysis",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
    "hidden": 0,
    "is_query_report": 0,
    "label": "Hatchery Reports",
@@ -139,7 +209,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 20:29:16.389649",
+ "modified": "2026-08-03 21:54:04.136696",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Hatchery",

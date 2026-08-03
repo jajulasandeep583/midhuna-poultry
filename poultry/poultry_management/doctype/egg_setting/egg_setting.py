@@ -54,6 +54,19 @@ class EggSetting(Document):
 		elif self.docstatus == 1:
 			self.status = "Set"
 
+	def on_submit(self):
+		self.update_receipt()
+
+	def on_cancel(self):
+		self.update_receipt()
+
+	def update_receipt(self):
+		if self.egg_receipt:
+			from poultry.poultry_management.doctype.hatching_egg_receipt.hatching_egg_receipt \
+				import refresh_receipt
+
+			refresh_receipt(self.egg_receipt)
+
 
 def refresh(setting):
 	doc = frappe.get_doc("Egg Setting", setting)

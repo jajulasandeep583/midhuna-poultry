@@ -15,6 +15,12 @@ class ChickDispatch(Document):
 				_("Dispatching {0} chicks from a hatch of {1} saleable.").format(
 					self.chicks_dispatched, cint(hatch.saleable_chicks)),
 				title=_("More than hatched"), indicator="orange")
+
+		if cint(self.chicks_dispatched):
+			self.doa_pct = cint(self.doa_chicks) / cint(self.chicks_dispatched) * 100.0
+		else:
+			self.doa_pct = 0
+
 		if self.destination_type == "Customer" and not self.customer:
 			frappe.throw(_("Pick the customer."))
 		if self.destination_type == "Own Farm" and not self.to_farm:

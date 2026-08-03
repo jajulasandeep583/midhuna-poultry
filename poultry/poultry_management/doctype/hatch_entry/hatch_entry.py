@@ -23,6 +23,20 @@ class HatchEntry(Document):
 			cint(self.chicks_hatched) / self.eggs_set * 100.0) if self.eggs_set else 0
 		self.hatchability_fertile_pct = (
 			cint(self.chicks_hatched) / self.fertile_eggs * 100.0) if self.fertile_eggs else 0
+
+		# a good chick weighs 67-70% of the egg it came from
+		egg_wt = 0
+		if self.egg_setting:
+			receipt = frappe.db.get_value("Egg Setting", self.egg_setting, "egg_receipt")
+			if receipt:
+				egg_wt = flt(frappe.db.get_value(
+					"Hatching Egg Receipt", receipt, "avg_egg_weight_g"))
+		self.chick_yield_pct = (
+			flt(self.avg_chick_weight_g) / egg_wt * 100.0) if egg_wt else 0
+		if not cint(self.grade_a_chicks) and cint(self.saleable_chicks):
+			self.grade_a_chicks = int(cint(self.saleable_chicks) * 0.94)
+			self.grade_b_chicks = cint(self.saleable_chicks) - self.grade_a_chicks
+
 		self.saleable_pct = (
 			cint(self.saleable_chicks) / cint(self.chicks_hatched) * 100.0
 		) if cint(self.chicks_hatched) else 0

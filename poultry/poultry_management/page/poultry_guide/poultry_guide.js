@@ -147,10 +147,21 @@ const GUIDE = [
 		lede: "Setting to dispatch, and the three numbers it is judged on.",
 		blocks: [
 			{ type: "steps", items: [
-				"<b>Egg Setting</b> on day 0 — eggs set, the setter, the source flock and <b>breeder age</b>. Candling, transfer and hatch dates are worked out for you.",
+				"<b>Hatching Egg Receipt</b> — eggs arrive from the breeder farm and are graded at the door: cracked, dirty, undersized, misshapen. What is left is <b>settable</b>. Fumigate on arrival and record the store and its temperature.",
+				"Watch the <b>egg store age</b>. Hatchability falls roughly a point a day past the first week, so the board flags anything sitting too long.",
+				"<b>Egg Setting</b> on day 0 — eggs set, the setter, the source flock and <b>breeder age</b>, plus pre-warm hours and setter temperature and humidity. Candling, transfer and hatch dates are worked out for you.",
 				"<b>Candling Entry</b> on day 18 — clear, dead germ and contaminated. What remains is fertile, and that gives <b>fertility %</b>.",
 				"<b>Hatch Entry</b> on day 21 — chicks hatched and cripples. This gives <b>hatchability of set</b> and <b>of fertile</b>; saleable chicks go straight into stock.",
-				"<b>Chick Dispatch</b> — boxes, chicks per box, transit temperature, in-ovo vaccination, and whether they go to your own farm or a customer.",
+				"<b>Chick Dispatch</b> — boxes, chicks per box, transit temperature and hours, in-ovo vaccination, dead on arrival, and whether they go to your own farm or a customer.",
+				"<b>Breakout Analysis</b> — open the unhatched residue and classify it. This is the only thing that tells you whether a poor hatch was the breeder flock's fault or the machine's.",
+			] },
+			{ type: "table", head: ["What the breakout shows", "Where to look"], rows: [
+				["Mostly <b>infertile</b>", "The breeder flock — males, mating ratio, age."],
+				["Mostly <b>early dead</b> (day 1-7)", "Egg storage, age or rough handling."],
+				["Mostly <b>late dead</b> (day 15-18)", "Setter temperature."],
+				["<b>Pipped, not hatched</b>", "Hatcher humidity or ventilation."],
+				["<b>Contaminated / exploders</b>", "Hygiene and fumigation."],
+				["<b>Malpositioned</b>", "Turning."],
 			] },
 			{ type: "note", tone: "info", html:
 				"<b>Always record breeder age at set.</b> It is the standard explanation for hatchability variation — the same flock at 28 weeks and at 62 weeks are not comparable." },
@@ -165,6 +176,9 @@ const GUIDE = [
 				["Candling Entry", "list", "Candling Entry"],
 				["Hatch Entry", "list", "Hatch Entry"],
 				["Chick Dispatch", "list", "Chick Dispatch"],
+				["Hatchery Board", "page", "poultry-hatch-board"],
+				["Hatching Egg Receipt", "list", "Hatching Egg Receipt"],
+				["Breakout Analysis", "list", "Breakout Analysis"],
 				["Hatchery Performance", "report", "Hatchery Performance"],
 			] },
 		],

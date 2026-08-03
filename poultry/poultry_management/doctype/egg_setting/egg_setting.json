@@ -36,7 +36,15 @@
   "status",
   "sec_notes",
   "remarks",
-  "amended_from"
+  "amended_from",
+  "sec_incub",
+  "egg_receipt",
+  "chick_type",
+  "prewarm_hours",
+  "cb_incub",
+  "setter_temp_c",
+  "setter_humidity_pct",
+  "turning_per_day"
  ],
  "fields": [
   {
@@ -214,13 +222,60 @@
    "options": "Egg Setting",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "sec_incub",
+   "fieldtype": "Section Break",
+   "label": "Incubation"
+  },
+  {
+   "fieldname": "egg_receipt",
+   "fieldtype": "Link",
+   "label": "Egg Receipt",
+   "options": "Hatching Egg Receipt"
+  },
+  {
+   "fieldname": "chick_type",
+   "fieldtype": "Link",
+   "label": "Chick Type",
+   "options": "Chick Type"
+  },
+  {
+   "default": "8",
+   "description": "6-12 hours at about 25 C before setting",
+   "fieldname": "prewarm_hours",
+   "fieldtype": "Float",
+   "label": "Pre-warm Hours"
+  },
+  {
+   "fieldname": "cb_incub",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "37.6",
+   "fieldname": "setter_temp_c",
+   "fieldtype": "Float",
+   "label": "Setter Temp (C)"
+  },
+  {
+   "default": "55",
+   "fieldname": "setter_humidity_pct",
+   "fieldtype": "Percent",
+   "label": "Setter Humidity %"
+  },
+  {
+   "default": "24",
+   "fieldname": "turning_per_day",
+   "fieldtype": "Int",
+   "label": "Turns per Day"
   }
  ],
  "grid_page_length": 50,
+ "icon": "poultry-egg",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-03 19:10:43.353080",
+ "modified": "2026-08-03 21:46:11.420287",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Egg Setting",

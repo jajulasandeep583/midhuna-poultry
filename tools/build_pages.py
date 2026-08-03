@@ -46,6 +46,12 @@ PAGES = [
 		"icon": "poultry-stock",
 	},
 	{
+		"name": "poultry-hatch-board",
+		"file": "poultry_hatch_board",
+		"title": "Hatchery Board",
+		"icon": "poultry-hatchery",
+	},
+	{
 		"name": "poultry-health-hub",
 		"file": "poultry_health_hub",
 		"title": "Vaccination & Health",

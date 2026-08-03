@@ -26,6 +26,8 @@ const PM_TILES = [
 	  s: "Days across, flocks down. Fill the gaps" },
 	{ route: "poultry-flock-360", icon: "poultry-target", c: "#6C4BE0", t: "Flock 360",
 	  s: "One flock, end to end, against its standard" },
+	{ route: "poultry-hatch-board", icon: "poultry-hatchery", c: "#D9694B", t: "Hatchery Board",
+	  s: "Egg store, machines, hatch results and breakouts" },
 	{ route: "poultry-guide", icon: "poultry-guide", c: "#3E7BB6", t: "How to Use Poultry",
 	  s: "The guide, with a button to every screen" },
 ];

@@ -1,0 +1,344 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 21:46:10.282953",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "posting_date",
+  "supplier",
+  "source_flock",
+  "cb1",
+  "chick_type",
+  "egg_type",
+  "company",
+  "breeder_age_weeks",
+  "sec_qty",
+  "eggs_received",
+  "cracked_eggs",
+  "dirty_eggs",
+  "cb2",
+  "small_eggs",
+  "misshapen_eggs",
+  "settable_eggs",
+  "settable_pct",
+  "sec_handling",
+  "fumigated",
+  "fumigation_time",
+  "avg_egg_weight_g",
+  "cb3",
+  "store_room",
+  "store_temp_c",
+  "store_humidity_pct",
+  "sec_status",
+  "eggs_set",
+  "eggs_in_store",
+  "cb4",
+  "storage_days",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "HER-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "HER-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receipt Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Breeder Farm / Supplier",
+   "options": "Supplier"
+  },
+  {
+   "description": "Where the eggs came from - drives breeder age on the setting",
+   "fieldname": "source_flock",
+   "fieldtype": "Link",
+   "label": "Source Breeder Flock",
+   "options": "Flock"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chick_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Chick Type",
+   "options": "Chick Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "egg_type",
+   "fieldtype": "Select",
+   "label": "Egg Type",
+   "options": "\nBroiler Hatching Egg\nLayer Hatching Egg\nDesi / Native Hatching Egg\nBreeder Hatching Egg"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "breeder_age_weeks",
+   "fieldtype": "Float",
+   "label": "Breeder Age (weeks)"
+  },
+  {
+   "fieldname": "sec_qty",
+   "fieldtype": "Section Break",
+   "label": "Grading on Arrival"
+  },
+  {
+   "fieldname": "eggs_received",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Eggs Received",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cracked_eggs",
+   "fieldtype": "Int",
+   "label": "Cracked / Hairline"
+  },
+  {
+   "fieldname": "dirty_eggs",
+   "fieldtype": "Int",
+   "label": "Dirty / Stained"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "small_eggs",
+   "fieldtype": "Int",
+   "label": "Undersized"
+  },
+  {
+   "fieldname": "misshapen_eggs",
+   "fieldtype": "Int",
+   "label": "Misshapen / Double Yolk"
+  },
+  {
+   "fieldname": "settable_eggs",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Settable Eggs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settable_pct",
+   "fieldtype": "Percent",
+   "label": "Settable %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_handling",
+   "fieldtype": "Section Break",
+   "label": "Handling"
+  },
+  {
+   "default": "1",
+   "description": "Formaldehyde and potassium permanganate, standard practice",
+   "fieldname": "fumigated",
+   "fieldtype": "Check",
+   "label": "Fumigated on Arrival"
+  },
+  {
+   "fieldname": "fumigation_time",
+   "fieldtype": "Datetime",
+   "label": "Fumigation Time"
+  },
+  {
+   "fieldname": "avg_egg_weight_g",
+   "fieldtype": "Float",
+   "label": "Avg Egg Weight (g)"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Cold Store 1",
+   "fieldname": "store_room",
+   "fieldtype": "Data",
+   "label": "Egg Store"
+  },
+  {
+   "default": "17.5",
+   "fieldname": "store_temp_c",
+   "fieldtype": "Float",
+   "label": "Store Temp (C)"
+  },
+  {
+   "default": "75",
+   "fieldname": "store_humidity_pct",
+   "fieldtype": "Percent",
+   "label": "Store Humidity %"
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "eggs_set",
+   "fieldtype": "Int",
+   "label": "Eggs Set from this Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eggs_in_store",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Still in Store",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Hatchability falls about a point a day past the first week",
+   "fieldname": "storage_days",
+   "fieldtype": "Int",
+   "label": "Days in Store",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Hatching Egg Receipt",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 21:46:10.282953",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Hatching Egg Receipt",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "supplier,chick_type,posting_date",
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

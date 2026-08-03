@@ -27,7 +27,14 @@
   "sec_notes",
   "vehicle_no",
   "remarks",
-  "amended_from"
+  "amended_from",
+  "sec_transit",
+  "driver_name",
+  "dispatch_time",
+  "cb_transit",
+  "transit_hours",
+  "doa_chicks",
+  "doa_pct"
  ],
  "fields": [
   {
@@ -154,13 +161,49 @@
    "options": "Chick Dispatch",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "sec_transit",
+   "fieldtype": "Section Break",
+   "label": "Transit"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver"
+  },
+  {
+   "fieldname": "dispatch_time",
+   "fieldtype": "Datetime",
+   "label": "Dispatch Time"
+  },
+  {
+   "fieldname": "cb_transit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transit_hours",
+   "fieldtype": "Float",
+   "label": "Transit Hours"
+  },
+  {
+   "fieldname": "doa_chicks",
+   "fieldtype": "Int",
+   "label": "Dead on Arrival"
+  },
+  {
+   "fieldname": "doa_pct",
+   "fieldtype": "Percent",
+   "label": "DOA %",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
+ "icon": "poultry-dispatch",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-03 19:10:44.714454",
+ "modified": "2026-08-03 21:46:12.629257",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Chick Dispatch",

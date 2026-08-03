@@ -33,7 +33,14 @@
   "sec_ref",
   "stock_entry",
   "remarks",
-  "amended_from"
+  "amended_from",
+  "sec_chick",
+  "grade_a_chicks",
+  "grade_b_chicks",
+  "cb_chick",
+  "hatcher_temp_c",
+  "hatcher_humidity_pct",
+  "chick_yield_pct"
  ],
  "fields": [
   {
@@ -196,13 +203,52 @@
    "options": "Hatch Entry",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "sec_chick",
+   "fieldtype": "Section Break",
+   "label": "Chick Quality"
+  },
+  {
+   "fieldname": "grade_a_chicks",
+   "fieldtype": "Int",
+   "label": "Grade A Chicks"
+  },
+  {
+   "fieldname": "grade_b_chicks",
+   "fieldtype": "Int",
+   "label": "Grade B Chicks"
+  },
+  {
+   "fieldname": "cb_chick",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "37.0",
+   "fieldname": "hatcher_temp_c",
+   "fieldtype": "Float",
+   "label": "Hatcher Temp (C)"
+  },
+  {
+   "default": "68",
+   "fieldname": "hatcher_humidity_pct",
+   "fieldtype": "Percent",
+   "label": "Hatcher Humidity %"
+  },
+  {
+   "description": "A good chick is 67-70% of the egg it came from",
+   "fieldname": "chick_yield_pct",
+   "fieldtype": "Percent",
+   "label": "Chick : Egg Weight %",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
+ "icon": "poultry-chick",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-03 19:10:44.265822",
+ "modified": "2026-08-03 21:46:12.094551",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Hatch Entry",
