@@ -33,14 +33,16 @@ class PoultryControlTower {
 		/* frappe's .icon sets margin: 0 auto, which inside a flex row eats all the
 		   free space and shunts the heading to the far right. */
 		.pt-tower .icon { margin: 0; flex: none; }
-		.pt-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		.pt-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
 			gap: 10px; margin-bottom: 1.4rem; }
 		.pt-kpi { background: var(--card-bg); border: 1px solid var(--border-color);
 			border-radius: var(--border-radius-md); padding: 12px 14px; }
 		.pt-kpi .l { font-size: var(--text-xs); color: var(--text-muted);
 			text-transform: uppercase; letter-spacing: .04em; }
 		.pt-kpi .v { font-size: 22px; font-weight: 700; margin-top: 4px; color: var(--text-color);
-			white-space: nowrap; }
+			white-space: nowrap; text-align: left; }
+		.pt-kpi .v .u { font-size: 13px; font-weight: 500; color: var(--text-muted);
+			margin-left: 3px; }
 		.pt-kpi .s { font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
 		.pt-kpi.warn .v { color: var(--orange-500); }
 		.pt-kpi.bad  .v { color: var(--red-500); }
@@ -117,13 +119,16 @@ class PoultryControlTower {
 	}
 
 	render_kpis(t) {
-		const fmt = (n) => frappe.format(n, { fieldtype: "Int" });
+		// plain strings: frappe.format() returns markup for some fieldtypes and
+		// a block element inside a tile breaks the layout
+		const fmt = (n) => Number(n || 0).toLocaleString("en-IN");
 		const tiles = [
 			{ l: __("Birds on Hand"), v: fmt(t.birds), s: __("across {0} flocks", [t.flocks]) },
 			{ l: __("Sheds Occupied"), v: `${t.sheds_occupied} / ${t.sheds_total}`,
 			  s: __("all-in all-out") },
 			{ l: __("Eggs Today"), v: fmt(t.eggs_today), s: __("collected") },
-			{ l: __("Feed Today"), v: `${fmt(t.feed_today_kg)} kg`, s: __("issued to sheds") },
+			{ l: __("Feed Today"), v: fmt(Math.round(t.feed_today_kg)), u: "kg",
+			  s: __("issued to sheds") },
 			{ l: __("Losses Today"), v: fmt(t.losses_today), s: __("dead and culled"),
 			  cls: t.losses_today > 0 ? "warn" : "good" },
 			{ l: __("Entries Pending"), v: t.pending_entries, s: __("flocks not entered today"),
@@ -136,7 +141,9 @@ class PoultryControlTower {
 		const $g = $('<div class="pt-kpis"></div>').appendTo(this.$body);
 		tiles.forEach((k) =>
 			$(`<div class="pt-kpi ${k.cls || ""}">
-				<div class="l">${k.l}</div><div class="v">${k.v}</div><div class="s">${k.s}</div>
+				<div class="l">${k.l}</div>
+				<div class="v">${k.v}${k.u ? `<span class="u">${k.u}</span>` : ""}</div>
+				<div class="s">${k.s}</div>
 			</div>`).appendTo($g)
 		);
 	}

@@ -59,14 +59,18 @@ class Flock360 {
 			background: var(--bg-light-gray); color: var(--text-muted); }
 		.f360-badge.on { background: var(--green-100); color: var(--green-700); }
 		.f360-badge.hold { background: var(--red-100); color: var(--red-600); }
-		.f360-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		.f360-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
 			gap: 10px; margin-bottom: 1.4rem; }
 		.f360-kpi { background: var(--card-bg); border: 1px solid var(--border-color);
 			border-radius: var(--border-radius-md); padding: 12px 14px; }
 		.f360-kpi .l { font-size: var(--text-xs); color: var(--text-muted);
 			text-transform: uppercase; letter-spacing: .04em; }
-		.f360-kpi .v { font-size: 21px; font-weight: 700; color: var(--text-color); margin-top: 3px; }
-		.f360-kpi .d { font-size: var(--text-xs); margin-top: 2px; }
+		.f360-kpi .v { font-size: 21px; font-weight: 700; color: var(--text-color); margin-top: 3px;
+			white-space: nowrap; text-align: left; }
+		.f360-kpi .v .u { font-size: 13px; font-weight: 500; color: var(--text-muted);
+			margin-left: 3px; }
+		.f360-kpi .d { font-size: var(--text-xs); margin-top: 2px; white-space: nowrap;
+			overflow: hidden; text-overflow: ellipsis; }
 		.f360-kpi .d.up { color: var(--green-600); }
 		.f360-kpi .d.down { color: var(--red-500); }
 		.f360-kpi .d.flat { color: var(--text-muted); }
@@ -140,35 +144,44 @@ class Flock360 {
 	}
 
 	render_kpis(f, isLayer, d) {
-		const num = (n, p = 0) => frappe.format(flt(n, p), { fieldtype: "Float", precision: p });
+		// Plain strings only. frappe.format() returns markup for several
+		// fieldtypes, and a block element inside the tile breaks the layout.
+		const int = (n) => Number(n || 0).toLocaleString("en-IN");
+		const dec = (n, p) => Number(n || 0).toFixed(p);
+		const money = (n) => "₹" + Number(n || 0).toLocaleString("en-IN",
+			{ minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
 		const tiles = [
-			{ l: __("Birds Alive"), v: frappe.format(f.current_qty, { fieldtype: "Int" }),
-			  d: __("of {0} placed", [frappe.format(f.opening_qty, { fieldtype: "Int" })]) },
-			{ l: __("Age"), v: `${f.age_days} d`, d: __("{0} weeks", [(f.age_days / 7).toFixed(1)]) },
-			{ l: __("Livability"), v: `${num(f.livability_pct, 2)}%`,
-			  d: __("{0} lost", [f.cumulative_mortality + f.cumulative_culls]),
+			{ l: __("Birds Alive"), v: int(f.current_qty),
+			  d: __("of {0} placed", [int(f.opening_qty)]) },
+			{ l: __("Age"), v: f.age_days, u: "d",
+			  d: __("{0} weeks", [(f.age_days / 7).toFixed(1)]) },
+			{ l: __("Livability"), v: dec(f.livability_pct, 2), u: "%",
+			  d: __("{0} lost", [int(f.cumulative_mortality + f.cumulative_culls)]),
 			  cls: f.livability_pct >= 95 ? "up" : "down" },
-			{ l: __("Feed"), v: `${num(f.cumulative_feed_kg, 0)} kg`,
-			  d: __("{0} g/bird", [f.current_qty ? Math.round((f.cumulative_feed_kg * 1000) / f.current_qty) : 0]) },
+			{ l: __("Feed"), v: int(Math.round(f.cumulative_feed_kg)), u: "kg",
+			  d: __("{0} g/bird", [f.current_qty
+				? int(Math.round((f.cumulative_feed_kg * 1000) / f.current_qty)) : 0]) },
 		];
 		if (isLayer) {
-			tiles.push({ l: __("HDP"), v: `${num(f.hd_production_pct, 1)}%`,
-				d: __("peak {0}%", [num(f.peak_production_pct, 1)]) });
-			tiles.push({ l: __("Eggs"), v: frappe.format(f.cumulative_eggs, { fieldtype: "Int" }),
-				d: __("{0} per bird housed", [num(f.eggs_per_bird_housed, 2)]) });
+			tiles.push({ l: __("HDP"), v: dec(f.hd_production_pct, 1), u: "%",
+				d: __("peak {0}%", [dec(f.peak_production_pct, 1)]) });
+			tiles.push({ l: __("Eggs"), v: int(f.cumulative_eggs),
+				d: __("{0} per bird housed", [dec(f.eggs_per_bird_housed, 2)]) });
 		} else {
-			tiles.push({ l: __("FCR"), v: num(f.fcr, 3), d: __("feed per kg live") });
-			tiles.push({ l: __("EEF"), v: num(f.eef, 0),
+			tiles.push({ l: __("FCR"), v: dec(f.fcr, 3), d: __("feed per kg live") });
+			tiles.push({ l: __("EEF"), v: dec(f.eef, 0),
 				d: f.eef >= 350 ? __("good") : f.eef >= 300 ? __("average") : __("below par"),
 				cls: f.eef >= 350 ? "up" : f.eef >= 300 ? "flat" : "down" });
 		}
-		tiles.push({ l: __("Cost / Bird"), v: format_currency(f.cost_per_bird),
-			d: __("{0} per kg live", [format_currency(f.cost_per_kg_live)]) });
+		tiles.push({ l: __("Cost / Bird"), v: money(f.cost_per_bird),
+			d: __("{0} per kg live", [money(f.cost_per_kg_live)]) });
 		tiles.push({ l: __("Entries"), v: d.entry_count, d: __("days recorded") });
 
 		const $g = $('<div class="f360-kpis"></div>').appendTo(this.$body);
 		tiles.forEach((t) =>
-			$(`<div class="f360-kpi"><div class="l">${t.l}</div><div class="v">${t.v}</div>
+			$(`<div class="f360-kpi"><div class="l">${t.l}</div>
+				<div class="v">${t.v}${t.u ? `<span class="u">${t.u}</span>` : ""}</div>
 				<div class="d ${t.cls || "flat"}">${t.d || ""}</div></div>`).appendTo($g)
 		);
 	}
