@@ -100,19 +100,38 @@ def install():
 		# happened to have no parent were showing.
 		doc.parent_icon = None
 
-		# Route explicitly rather than through a Workspace Sidebar link.
-		# desktop.js resolves a "Workspace Sidebar" icon by looking the label up
-		# in frappe.boot.workspace_sidebar_item and reading its first link; if
-		# that lookup misses on a given site there is NO fallback and clicking
-		# the tile only says "Icon is not correctly configured". An External
-		# link needs no boot lookup and works on any site.
-		doc.link_type = "External"
-		doc.link = f"/app/{frappe.scrub(label).replace('_', '-')}"
-		doc.link_to = None
+		# Link through the Workspace Sidebar, never as "External". On current
+		# version-16 (what Frappe Cloud runs) desktop.js prefixes an External
+		# icon's link with window.location.origin and then puts
+		# target="_blank" on any route that starts with http - every tile
+		# opens a NEW TAB. External icons are also dropped from the
+		# app-switcher sibling menu (build_folder_map filters them out).
+		# The sidebar records this points at ship as app-level JSON in
+		# poultry/workspace_sidebar/ and are synced on every migrate, and
+		# sidebar.install() runs before this in setup, so the boot lookup
+		# desktop.js does (frappe.boot.workspace_sidebar_item[label.lower()])
+		# cannot miss on a migrated site.
+		doc.link = None
 		if frappe.db.exists("Workspace Sidebar", label):
+			doc.link_type = "Workspace Sidebar"
+			doc.link_to = label
 			doc.sidebar = label
 		doc.flags.ignore_permissions = True
 		doc.save()
+
+	# frappe generates an "App"-type icon for every installed app from the
+	# add_to_apps_screen hook, always link_type External - which current
+	# version-16 opens in a NEW TAB (origin-prefixed route -> target=_blank).
+	# Ours has no child icons (the workspace tiles sit flat on the desk, not
+	# nested under it), so it is only a redundant duplicate of the Poultry
+	# tile. Hide it.
+	if frappe.db.exists("Desktop Icon", {"label": "Poultry Management", "icon_type": "App"}):
+		frappe.db.set_value(
+			"Desktop Icon",
+			{"label": "Poultry Management", "icon_type": "App"},
+			"hidden",
+			1,
+		)
 	frappe.db.commit()
 	frappe.clear_cache()
 	print(f"  + desktop icon records: {len(TILES)}")
