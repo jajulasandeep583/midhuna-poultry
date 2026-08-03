@@ -503,6 +503,77 @@ def generate_sales():
 	print("  + egg sales invoices:", made)
 
 
+def generate_recent_trade():
+	"""Sales and purchases dated today and in the last week.
+
+	Without these the management screens read zero for "today", which looks
+	like the page is broken rather than like a quiet day.
+	"""
+	made = {"sales": 0, "purchases": 0}
+	prices = {"EGG-SML": 5.10, "EGG-MED": 5.85, "EGG-LRG": 6.60, "EGG-JUM": 7.20}
+	customers = ["Hyderabad Egg Mandi", "Sri Lakshmi Poultry Traders", "Metro Fresh Retail"]
+
+	for i, days in enumerate([0, 0, 1, 2]):
+		d = add_days(TODAY, -days)
+		cust = customers[i % len(customers)]
+		if frappe.db.exists("Sales Invoice", {"docstatus": 1, "posting_date": d,
+		                                      "customer": cust}):
+			continue
+		si = frappe.get_doc({
+			"doctype": "Sales Invoice", "customer": cust, "company": COMPANY,
+			"posting_date": d, "set_posting_time": 1, "update_stock": 1,
+			"set_warehouse": wh("Egg Cold Store"), "items": [],
+		})
+		for code in ("EGG-MED", "EGG-LRG", "EGG-JUM"):
+			bal = get_balance(code, wh("Egg Cold Store"), d)
+			if bal < 3000:
+				continue
+			q = min(int(bal * 0.25), random.randint(6000, 15000))
+			if q < 500:
+				continue
+			si.append("items", {"item_code": code, "qty": q, "rate": prices[code],
+			                    "warehouse": wh("Egg Cold Store")})
+		if not si.items:
+			continue
+		si.flags.ignore_permissions = True
+		si.insert()
+		si.submit()
+		made["sales"] += 1
+
+	# a feed top-up today and one last week, so purchases are not a flat zero
+	for days, qty_each in [(0, 12000), (6, 9000)]:
+		d = add_days(TODAY, -days)
+		tag = f"Feed top-up {d}"
+		if frappe.db.exists("Purchase Receipt", {"docstatus": 1, "remarks": tag}):
+			continue
+		pr = frappe.get_doc({
+			"doctype": "Purchase Receipt", "company": COMPANY,
+			"supplier": "Godrej Agrovet Feed", "posting_date": d, "set_posting_time": 1,
+			"remarks": tag, "items": [],
+		})
+		for shed in frappe.get_all("Shed", filters={"status": "Occupied"},
+		                           fields=["name", "farm", "warehouse"], limit=4):
+			ftype = frappe.db.get_value("Farm", shed.farm, "farm_type")
+			item = {"Broiler": "FEED-BFN", "Layer": "FEED-LP1",
+			        "Rearing": "FEED-GRW"}.get(ftype)
+			if not item:
+				continue
+			pr.append("items", {
+				"item_code": item, "qty": qty_each, "received_qty": qty_each,
+				"rate": flt(frappe.db.get_value("Item", item, "valuation_rate")),
+				"warehouse": shed.warehouse,
+			})
+		if not pr.items:
+			continue
+		pr.flags.ignore_permissions = True
+		pr.insert()
+		pr.submit()
+		made["purchases"] += 1
+
+	frappe.db.commit()
+	print(f"  + recent trade: {made['sales']} invoices, {made['purchases']} purchase receipts")
+
+
 def get_balance(item, warehouse, upto):
 	bal = frappe.db.sql(
 		"""select coalesce(sum(actual_qty),0) from `tabStock Ledger Entry`
@@ -529,6 +600,7 @@ def run(step=None):
 	if step in (None, "finish"):
 		print("--- closure ---");       close_finished()
 		print("--- sales ---");         generate_sales()
+		print("--- recent trade ---"); generate_recent_trade()
 		print("--- recompute ---")
 		for f in frappe.get_all("Flock", pluck="name"):
 			recompute_flock(f)

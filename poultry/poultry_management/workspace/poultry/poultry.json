@@ -18,7 +18,7 @@
    "label": "Flocks by Status"
   }
  ],
- "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Today on the Farms</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds on Hand\", \"col\": 3}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Flocks in Production\", \"col\": 3}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Sheds Occupied\", \"col\": 3}}, {\"id\": \"pltry004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Eggs Collected Today\", \"col\": 3}}, {\"id\": \"pltry005\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Feed Used (30 Days) kg\", \"col\": 3}}, {\"id\": \"pltry006\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds Lost (30 Days)\", \"col\": 3}}, {\"id\": \"pltry007\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Vaccinations\", \"col\": 3}}, {\"id\": \"pltry008\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Alerts (7 Days)\", \"col\": 3}}, {\"id\": \"pltry009\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry010\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Daily Mortality Trend\", \"col\": 12}}, {\"id\": \"pltry011\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Daily Egg Collection\", \"col\": 12}}, {\"id\": \"pltry012\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Daily Feed Consumption (kg)\", \"col\": 12}}, {\"id\": \"pltry013\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"pltry014\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Poultry Control Tower\", \"col\": 3}}, {\"id\": \"pltry015\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Flock 360\", \"col\": 3}}, {\"id\": \"pltry016\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Daily Entry Board\", \"col\": 3}}, {\"id\": \"pltry017\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vaccination & Health\", \"col\": 3}}, {\"id\": \"pltry018\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Cost & Profitability\", \"col\": 3}}, {\"id\": \"pltry019\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"How to Use Poultry\", \"col\": 3}}, {\"id\": \"pltry020\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Daily Flock Entry\", \"col\": 3}}, {\"id\": \"pltry021\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Flock\", \"col\": 3}}, {\"id\": \"pltry022\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shed\", \"col\": 3}}, {\"id\": \"pltry023\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vaccination Entry\", \"col\": 3}}, {\"id\": \"pltry024\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Medication Entry\", \"col\": 3}}, {\"id\": \"pltry025\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Broiler Batch Summary\", \"col\": 3}}, {\"id\": \"pltry026\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Withdrawal Period Alert\", \"col\": 3}}, {\"id\": \"pltry027\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Poultry Settings\", \"col\": 3}}, {\"id\": \"pltry028\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Masters and Reports</b></span>\", \"col\": 12}}, {\"id\": \"pltry029\", \"type\": \"card\", \"data\": {\"card_name\": \"Dashboards\", \"col\": 4}}, {\"id\": \"pltry030\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock\", \"col\": 4}}, {\"id\": \"pltry031\", \"type\": \"card\", \"data\": {\"card_name\": \"Health\", \"col\": 4}}, {\"id\": \"pltry032\", \"type\": \"card\", \"data\": {\"card_name\": \"Farm Setup\", \"col\": 4}}, {\"id\": \"pltry033\", \"type\": \"card\", \"data\": {\"card_name\": \"Key Reports\", \"col\": 4}}, {\"id\": \"pltry034\", \"type\": \"card\", \"data\": {\"card_name\": \"Stock and Accounts\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Today on the Farms</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds on Hand\", \"col\": 3}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Flocks in Production\", \"col\": 3}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Sheds Occupied\", \"col\": 3}}, {\"id\": \"pltry004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Eggs Collected Today\", \"col\": 3}}, {\"id\": \"pltry005\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Feed Used (30 Days) kg\", \"col\": 3}}, {\"id\": \"pltry006\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds Lost (30 Days)\", \"col\": 3}}, {\"id\": \"pltry007\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Vaccinations\", \"col\": 3}}, {\"id\": \"pltry008\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Alerts (7 Days)\", \"col\": 3}}, {\"id\": \"pltry009\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry010\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Daily Mortality Trend\", \"col\": 12}}, {\"id\": \"pltry011\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Daily Egg Collection\", \"col\": 12}}, {\"id\": \"pltry012\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Daily Feed Consumption (kg)\", \"col\": 12}}, {\"id\": \"pltry013\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"pltry014\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Management\", \"col\": 3}}, {\"id\": \"pltry015\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales & Purchases\", \"col\": 3}}, {\"id\": \"pltry016\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Stock on Hand\", \"col\": 3}}, {\"id\": \"pltry017\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Poultry Control Tower\", \"col\": 3}}, {\"id\": \"pltry018\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Flock 360\", \"col\": 3}}, {\"id\": \"pltry019\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Daily Entry Board\", \"col\": 3}}, {\"id\": \"pltry020\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vaccination & Health\", \"col\": 3}}, {\"id\": \"pltry021\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Cost & Profitability\", \"col\": 3}}, {\"id\": \"pltry022\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"How to Use Poultry\", \"col\": 3}}, {\"id\": \"pltry023\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Daily Flock Entry\", \"col\": 3}}, {\"id\": \"pltry024\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Flock\", \"col\": 3}}, {\"id\": \"pltry025\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shed\", \"col\": 3}}, {\"id\": \"pltry026\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vaccination Entry\", \"col\": 3}}, {\"id\": \"pltry027\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Medication Entry\", \"col\": 3}}, {\"id\": \"pltry028\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Broiler Batch Summary\", \"col\": 3}}, {\"id\": \"pltry029\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Withdrawal Period Alert\", \"col\": 3}}, {\"id\": \"pltry030\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Poultry Settings\", \"col\": 3}}, {\"id\": \"pltry031\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Masters and Reports</b></span>\", \"col\": 12}}, {\"id\": \"pltry032\", \"type\": \"card\", \"data\": {\"card_name\": \"Dashboards\", \"col\": 4}}, {\"id\": \"pltry033\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock\", \"col\": 4}}, {\"id\": \"pltry034\", \"type\": \"card\", \"data\": {\"card_name\": \"Health\", \"col\": 4}}, {\"id\": \"pltry035\", \"type\": \"card\", \"data\": {\"card_name\": \"Farm Setup\", \"col\": 4}}, {\"id\": \"pltry036\", \"type\": \"card\", \"data\": {\"card_name\": \"Key Reports\", \"col\": 4}}, {\"id\": \"pltry037\", \"type\": \"card\", \"data\": {\"card_name\": \"Stock and Accounts\", \"col\": 4}}]",
  "creation": "2026-08-03 12:24:56.821046",
  "custom_blocks": [
   {
@@ -44,6 +44,45 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "One place for sales, purchases, stock and every other screen",
+   "hidden": 0,
+   "icon": "poultry-manage",
+   "is_query_report": 0,
+   "label": "Management",
+   "link_count": 0,
+   "link_to": "poultry-manage",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Sold and bought today, this week, this month",
+   "hidden": 0,
+   "icon": "poultry-sales",
+   "is_query_report": 0,
+   "label": "Sales & Purchases",
+   "link_count": 0,
+   "link_to": "poultry-trade",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "Birds, eggs and feed by item and location",
+   "hidden": 0,
+   "icon": "poultry-stock",
+   "is_query_report": 0,
+   "label": "Stock on Hand",
+   "link_count": 0,
+   "link_to": "poultry-stock",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "dependencies": "",
@@ -417,7 +456,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 14:45:07.576081",
+ "modified": "2026-08-03 18:54:43.939057",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry",
@@ -461,6 +500,30 @@
  "roles": [],
  "sequence_id": 15.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "",
+   "icon": "poultry-manage",
+   "label": "Management",
+   "link_to": "poultry-manage",
+   "type": "Page"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "icon": "poultry-sales",
+   "label": "Sales & Purchases",
+   "link_to": "poultry-trade",
+   "type": "Page"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "icon": "poultry-stock",
+   "label": "Stock on Hand",
+   "link_to": "poultry-stock",
+   "type": "Page"
+  },
   {
    "color": "Green",
    "doc_view": "",

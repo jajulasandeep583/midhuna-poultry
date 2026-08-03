@@ -27,9 +27,26 @@ GLYPHS = {
 	        '<path d="M9 7.6h6M9 10.6h6M9 7.6c2.6 0 3.6 1.4 3.6 3s-1 3-3.6 3l5.4 5"/>',
 	"guide": '<path d="M2.8 4.6a2 2 0 0 1 2-2H10a2.6 2.6 0 0 1 2 1.2 2.6 2.6 0 0 1 2-1.2h5.2a2 2 0 0 1 2 2v12.6a1.6 1.6 0 0 1-1.6 1.6H14.4A2.4 2.4 0 0 0 12 21a2.4 2.4 0 0 0-2.4-2.2H4.4a1.6 1.6 0 0 1-1.6-1.6Z"/>'
 	         '<path d="M12 3.8V21"/><path d="M5.6 7.4h3.6M5.6 10.6h3.6M14.8 7.4h3.6M14.8 10.6h3.6"/>',
+	"manage": '<rect x="2.8" y="2.8" width="7.6" height="7.6" rx="1.6"/>'
+	          '<rect x="13.6" y="2.8" width="7.6" height="7.6" rx="1.6"/>'
+	          '<rect x="2.8" y="13.6" width="7.6" height="7.6" rx="1.6"/>'
+	          '<rect x="13.6" y="13.6" width="7.6" height="7.6" rx="1.6"/>',
+	"sales": '<path d="M3.4 5.4a2 2 0 0 1 2-2h5.3a2 2 0 0 1 1.4.6l8 8a2 2 0 0 1 0 2.8l-5.3 5.3a2 2 0 0 1-2.8 0l-8-8a2 2 0 0 1-.6-1.4Z"/>'
+	         '<circle cx="8.2" cy="8.2" r="1.6"/>'
+	         '<path d="M13.6 12.2h3.4M13.6 15h3.4M13.6 12.2c1.5 0 2.1.8 2.1 1.7s-.6 1.7-2.1 1.7l3.1 2.9"/>',
+	"stock": '<rect x="2.6" y="12.6" width="8" height="8" rx="1.2"/>'
+	         '<rect x="13.4" y="12.6" width="8" height="8" rx="1.2"/>'
+	         '<rect x="8" y="3.4" width="8" height="8" rx="1.2"/>'
+	         '<path d="M4.8 12.6v-1M18.6 12.6v-1M12 12.6v-1.2"/>',
 }
 
 TILES = [
+	("poultry-manage", "manage", "#4B6A88", "Management",
+	 "Sales, purchases, stock and every screen in one place"),
+	("poultry-trade", "sales", "#1F9254", "Sales &amp; Purchases",
+	 "Sold and bought today, this week, this month"),
+	("poultry-stock", "stock", "#4178D4", "Stock on Hand",
+	 "Birds, eggs and feed by item and location"),
 	("poultry-tower", "alert", "#E2703A", "Control Tower",
 	 "Every flock ranked by what needs attention"),
 	("poultry-entry-board", "board", "#4B6A88", "Daily Entry Board",

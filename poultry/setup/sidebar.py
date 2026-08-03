@@ -12,6 +12,9 @@ SIDEBARS = {
 		"icon": "poultry-hen",
 		"items": [
 			("Home", "Workspace", "Poultry", "poultry-hen"),
+			("Management", "Page", "poultry-manage", "poultry-manage"),
+			("Sales & Purchases", "Page", "poultry-trade", "poultry-sales"),
+			("Stock on Hand", "Page", "poultry-stock", "poultry-stock"),
 			("Control Tower", "Page", "poultry-tower", "poultry-alert"),
 			("Flock 360", "Page", "poultry-flock-360", "poultry-target"),
 			("Daily Entry Board", "Page", "poultry-entry-board", "poultry-board"),
@@ -64,6 +67,8 @@ SIDEBARS = {
 		"items": [
 			("Home", "Workspace", "Poultry Analytics", "poultry-chart"),
 			("Cost & Profitability", "Page", "poultry-cost-hub", "poultry-cost"),
+			("Sales & Purchases", "Page", "poultry-trade", "poultry-sales"),
+			("Stock on Hand", "Page", "poultry-stock", "poultry-stock"),
 			("Flock Performance vs Standard", "Report", "Flock Performance vs Standard",
 			 "poultry-standard"),
 			("Broiler Batch Summary", "Report", "Broiler Batch Summary", "poultry-broiler"),

@@ -58,6 +58,12 @@ COLOURS = {
 	"poultry-worker": "#6B7A8F",
 	"poultry-search": "#6B7A8F",
 	"poultry-settings": "#6B7A8F",
+	# commercial
+	"poultry-sales": "#1F9254",
+	"poultry-purchase": "#D97757",
+	"poultry-stock": "#4178D4",
+	"poultry-customer": "#7C5CFC",
+	"poultry-manage": "#4B6A88",
 }
 
 

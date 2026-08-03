@@ -1,16 +1,16 @@
 {
  "content": null,
- "creation": "2026-08-03 14:00:30.448474",
+ "creation": "2026-08-03 18:52:08.601462",
  "docstatus": 0,
  "doctype": "Page",
- "icon": "poultry-guide",
+ "icon": "poultry-manage",
  "idx": 0,
- "modified": "2026-08-03 18:52:08.429596",
+ "modified": "2026-08-03 18:52:08.601462",
  "modified_by": "Administrator",
  "module": "Poultry Management",
- "name": "poultry-guide",
+ "name": "poultry-manage",
  "owner": "Administrator",
- "page_name": "poultry-guide",
+ "page_name": "poultry-manage",
  "roles": [
   {
    "role": "Poultry Manager"
@@ -35,5 +35,5 @@
  "standard": "Yes",
  "style": null,
  "system_page": 0,
- "title": "How to Use Poultry"
+ "title": "Management"
 }

@@ -28,6 +28,24 @@ PAGES = [
 		"icon": "poultry-guide",
 	},
 	{
+		"name": "poultry-manage",
+		"file": "poultry_manage",
+		"title": "Management",
+		"icon": "poultry-manage",
+	},
+	{
+		"name": "poultry-trade",
+		"file": "poultry_trade",
+		"title": "Sales & Purchases",
+		"icon": "poultry-sales",
+	},
+	{
+		"name": "poultry-stock",
+		"file": "poultry_stock",
+		"title": "Stock on Hand",
+		"icon": "poultry-stock",
+	},
+	{
 		"name": "poultry-health-hub",
 		"file": "poultry_health_hub",
 		"title": "Vaccination & Health",

@@ -229,6 +229,12 @@ ANALYTICS_LINKS = [
 
 MAIN_LINKS = [
 	card_break("Dashboards"),
+	link("Management", "Page", "poultry-manage",
+	     description="One place for sales, purchases, stock and every other screen"),
+	link("Sales & Purchases", "Page", "poultry-trade",
+	     description="Sold and bought today, this week, this month"),
+	link("Stock on Hand", "Page", "poultry-stock",
+	     description="Birds, eggs and feed by item and location"),
 	link("Poultry Control Tower", "Page", "poultry-tower",
 	     description="Live board: every flock, ranked by what needs attention"),
 	link("Flock 360", "Page", "poultry-flock-360",
@@ -269,6 +275,9 @@ MAIN_LINKS = [
 ]
 
 MAIN_SHORTCUTS = [
+	shortcut("Management", "poultry-manage", type_="Page", color="Grey"),
+	shortcut("Sales & Purchases", "poultry-trade", type_="Page", color="Green"),
+	shortcut("Stock on Hand", "poultry-stock", type_="Page", color="Blue"),
 	shortcut("Poultry Control Tower", "poultry-tower", type_="Page", color="Green"),
 	shortcut("Flock 360", "poultry-flock-360", type_="Page", color="Blue"),
 	shortcut("Daily Entry Board", "poultry-entry-board", type_="Page", color="Cyan"),

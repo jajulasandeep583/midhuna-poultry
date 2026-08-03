@@ -456,6 +456,200 @@ def cost_hub():
 	}
 
 
+@frappe.whitelist()
+def trade_board():
+	"""What went out and what came in - today, this week, this month."""
+	today = getdate(nowdate())
+	spans = {"today": today, "week": add_days(today, -6), "month": add_days(today, -29)}
+
+	def sales_since(since):
+		return frappe.db.sql(
+			"""
+			select coalesce(sum(si.base_grand_total), 0) as amount, count(*) as docs
+			from `tabSales Invoice` si
+			where si.docstatus = 1 and si.posting_date >= %(since)s
+			""", {"since": since}, as_dict=True)[0]
+
+	def purchases_since(since):
+		pr = frappe.db.sql(
+			"""
+			select coalesce(sum(base_grand_total), 0) as amount, count(*) as docs
+			from `tabPurchase Receipt` where docstatus = 1 and posting_date >= %(since)s
+			""", {"since": since}, as_dict=True)[0]
+		pi = frappe.db.sql(
+			"""
+			select coalesce(sum(base_grand_total), 0) as amount, count(*) as docs
+			from `tabPurchase Invoice` where docstatus = 1 and posting_date >= %(since)s
+			""", {"since": since}, as_dict=True)[0]
+		return {"amount": flt(pr.amount) + flt(pi.amount), "docs": cint(pr.docs) + cint(pi.docs)}
+
+	sold_items = frappe.db.sql(
+		"""
+		select sii.item_code, i.item_name, i.stock_uom,
+		       sum(sii.stock_qty) as qty, sum(sii.base_net_amount) as amount
+		from `tabSales Invoice Item` sii
+		join `tabSales Invoice` si on si.name = sii.parent
+		join `tabItem` i on i.name = sii.item_code
+		where si.docstatus = 1 and si.posting_date >= %(since)s
+		group by sii.item_code, i.item_name, i.stock_uom
+		order by amount desc
+		""", {"since": spans["month"]}, as_dict=True)
+
+	bought_items = frappe.db.sql(
+		"""
+		select pri.item_code, i.item_name, i.stock_uom,
+		       sum(pri.stock_qty) as qty, sum(pri.base_net_amount) as amount
+		from `tabPurchase Receipt Item` pri
+		join `tabPurchase Receipt` pr on pr.name = pri.parent
+		join `tabItem` i on i.name = pri.item_code
+		where pr.docstatus = 1 and pr.posting_date >= %(since)s
+		group by pri.item_code, i.item_name, i.stock_uom
+		order by amount desc
+		""", {"since": spans["month"]}, as_dict=True)
+
+	customers = frappe.db.sql(
+		"""
+		select customer, sum(base_grand_total) as amount, count(*) as invoices
+		from `tabSales Invoice` where docstatus = 1 and posting_date >= %(since)s
+		group by customer order by amount desc limit 6
+		""", {"since": spans["month"]}, as_dict=True)
+
+	suppliers = frappe.db.sql(
+		"""
+		select supplier, sum(base_grand_total) as amount, count(*) as receipts
+		from `tabPurchase Receipt` where docstatus = 1 and posting_date >= %(since)s
+		group by supplier order by amount desc limit 6
+		""", {"since": spans["month"]}, as_dict=True)
+
+	recent_sales = frappe.get_all(
+		"Sales Invoice", filters={"docstatus": 1},
+		fields=["name", "customer", "posting_date", "base_grand_total", "status"],
+		order_by="posting_date desc, creation desc", limit=8)
+	recent_purchases = frappe.get_all(
+		"Purchase Receipt", filters={"docstatus": 1},
+		fields=["name", "supplier", "posting_date", "base_grand_total", "status"],
+		order_by="posting_date desc, creation desc", limit=8)
+
+	trend = frappe.db.sql(
+		"""
+		select posting_date as d, sum(base_grand_total) as amount
+		from `tabSales Invoice` where docstatus = 1 and posting_date >= %(since)s
+		group by posting_date order by posting_date
+		""", {"since": spans["month"]}, as_dict=True)
+
+	return {
+		"sales": {k: sales_since(v) for k, v in spans.items()},
+		"purchases": {k: purchases_since(v) for k, v in spans.items()},
+		"sold_items": sold_items,
+		"bought_items": bought_items,
+		"customers": customers,
+		"suppliers": suppliers,
+		"recent_sales": recent_sales,
+		"recent_purchases": recent_purchases,
+		"sales_trend": [{"d": str(r.d), "amount": flt(r.amount, 0)} for r in trend],
+		"receivable": flt(frappe.db.sql(
+			"""select coalesce(sum(outstanding_amount),0) from `tabSales Invoice`
+			   where docstatus=1 and outstanding_amount > 0""")[0][0]),
+	}
+
+
+@frappe.whitelist()
+def stock_board():
+	"""Everything on hand, grouped the way a poultry manager thinks: birds,
+	eggs, feed - not by item group."""
+	rows = frappe.db.sql(
+		"""
+		select b.item_code, i.item_name, i.stock_uom, b.warehouse,
+		       b.actual_qty, b.stock_value, b.valuation_rate
+		from `tabBin` b join `tabItem` i on i.name = b.item_code
+		where b.actual_qty != 0
+		order by i.item_name, b.warehouse
+		""", as_dict=True)
+
+	def bucket(code):
+		if code.startswith("BIRD"):
+			return "Live Birds"
+		if code.startswith("EGG"):
+			return "Eggs"
+		if code.startswith("FEED"):
+			return "Feed"
+		return "Other"
+
+	groups, items = {}, {}
+	for r in rows:
+		g = bucket(r.item_code)
+		groups.setdefault(g, {"group": g, "qty": 0.0, "value": 0.0, "lines": 0})
+		groups[g]["qty"] += flt(r.actual_qty)
+		groups[g]["value"] += flt(r.stock_value)
+		groups[g]["lines"] += 1
+
+		key = r.item_code
+		items.setdefault(key, {
+			"item_code": r.item_code, "item_name": r.item_name, "uom": r.stock_uom,
+			"group": g, "qty": 0.0, "value": 0.0, "rate": flt(r.valuation_rate),
+			"warehouses": [],
+		})
+		items[key]["qty"] += flt(r.actual_qty)
+		items[key]["value"] += flt(r.stock_value)
+		items[key]["warehouses"].append({
+			"warehouse": r.warehouse, "qty": flt(r.actual_qty, 1),
+			"value": flt(r.stock_value, 0),
+		})
+
+	order = {"Live Birds": 0, "Eggs": 1, "Feed": 2, "Other": 3}
+	item_rows = sorted(items.values(), key=lambda x: (order.get(x["group"], 9), -x["value"]))
+	for it in item_rows:
+		it["qty"] = flt(it["qty"], 1)
+		it["value"] = flt(it["value"], 0)
+		it["warehouses"].sort(key=lambda w: -w["qty"])
+
+	return {
+		"groups": sorted(groups.values(), key=lambda g: order.get(g["group"], 9)),
+		"items": item_rows,
+		"total_value": round(sum(g["value"] for g in groups.values()), 0),
+	}
+
+
+@frappe.whitelist()
+def management():
+	"""Top line for the management landing page - one call, small payload."""
+	today = getdate(nowdate())
+	sales_today = flt(frappe.db.sql(
+		"""select coalesce(sum(base_grand_total),0) from `tabSales Invoice`
+		   where docstatus=1 and posting_date=%s""", today)[0][0])
+	purch_today = flt(frappe.db.sql(
+		"""select coalesce(sum(base_grand_total),0) from `tabPurchase Receipt`
+		   where docstatus=1 and posting_date=%s""", today)[0][0])
+	stock_value = flt(frappe.db.sql(
+		"""select coalesce(sum(stock_value),0) from `tabBin`""")[0][0])
+	eggs_stock = flt(frappe.db.sql(
+		"""select coalesce(sum(b.actual_qty),0) from `tabBin` b
+		   where b.item_code like 'EGG%%'""")[0][0])
+	birds_stock = flt(frappe.db.sql(
+		"""select coalesce(sum(b.actual_qty),0) from `tabBin` b
+		   where b.item_code like 'BIRD%%'""")[0][0])
+	feed_stock = flt(frappe.db.sql(
+		"""select coalesce(sum(b.actual_qty),0) from `tabBin` b
+		   where b.item_code like 'FEED%%'""")[0][0])
+	eggs_today = flt(frappe.db.sql(
+		"""select coalesce(sum(total_eggs),0) from `tabDaily Flock Entry`
+		   where docstatus=1 and posting_date=%s""", today)[0][0])
+
+	return {
+		"sales_today": round(sales_today, 0),
+		"purchases_today": round(purch_today, 0),
+		"stock_value": round(stock_value, 0),
+		"eggs_stock": int(eggs_stock),
+		"birds_stock": int(birds_stock),
+		"feed_stock_kg": round(feed_stock, 0),
+		"eggs_today": int(eggs_today),
+		"flocks": frappe.db.count("Flock", {"status": ["in", ACTIVE]}),
+		"sheds_occupied": frappe.db.count("Shed", {"status": "Occupied"}),
+		"overdue_vaccinations": cint(frappe.db.sql(
+			"""select coalesce(sum(overdue_count),0) from `tabFlock Vaccination Plan`""")[0][0]),
+	}
+
+
 def _weighted_cost_per_kg(rows):
 	broilers = [r for r in rows if r["flock_type"] == "Broiler" and r["live_kg"]]
 	kg = sum(r["live_kg"] for r in broilers)
