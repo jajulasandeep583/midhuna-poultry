@@ -1,7 +1,7 @@
 {
  "app": "poultry",
  "charts": [],
- "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Health</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Vaccinations\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds Lost (30 Days)\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Alerts (7 Days)\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Screens\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Vaccination\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Medication and Withdrawal\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Health Reports\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pltry000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Health</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Vaccinations\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Birds Lost (30 Days)\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Alerts (7 Days)\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Screens\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Vaccination\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Medication and Withdrawal\", \"col\": 4}}, {\"id\": \"pltry008\", \"type\": \"card\", \"data\": {\"card_name\": \"Health Reports\", \"col\": 4}}]",
  "creation": "2026-08-03 12:24:57.575023",
  "custom_blocks": [
   {
@@ -199,7 +199,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 20:01:36.533998",
+ "modified": "2026-08-03 20:14:44.211672",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Poultry Health",

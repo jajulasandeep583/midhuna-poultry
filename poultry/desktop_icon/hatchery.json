@@ -1,0 +1,22 @@
+{
+ "app": "poultry",
+ "bg_color": "gray",
+ "creation": "2026-08-03 20:12:28.513033",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon": "poultry-hatchery",
+ "icon_type": "Link",
+ "idx": 0,
+ "label": "Hatchery",
+ "link_to": "Hatchery",
+ "link_type": "Workspace Sidebar",
+ "modified": "2026-08-03 20:14:45.708165",
+ "modified_by": "Administrator",
+ "name": "Hatchery",
+ "owner": "Administrator",
+ "restrict_removal": 0,
+ "roles": [],
+ "sidebar": "Hatchery",
+ "standard": 1
+}

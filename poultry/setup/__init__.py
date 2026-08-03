@@ -22,13 +22,23 @@ def after_install():
 	print("Setting up Poultry Management...")
 	make_roles()
 
-	from poultry.setup import custom_fields, desk, icons, masters, sidebar
+	from poultry.setup import (
+		custom_fields,
+		desk,
+		desktop_icons,
+		icons,
+		masters,
+		navblock,
+		sidebar,
+	)
 
 	custom_fields.install()
 	masters.install()
+	navblock.install()
 	desk.install()
 	sidebar.install()
 	icons.install()
+	desktop_icons.install()
 
 	frappe.db.commit()
 	print("Poultry Management is ready. Open the Poultry workspace.")
@@ -36,12 +46,14 @@ def after_install():
 
 def after_migrate():
 	"""Keep the desk objects and icons in step with the code on every migrate."""
-	from poultry.setup import desk, icons, sidebar
+	from poultry.setup import desk, desktop_icons, icons, navblock, sidebar
 
 	try:
+		navblock.install()
 		desk.install()
 		sidebar.install()
 		icons.install()
+		desktop_icons.install()
 		frappe.db.commit()
 	except Exception:
 		frappe.log_error(frappe.get_traceback(), "Poultry: after_migrate desk rebuild failed")

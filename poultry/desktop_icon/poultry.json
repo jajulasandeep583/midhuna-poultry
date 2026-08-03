@@ -1,0 +1,23 @@
+{
+ "app": "poultry",
+ "bg_color": "gray",
+ "creation": "2026-08-03 13:07:03.655772",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon": "poultry-farm",
+ "icon_type": "Link",
+ "idx": 0,
+ "label": "Poultry",
+ "link_to": "Poultry",
+ "link_type": "Workspace Sidebar",
+ "modified": "2026-08-03 20:14:45.207880",
+ "modified_by": "Administrator",
+ "name": "Poultry",
+ "owner": "Administrator",
+ "parent_icon": "Poultry Management",
+ "restrict_removal": 0,
+ "roles": [],
+ "sidebar": "Poultry",
+ "standard": 1
+}

@@ -1,7 +1,7 @@
 {
  "app": "poultry",
  "charts": [],
- "content": "[{\"id\": \"pnav000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Management</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"card\", \"data\": {\"card_name\": \"Daily Screens\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Commercial\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Documents\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Help\", \"col\": 4}}]",
+ "content": "[{\"id\": \"pltry000\", \"type\": \"custom_block\", \"data\": {\"custom_block_name\": \"Poultry Navigator\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Management</b></span>\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"card\", \"data\": {\"card_name\": \"Daily Screens\", \"col\": 4}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Commercial\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Documents\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Help\", \"col\": 4}}]",
  "creation": "2026-08-03 19:25:05.930580",
  "custom_blocks": [
   {
@@ -199,7 +199,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-03 20:01:36.409381",
+ "modified": "2026-08-03 20:14:44.052193",
  "modified_by": "Administrator",
  "module": "Poultry Management",
  "name": "Management",
