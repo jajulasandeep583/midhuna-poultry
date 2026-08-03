@@ -51,6 +51,20 @@ EXTRA_ICONS = {
 	"Item": "poultry-egg-tray",
 	"Poultry Control Tower": "poultry-alert",
 	"Flock 360": "poultry-hen",
+	"Daily Entry Board": "poultry-board",
+	"How to Use Poultry": "poultry-guide",
+	"Flock Vaccination Plan": "poultry-schedule",
+	"Bird Weighing": "poultry-scale",
+	"Flock Closure": "poultry-closure",
+	"Breed": "poultry-dna",
+	"Strain": "poultry-chick",
+	"Egg Grade": "poultry-egg",
+	"Feed Type": "poultry-feed-bag",
+	"Vaccine": "poultry-syringe",
+	"Poultry Disease": "poultry-virus",
+	"Mortality Reason": "poultry-mortality",
+	"Vaccination Schedule Template": "poultry-schedule",
+	"Poultry Settings": "poultry-settings",
 }
 
 

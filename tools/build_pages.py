@@ -16,6 +16,18 @@ PAGES = [
 		"icon": "poultry-alert",
 	},
 	{
+		"name": "poultry-entry-board",
+		"file": "poultry_entry_board",
+		"title": "Daily Entry Board",
+		"icon": "poultry-board",
+	},
+	{
+		"name": "poultry-guide",
+		"file": "poultry_guide",
+		"title": "How to Use Poultry",
+		"icon": "poultry-guide",
+	},
+	{
 		"name": "poultry-flock-360",
 		"file": "poultry_flock_360",
 		"title": "Flock 360",

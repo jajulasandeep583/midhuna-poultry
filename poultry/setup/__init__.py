@@ -22,11 +22,12 @@ def after_install():
 	print("Setting up Poultry Management...")
 	make_roles()
 
-	from poultry.setup import custom_fields, desk, icons, masters
+	from poultry.setup import custom_fields, desk, icons, masters, sidebar
 
 	custom_fields.install()
 	masters.install()
 	desk.install()
+	sidebar.install()
 	icons.install()
 
 	frappe.db.commit()
@@ -35,10 +36,11 @@ def after_install():
 
 def after_migrate():
 	"""Keep the desk objects and icons in step with the code on every migrate."""
-	from poultry.setup import desk, icons
+	from poultry.setup import desk, icons, sidebar
 
 	try:
 		desk.install()
+		sidebar.install()
 		icons.install()
 		frappe.db.commit()
 	except Exception:

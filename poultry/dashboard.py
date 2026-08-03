@@ -218,6 +218,71 @@ def flock_360(flock):
 
 
 @frappe.whitelist()
+def entry_board(days=14):
+	"""Days across, flocks down - the catch-up grid a supervisor fills in on a
+	farm visit (§11.6). Shows at a glance which days are missing."""
+	days = cint(days) or 14
+	today = getdate(nowdate())
+	dates = [add_days(today, -i) for i in range(days - 1, -1, -1)]
+
+	flocks = frappe.get_all(
+		"Flock",
+		filters={"status": ["in", ACTIVE]},
+		fields=["name", "flock_name", "farm", "shed", "flock_type", "placement_date",
+		        "current_qty"],
+		order_by="farm asc, shed asc",
+	)
+
+	rows = frappe.get_all(
+		"Daily Flock Entry",
+		filters={"docstatus": 1, "posting_date": [">=", dates[0]],
+		         "flock": ["in", [f.name for f in flocks]] if flocks else [""]},
+		fields=["name", "flock", "posting_date", "mortality_qty", "cull_qty", "total_feed_kg",
+		        "total_eggs", "has_alert"],
+	)
+	by_key = {(r.flock, str(r.posting_date)): r for r in rows}
+
+	board = []
+	for f in flocks:
+		cells = []
+		missing = 0
+		for d in dates:
+			before_placement = getdate(d) < getdate(f.placement_date)
+			entry = by_key.get((f.name, str(d)))
+			if before_placement:
+				state = "na"
+			elif entry:
+				state = "alert" if entry.has_alert else "done"
+			else:
+				state = "missing"
+				missing += 1
+			cells.append({
+				"date": str(d),
+				"state": state,
+				"entry": entry.name if entry else None,
+				"losses": (cint(entry.mortality_qty) + cint(entry.cull_qty)) if entry else None,
+				"feed": flt(entry.total_feed_kg, 1) if entry else None,
+				"eggs": cint(entry.total_eggs) if entry else None,
+			})
+		board.append({
+			"flock": f.name, "flock_name": f.flock_name, "farm": f.farm, "shed": f.shed,
+			"flock_type": f.flock_type, "birds": f.current_qty, "missing": missing,
+			"cells": cells,
+		})
+
+	board.sort(key=lambda r: (-r["missing"], r["farm"], r["shed"]))
+	return {
+		"dates": [str(d) for d in dates],
+		"board": board,
+		"total_missing": sum(r["missing"] for r in board),
+		"coverage_pct": round(
+			100.0 * (1 - sum(r["missing"] for r in board) /
+			         max(1, sum(len([c for c in r["cells"] if c["state"] != "na"]) for r in board))),
+			1),
+	}
+
+
+@frappe.whitelist()
 def flock_options():
 	return frappe.get_all(
 		"Flock",

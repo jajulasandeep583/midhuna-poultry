@@ -1,16 +1,16 @@
 {
  "content": null,
- "creation": "2026-08-03 13:23:51.126707",
+ "creation": "2026-08-03 14:00:30.181182",
  "docstatus": 0,
  "doctype": "Page",
- "icon": "poultry-alert",
+ "icon": "poultry-board",
  "idx": 0,
- "modified": "2026-08-03 14:00:27.405697",
+ "modified": "2026-08-03 14:00:30.181182",
  "modified_by": "Administrator",
  "module": "Poultry Management",
- "name": "poultry-tower",
+ "name": "poultry-entry-board",
  "owner": "Administrator",
- "page_name": "poultry-tower",
+ "page_name": "poultry-entry-board",
  "roles": [
   {
    "role": "Poultry Manager"
@@ -35,5 +35,5 @@
  "standard": "Yes",
  "style": null,
  "system_page": 0,
- "title": "Poultry Control Tower"
+ "title": "Daily Entry Board"
 }
