@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 12:04:56.373664",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "flock",
+  "posting_date",
+  "age_days",
+  "cb1",
+  "farm",
+  "shed",
+  "company",
+  "sec_vac",
+  "vaccine",
+  "route",
+  "dose_per_bird",
+  "birds_covered",
+  "cb2",
+  "vial_batch",
+  "vial_serial",
+  "diluent",
+  "wastage_pct",
+  "sec_notes",
+  "operator",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "VAC-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "VAC-.YYYY.-.#####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Flock",
+   "options": "Flock",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age (days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flock.farm",
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "label": "Farm",
+   "options": "Farm",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.shed",
+   "fieldname": "shed",
+   "fieldtype": "Link",
+   "label": "Shed",
+   "options": "Shed",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_vac",
+   "fieldtype": "Section Break",
+   "label": "Vaccine"
+  },
+  {
+   "fieldname": "vaccine",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vaccine",
+   "options": "Vaccine",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Select",
+   "label": "Route",
+   "options": "\nDrinking Water\nEye Drop\nSpray\nSubcutaneous\nIntramuscular\nWing Web\nIn-Ovo\nBeak Dip"
+  },
+  {
+   "default": "1",
+   "fieldname": "dose_per_bird",
+   "fieldtype": "Float",
+   "label": "Dose per Bird"
+  },
+  {
+   "fieldname": "birds_covered",
+   "fieldtype": "Int",
+   "label": "Birds Covered"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Traceability - required on audit",
+   "fieldname": "vial_batch",
+   "fieldtype": "Data",
+   "label": "Vial Batch No"
+  },
+  {
+   "fieldname": "vial_serial",
+   "fieldtype": "Data",
+   "label": "Vial Serial No"
+  },
+  {
+   "fieldname": "diluent",
+   "fieldtype": "Data",
+   "label": "Diluent"
+  },
+  {
+   "fieldname": "wastage_pct",
+   "fieldtype": "Percent",
+   "label": "Wastage %"
+  },
+  {
+   "fieldname": "sec_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Data",
+   "label": "Operator"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vaccination Entry",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:56.373664",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Vaccination Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

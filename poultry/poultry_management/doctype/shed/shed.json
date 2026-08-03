@@ -1,0 +1,216 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "format:{farm}-{shed_code}",
+ "creation": "2026-08-03 12:04:23.572704",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "farm",
+  "shed_code",
+  "capacity",
+  "housing_system",
+  "cb1",
+  "company",
+  "floor_area_sqft",
+  "warehouse",
+  "sec_status",
+  "status",
+  "current_flock",
+  "last_depleted_on",
+  "cb2",
+  "last_cleaned_on",
+  "downtime_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farm",
+   "options": "Farm",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shed_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shed Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Capacity (birds)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "housing_system",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Housing System",
+   "options": "\nDeep Litter\nCage\nSlat\nEnvironment Controlled\nFree Range"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "farm.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "floor_area_sqft",
+   "fieldtype": "Float",
+   "label": "Floor Area (sqft)"
+  },
+  {
+   "description": "Created automatically from the shed code",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "Empty",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Empty\nOccupied\nCleaning\nUnder Repair",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_depleted_on",
+   "fieldtype": "Date",
+   "label": "Last Depleted On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_cleaned_on",
+   "fieldtype": "Date",
+   "label": "Last Cleaned On"
+  },
+  {
+   "fieldname": "downtime_days",
+   "fieldtype": "Int",
+   "label": "Downtime Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Current Flock",
+   "options": "Flock",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:25.037353",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Shed",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "farm,status,capacity",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

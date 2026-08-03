@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-03 12:04:55.415240",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "age_days",
+  "vaccine",
+  "route",
+  "dose_per_bird",
+  "is_mandatory",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age (days)"
+  },
+  {
+   "columns": 3,
+   "fieldname": "vaccine",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vaccine",
+   "options": "Vaccine"
+  },
+  {
+   "columns": 2,
+   "fieldname": "route",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Route",
+   "options": "\nDrinking Water\nEye Drop\nSpray\nSubcutaneous\nIntramuscular\nWing Web\nIn-Ovo\nBeak Dip"
+  },
+  {
+   "columns": 1,
+   "fieldname": "dose_per_bird",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Dose"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mandatory"
+  },
+  {
+   "columns": 2,
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:55.415240",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Vaccination Schedule Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

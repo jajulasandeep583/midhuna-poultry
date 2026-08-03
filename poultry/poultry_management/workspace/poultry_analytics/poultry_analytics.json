@@ -1,0 +1,262 @@
+{
+ "app": "poultry",
+ "charts": [
+  {
+   "chart_name": "Flocks by Status",
+   "label": "Flocks by Status"
+  }
+ ],
+ "content": "[{\"id\": \"pltry000\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Poultry Analytics</b></span>\", \"col\": 12}}, {\"id\": \"pltry001\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Flocks by Status\", \"col\": 12}}, {\"id\": \"pltry002\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"pltry003\", \"type\": \"card\", \"data\": {\"card_name\": \"Flock Performance\", \"col\": 4}}, {\"id\": \"pltry004\", \"type\": \"card\", \"data\": {\"card_name\": \"Feed and Cost\", \"col\": 4}}, {\"id\": \"pltry005\", \"type\": \"card\", \"data\": {\"card_name\": \"Health and Compliance\", \"col\": 4}}, {\"id\": \"pltry006\", \"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"id\": \"pltry007\", \"type\": \"card\", \"data\": {\"card_name\": \"Standard ERPNext\", \"col\": 4}}]",
+ "creation": "2026-08-03 12:24:57.607704",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "poultry-chart",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Poultry Analytics",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Flock Performance",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-standard",
+   "is_query_report": 1,
+   "label": "Flock Performance vs Standard",
+   "link_count": 0,
+   "link_to": "Flock Performance vs Standard",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-hen",
+   "is_query_report": 1,
+   "label": "Broiler Batch Summary",
+   "link_count": 0,
+   "link_to": "Broiler Batch Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-egg",
+   "is_query_report": 1,
+   "label": "Layer Production Curve",
+   "link_count": 0,
+   "link_to": "Layer Production Curve",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Feed and Cost",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-feed-bag",
+   "is_query_report": 1,
+   "label": "Feed Consumption and FCR Trend",
+   "link_count": 0,
+   "link_to": "Feed Consumption and FCR Trend",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Health and Compliance",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-mortality",
+   "is_query_report": 1,
+   "label": "Mortality Analysis",
+   "link_count": 0,
+   "link_to": "Mortality Analysis",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-schedule",
+   "is_query_report": 1,
+   "label": "Vaccination Compliance",
+   "link_count": 0,
+   "link_to": "Vaccination Compliance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-withdrawal",
+   "is_query_report": 1,
+   "label": "Withdrawal Period Alert",
+   "link_count": 0,
+   "link_to": "Withdrawal Period Alert",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-shed",
+   "is_query_report": 1,
+   "label": "Shed Utilisation and Downtime",
+   "link_count": 0,
+   "link_to": "Shed Utilisation and Downtime",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Standard ERPNext",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-chart",
+   "is_query_report": 1,
+   "label": "Stock Ledger",
+   "link_count": 0,
+   "link_to": "Stock Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-chart",
+   "is_query_report": 1,
+   "label": "Stock Balance",
+   "link_count": 0,
+   "link_to": "Stock Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "",
+   "hidden": 0,
+   "icon": "poultry-chart",
+   "is_query_report": 1,
+   "label": "Profit and Loss Statement",
+   "link_count": 0,
+   "link_to": "Profit and Loss Statement",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-03 13:35:37.474937",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Poultry Analytics",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Poultry",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 15.3,
+ "shortcuts": [
+  {
+   "color": "Purple",
+   "doc_view": "",
+   "icon": "poultry-hen",
+   "label": "Broiler Batch Summary",
+   "link_to": "Broiler Batch Summary",
+   "report_ref_doctype": "Flock",
+   "type": "Report"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "icon": "poultry-standard",
+   "label": "Flock Performance vs Standard",
+   "link_to": "Flock Performance vs Standard",
+   "report_ref_doctype": "Flock",
+   "type": "Report"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "",
+   "icon": "poultry-egg",
+   "label": "Layer Production Curve",
+   "link_to": "Layer Production Curve",
+   "report_ref_doctype": "Flock",
+   "type": "Report"
+  },
+  {
+   "color": "Red",
+   "doc_view": "",
+   "icon": "poultry-mortality",
+   "label": "Mortality Analysis",
+   "link_to": "Mortality Analysis",
+   "report_ref_doctype": "Daily Flock Entry",
+   "type": "Report"
+  }
+ ],
+ "title": "Poultry Analytics",
+ "type": "Workspace"
+}

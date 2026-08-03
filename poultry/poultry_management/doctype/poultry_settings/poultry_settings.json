@@ -1,0 +1,284 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-03 12:04:16.915825",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_modules",
+  "enable_egg_management",
+  "enable_hatchery",
+  "enable_processing",
+  "cb_modules",
+  "enable_contract_farming",
+  "enable_breeder_operations",
+  "enable_feed_mill",
+  "sec_entry",
+  "data_tier",
+  "allow_backdated_entry",
+  "max_backdate_days",
+  "cb_entry",
+  "default_bag_weight_kg",
+  "eggs_per_tray",
+  "sec_alerts",
+  "mortality_spike_threshold_pct",
+  "weight_deviation_threshold_pct",
+  "cb_alerts",
+  "cumulative_mortality_factor",
+  "water_feed_factor",
+  "sec_costing",
+  "costing_method",
+  "create_stock_entries",
+  "auto_create_vaccination_plan",
+  "cb_costing",
+  "default_company",
+  "mortality_expense_account",
+  "egg_warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_modules",
+   "fieldtype": "Section Break",
+   "label": "Modules"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_egg_management",
+   "fieldtype": "Check",
+   "label": "Enable Egg Management"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_hatchery",
+   "fieldtype": "Check",
+   "label": "Enable Hatchery"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_processing",
+   "fieldtype": "Check",
+   "label": "Enable Processing"
+  },
+  {
+   "fieldname": "cb_modules",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_contract_farming",
+   "fieldtype": "Check",
+   "label": "Enable Contract Farming"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_breeder_operations",
+   "fieldtype": "Check",
+   "label": "Enable Breeder Operations"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_feed_mill",
+   "fieldtype": "Check",
+   "label": "Enable Feed Mill"
+  },
+  {
+   "fieldname": "sec_entry",
+   "fieldtype": "Section Break",
+   "label": "Data Entry"
+  },
+  {
+   "default": "Tier 2",
+   "description": "Tier 1 = mortality and feed only. Tier 2 adds eggs, weight, water. Tier 3 adds environment.",
+   "fieldname": "data_tier",
+   "fieldtype": "Select",
+   "label": "Data Tier",
+   "options": "Tier 1\nTier 2\nTier 3"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_backdated_entry",
+   "fieldtype": "Check",
+   "label": "Allow Backdated Entry"
+  },
+  {
+   "default": "30",
+   "fieldname": "max_backdate_days",
+   "fieldtype": "Int",
+   "label": "Max Backdate Days"
+  },
+  {
+   "fieldname": "cb_entry",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "50",
+   "fieldname": "default_bag_weight_kg",
+   "fieldtype": "Float",
+   "label": "Default Bag Weight (kg)"
+  },
+  {
+   "default": "30",
+   "fieldname": "eggs_per_tray",
+   "fieldtype": "Int",
+   "label": "Eggs per Tray"
+  },
+  {
+   "fieldname": "sec_alerts",
+   "fieldtype": "Section Break",
+   "label": "Alert Thresholds"
+  },
+  {
+   "default": "0.5",
+   "fieldname": "mortality_spike_threshold_pct",
+   "fieldtype": "Float",
+   "label": "Mortality Spike Threshold (%/day)"
+  },
+  {
+   "default": "10",
+   "fieldname": "weight_deviation_threshold_pct",
+   "fieldtype": "Float",
+   "label": "Weight Deviation Threshold (%)"
+  },
+  {
+   "fieldname": "cb_alerts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1.5",
+   "fieldname": "cumulative_mortality_factor",
+   "fieldtype": "Float",
+   "label": "Cumulative Mortality Alert Factor"
+  },
+  {
+   "default": "1.25",
+   "fieldname": "water_feed_factor",
+   "fieldtype": "Float",
+   "label": "Water:Feed Alert Factor"
+  },
+  {
+   "fieldname": "sec_costing",
+   "fieldtype": "Section Break",
+   "label": "Costing and Stock"
+  },
+  {
+   "default": "Project",
+   "fieldname": "costing_method",
+   "fieldtype": "Select",
+   "label": "Costing Method",
+   "options": "Project\nWork Order"
+  },
+  {
+   "default": "1",
+   "fieldname": "create_stock_entries",
+   "fieldtype": "Check",
+   "label": "Post Stock Entries on Daily Entry"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_vaccination_plan",
+   "fieldtype": "Check",
+   "label": "Auto Create Vaccination Plan"
+  },
+  {
+   "fieldname": "cb_costing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_company",
+   "fieldtype": "Link",
+   "label": "Default Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "mortality_expense_account",
+   "fieldtype": "Link",
+   "label": "Mortality Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "egg_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Egg Warehouse",
+   "options": "Warehouse"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:16.915825",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Poultry Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

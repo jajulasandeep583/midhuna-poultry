@@ -1,0 +1,368 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 12:04:54.892585",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "flock",
+  "closure_date",
+  "cb1",
+  "farm",
+  "shed",
+  "flock_type",
+  "company",
+  "sec_counts",
+  "placed_qty",
+  "total_mortality",
+  "total_culls",
+  "cb2",
+  "total_sold",
+  "livability_pct",
+  "age_days",
+  "sec_perf",
+  "cumulative_feed_kg",
+  "total_live_weight_kg",
+  "avg_sale_weight_kg",
+  "cb3",
+  "fcr",
+  "adg_g",
+  "eef",
+  "cumulative_eggs",
+  "sec_money",
+  "total_cost",
+  "cost_per_bird",
+  "cost_per_kg_live",
+  "cb4",
+  "total_revenue",
+  "margin",
+  "sec_notes",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "FCL-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "FCL-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Flock",
+   "options": "Flock",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "closure_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Closure Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flock.farm",
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "label": "Farm",
+   "options": "Farm",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.shed",
+   "fieldname": "shed",
+   "fieldtype": "Link",
+   "label": "Shed",
+   "options": "Shed",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.flock_type",
+   "fieldname": "flock_type",
+   "fieldtype": "Select",
+   "label": "Flock Type",
+   "options": "\nBroiler\nLayer\nRearing\nBreeder",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_counts",
+   "fieldtype": "Section Break",
+   "label": "Final Counts"
+  },
+  {
+   "fieldname": "placed_qty",
+   "fieldtype": "Int",
+   "label": "Placed Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_mortality",
+   "fieldtype": "Int",
+   "label": "Total Mortality",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_culls",
+   "fieldtype": "Int",
+   "label": "Total Culls",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_sold",
+   "fieldtype": "Int",
+   "label": "Total Sold / Depleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "livability_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Livability %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "label": "Age at Closure (days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_perf",
+   "fieldtype": "Section Break",
+   "label": "Performance"
+  },
+  {
+   "fieldname": "cumulative_feed_kg",
+   "fieldtype": "Float",
+   "label": "Total Feed (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_live_weight_kg",
+   "fieldtype": "Float",
+   "label": "Live Weight Sold (kg)"
+  },
+  {
+   "fieldname": "avg_sale_weight_kg",
+   "fieldtype": "Float",
+   "label": "Avg Sale Weight (kg)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fcr",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "FCR",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "adg_g",
+   "fieldtype": "Float",
+   "label": "ADG (g/day)",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eef",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "EEF",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cumulative_eggs",
+   "fieldtype": "Int",
+   "label": "Total Eggs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_money",
+   "fieldtype": "Section Break",
+   "label": "Settlement"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_bird",
+   "fieldtype": "Currency",
+   "label": "Cost per Bird",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_kg_live",
+   "fieldtype": "Currency",
+   "label": "Cost per kg Live",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "label": "Total Revenue"
+  },
+  {
+   "fieldname": "margin",
+   "fieldtype": "Currency",
+   "label": "Margin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Flock Closure",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:54.892585",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Flock Closure",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "closure_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

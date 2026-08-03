@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-03 12:04:19.845215",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "age_days",
+  "age_weeks",
+  "std_body_weight_g",
+  "std_daily_feed_g",
+  "std_cumulative_feed_g",
+  "std_fcr",
+  "std_cumulative_mortality_pct",
+  "std_hd_production_pct",
+  "std_egg_weight_g",
+  "std_uniformity_pct",
+  "std_water_feed_ratio"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age (days)"
+  },
+  {
+   "fieldname": "age_weeks",
+   "fieldtype": "Float",
+   "label": "Age (weeks)",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "std_body_weight_g",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Body Weight (g)"
+  },
+  {
+   "columns": 1,
+   "fieldname": "std_daily_feed_g",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Daily Feed (g)"
+  },
+  {
+   "columns": 1,
+   "fieldname": "std_cumulative_feed_g",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cumulative Feed (g)"
+  },
+  {
+   "columns": 1,
+   "fieldname": "std_fcr",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "FCR",
+   "precision": "3"
+  },
+  {
+   "columns": 1,
+   "fieldname": "std_cumulative_mortality_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Cumulative Mortality %"
+  },
+  {
+   "columns": 1,
+   "fieldname": "std_hd_production_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "HD Production %"
+  },
+  {
+   "fieldname": "std_egg_weight_g",
+   "fieldtype": "Float",
+   "label": "Egg Weight (g)"
+  },
+  {
+   "fieldname": "std_uniformity_pct",
+   "fieldtype": "Percent",
+   "label": "Uniformity %"
+  },
+  {
+   "fieldname": "std_water_feed_ratio",
+   "fieldtype": "Float",
+   "label": "Water:Feed",
+   "precision": "2"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:19.845215",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Breed Standard Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

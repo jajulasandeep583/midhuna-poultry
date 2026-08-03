@@ -1,0 +1,39 @@
+{
+ "content": null,
+ "creation": "2026-08-03 13:22:12.559974",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "poultry-hen",
+ "idx": 0,
+ "modified": "2026-08-03 13:29:42.849730",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "poultry-flock-360",
+ "owner": "Administrator",
+ "page_name": "poultry-flock-360",
+ "roles": [
+  {
+   "role": "Poultry Manager"
+  },
+  {
+   "role": "Farm Manager"
+  },
+  {
+   "role": "Farm Supervisor"
+  },
+  {
+   "role": "Veterinarian"
+  },
+  {
+   "role": "Poultry Accounts"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Flock 360"
+}

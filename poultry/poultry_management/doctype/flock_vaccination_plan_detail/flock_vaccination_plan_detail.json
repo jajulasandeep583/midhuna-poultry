@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-03 12:04:56.840060",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "age_days",
+  "due_date",
+  "vaccine",
+  "route",
+  "dose_per_bird",
+  "is_mandatory",
+  "status",
+  "done_on",
+  "vaccination_entry"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age (days)"
+  },
+  {
+   "columns": 2,
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "columns": 2,
+   "fieldname": "vaccine",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vaccine",
+   "options": "Vaccine"
+  },
+  {
+   "columns": 2,
+   "fieldname": "route",
+   "fieldtype": "Select",
+   "label": "Route",
+   "options": "\nDrinking Water\nEye Drop\nSpray\nSubcutaneous\nIntramuscular\nWing Web\nIn-Ovo\nBeak Dip"
+  },
+  {
+   "fieldname": "dose_per_bird",
+   "fieldtype": "Float",
+   "label": "Dose"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "label": "Mandatory"
+  },
+  {
+   "columns": 1,
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nDone\nOverdue\nSkipped"
+  },
+  {
+   "columns": 2,
+   "fieldname": "done_on",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Done On"
+  },
+  {
+   "fieldname": "vaccination_entry",
+   "fieldtype": "Link",
+   "label": "Vaccination Entry",
+   "options": "Vaccination Entry",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:56.840060",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Flock Vaccination Plan Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

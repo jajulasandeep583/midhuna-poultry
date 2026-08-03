@@ -1,0 +1,549 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 12:04:24.171654",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "flock_name",
+  "farm",
+  "shed",
+  "flock_type",
+  "cb1",
+  "company",
+  "breed",
+  "strain",
+  "status",
+  "sec_placement",
+  "source",
+  "supplier",
+  "hatch_date",
+  "placement_date",
+  "expected_end_date",
+  "cb2",
+  "bird_item",
+  "batch_no",
+  "parent_flock_age_weeks",
+  "purchase_receipt",
+  "sec_counts",
+  "opening_qty",
+  "opening_male",
+  "opening_female",
+  "cb3",
+  "current_qty",
+  "cumulative_mortality",
+  "cumulative_culls",
+  "cumulative_sold",
+  "sec_perf",
+  "age_days",
+  "mortality_pct",
+  "livability_pct",
+  "cumulative_feed_kg",
+  "cb4",
+  "avg_body_weight_g",
+  "fcr",
+  "adg_g",
+  "eef",
+  "sec_egg",
+  "cumulative_eggs",
+  "hd_production_pct",
+  "cb5",
+  "peak_production_pct",
+  "eggs_per_bird_housed",
+  "sec_cost",
+  "cost_center",
+  "project",
+  "work_order",
+  "cb6",
+  "total_cost",
+  "cost_per_bird",
+  "cost_per_kg_live",
+  "sec_std",
+  "breed_standard",
+  "standard_snapshot",
+  "sec_closure",
+  "closure_date",
+  "total_live_weight_kg",
+  "cb7",
+  "total_revenue",
+  "margin"
+ ],
+ "fields": [
+  {
+   "default": "FLK-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "FLK-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "flock_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Flock Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farm",
+   "options": "Farm",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shed",
+   "options": "Shed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "flock_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Flock Type",
+   "options": "\nBroiler\nLayer\nRearing\nBreeder",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "farm.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Link",
+   "label": "Breed",
+   "options": "Breed"
+  },
+  {
+   "fieldname": "strain",
+   "fieldtype": "Link",
+   "label": "Strain",
+   "options": "Strain"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nPlaced\nGrowing\nLaying\nDepleting\nClosed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_placement",
+   "fieldtype": "Section Break",
+   "label": "Placement"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "\nPurchased DOC\nOwn Hatchery\nTransferred In"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "hatch_date",
+   "fieldtype": "Date",
+   "label": "Hatch Date"
+  },
+  {
+   "fieldname": "placement_date",
+   "fieldtype": "Date",
+   "label": "Placement Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bird_item",
+   "fieldtype": "Link",
+   "label": "Bird Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch",
+   "options": "Batch",
+   "read_only": 1
+  },
+  {
+   "description": "Breeder age at hatch - explains otherwise unexplained chick quality",
+   "fieldname": "parent_flock_age_weeks",
+   "fieldtype": "Float",
+   "label": "Parent Flock Age (weeks)"
+  },
+  {
+   "fieldname": "purchase_receipt",
+   "fieldtype": "Link",
+   "label": "Purchase Receipt",
+   "options": "Purchase Receipt"
+  },
+  {
+   "fieldname": "sec_counts",
+   "fieldtype": "Section Break",
+   "label": "Bird Counts"
+  },
+  {
+   "fieldname": "opening_qty",
+   "fieldtype": "Int",
+   "label": "Placed Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "opening_male",
+   "fieldtype": "Int",
+   "label": "Placed Male"
+  },
+  {
+   "fieldname": "opening_female",
+   "fieldtype": "Int",
+   "label": "Placed Female"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Birds Alive",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cumulative_mortality",
+   "fieldtype": "Int",
+   "label": "Cumulative Mortality",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cumulative_culls",
+   "fieldtype": "Int",
+   "label": "Cumulative Culls",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cumulative_sold",
+   "fieldtype": "Int",
+   "label": "Cumulative Sold",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_perf",
+   "fieldtype": "Section Break",
+   "label": "Performance"
+  },
+  {
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "label": "Age (days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mortality_pct",
+   "fieldtype": "Percent",
+   "label": "Mortality %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "livability_pct",
+   "fieldtype": "Percent",
+   "label": "Livability %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cumulative_feed_kg",
+   "fieldtype": "Float",
+   "label": "Cumulative Feed (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "avg_body_weight_g",
+   "fieldtype": "Float",
+   "label": "Avg Body Weight (g)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fcr",
+   "fieldtype": "Float",
+   "label": "FCR",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "adg_g",
+   "fieldtype": "Float",
+   "label": "ADG (g/day)",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "description": "Below 250 poor, 300 average, 350+ good, 400+ excellent",
+   "fieldname": "eef",
+   "fieldtype": "Float",
+   "label": "EEF",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_egg",
+   "fieldtype": "Section Break",
+   "label": "Egg Production"
+  },
+  {
+   "fieldname": "cumulative_eggs",
+   "fieldtype": "Int",
+   "label": "Cumulative Eggs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hd_production_pct",
+   "fieldtype": "Percent",
+   "label": "HD Production %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "peak_production_pct",
+   "fieldtype": "Percent",
+   "label": "Peak Production %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eggs_per_bird_housed",
+   "fieldtype": "Float",
+   "label": "Eggs per Bird Housed",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_cost",
+   "fieldtype": "Section Break",
+   "label": "Costing"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "label": "Work Order",
+   "options": "Work Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_bird",
+   "fieldtype": "Currency",
+   "label": "Cost per Bird",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_kg_live",
+   "fieldtype": "Currency",
+   "label": "Cost per kg Live",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_std",
+   "fieldtype": "Section Break",
+   "label": "Breed Standard"
+  },
+  {
+   "fieldname": "breed_standard",
+   "fieldtype": "Link",
+   "label": "Breed Standard",
+   "options": "Breed Standard"
+  },
+  {
+   "description": "Frozen at placement so history stays comparable",
+   "fieldname": "standard_snapshot",
+   "fieldtype": "Table",
+   "label": "Standard Snapshot",
+   "options": "Breed Standard Detail",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_closure",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "closure_date",
+   "fieldtype": "Date",
+   "label": "Closure Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_live_weight_kg",
+   "fieldtype": "Float",
+   "label": "Total Live Weight (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "label": "Total Revenue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "margin",
+   "fieldtype": "Currency",
+   "label": "Margin",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:24.171654",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Flock",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "farm,shed,flock_type,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "flock_name",
+ "track_changes": 1
+}

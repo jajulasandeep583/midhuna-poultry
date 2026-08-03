@@ -1,0 +1,515 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-08-03 12:04:51.196255",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "flock",
+  "posting_date",
+  "age_days",
+  "cb1",
+  "farm",
+  "shed",
+  "company",
+  "flock_type",
+  "entry_source",
+  "sec_birds",
+  "opening_qty",
+  "mortality_qty",
+  "cull_qty",
+  "cb2",
+  "closing_qty",
+  "mortality_pct_today",
+  "cumulative_mortality_pct",
+  "sec_mort_detail",
+  "mortality_details",
+  "sec_feed",
+  "feed_details",
+  "total_feed_kg",
+  "cb3",
+  "cumulative_feed_kg",
+  "feed_per_bird_g",
+  "sec_water",
+  "water_litres",
+  "water_feed_ratio",
+  "cb4",
+  "avg_body_weight_g",
+  "sample_size",
+  "uniformity_pct",
+  "sec_eggs",
+  "egg_details",
+  "total_eggs",
+  "floor_eggs",
+  "cb5",
+  "hd_production_pct",
+  "avg_egg_weight_g",
+  "sec_env",
+  "min_temp",
+  "max_temp",
+  "humidity_pct",
+  "cb6",
+  "litter_condition",
+  "light_hours",
+  "sec_notes",
+  "has_alert",
+  "alert_message",
+  "remarks",
+  "sec_ref",
+  "feed_stock_entry",
+  "mortality_stock_entry",
+  "cb7",
+  "egg_stock_entry",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "DFE-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "DFE-.YYYY.-.#####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Flock",
+   "options": "Flock",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age (days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flock.farm",
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.shed",
+   "fieldname": "shed",
+   "fieldtype": "Link",
+   "label": "Shed",
+   "options": "Shed",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "flock.flock_type",
+   "fieldname": "flock_type",
+   "fieldtype": "Select",
+   "label": "Flock Type",
+   "options": "\nBroiler\nLayer\nRearing\nBreeder",
+   "read_only": 1
+  },
+  {
+   "default": "Desk",
+   "fieldname": "entry_source",
+   "fieldtype": "Select",
+   "label": "Entry Source",
+   "options": "Desk\nField App\nBot\nIVR\nCatch-up"
+  },
+  {
+   "fieldname": "sec_birds",
+   "fieldtype": "Section Break",
+   "label": "Bird Count"
+  },
+  {
+   "fieldname": "opening_qty",
+   "fieldtype": "Int",
+   "label": "Opening Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mortality_qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Mortality"
+  },
+  {
+   "fieldname": "cull_qty",
+   "fieldtype": "Int",
+   "label": "Culls"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "closing_qty",
+   "fieldtype": "Int",
+   "label": "Closing Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mortality_pct_today",
+   "fieldtype": "Percent",
+   "label": "Mortality % Today",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cumulative_mortality_pct",
+   "fieldtype": "Percent",
+   "label": "Cumulative Mortality %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_mort_detail",
+   "fieldtype": "Section Break",
+   "label": "Mortality Detail"
+  },
+  {
+   "fieldname": "mortality_details",
+   "fieldtype": "Table",
+   "label": "Mortality Details",
+   "options": "Flock Mortality Detail"
+  },
+  {
+   "fieldname": "sec_feed",
+   "fieldtype": "Section Break",
+   "label": "Feed"
+  },
+  {
+   "fieldname": "feed_details",
+   "fieldtype": "Table",
+   "label": "Feed",
+   "options": "Flock Feed Detail"
+  },
+  {
+   "fieldname": "total_feed_kg",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Feed (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cumulative_feed_kg",
+   "fieldtype": "Float",
+   "label": "Cumulative Feed (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "feed_per_bird_g",
+   "fieldtype": "Float",
+   "label": "Feed per Bird (g)",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_water",
+   "fieldtype": "Section Break",
+   "label": "Water and Weight"
+  },
+  {
+   "fieldname": "water_litres",
+   "fieldtype": "Float",
+   "label": "Water (litres)"
+  },
+  {
+   "fieldname": "water_feed_ratio",
+   "fieldtype": "Float",
+   "label": "Water : Feed",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "avg_body_weight_g",
+   "fieldtype": "Float",
+   "label": "Avg Body Weight (g)"
+  },
+  {
+   "fieldname": "sample_size",
+   "fieldtype": "Int",
+   "label": "Sample Size"
+  },
+  {
+   "fieldname": "uniformity_pct",
+   "fieldtype": "Percent",
+   "label": "Uniformity %"
+  },
+  {
+   "fieldname": "sec_eggs",
+   "fieldtype": "Section Break",
+   "label": "Eggs"
+  },
+  {
+   "fieldname": "egg_details",
+   "fieldtype": "Table",
+   "label": "Eggs",
+   "options": "Flock Egg Detail"
+  },
+  {
+   "fieldname": "total_eggs",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Eggs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "floor_eggs",
+   "fieldtype": "Int",
+   "label": "Floor Eggs"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hd_production_pct",
+   "fieldtype": "Percent",
+   "label": "HD Production %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "avg_egg_weight_g",
+   "fieldtype": "Float",
+   "label": "Avg Egg Weight (g)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sec_env",
+   "fieldtype": "Section Break",
+   "label": "Environment"
+  },
+  {
+   "fieldname": "min_temp",
+   "fieldtype": "Float",
+   "label": "Min Temp (C)"
+  },
+  {
+   "fieldname": "max_temp",
+   "fieldtype": "Float",
+   "label": "Max Temp (C)"
+  },
+  {
+   "fieldname": "humidity_pct",
+   "fieldtype": "Percent",
+   "label": "Humidity %"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "litter_condition",
+   "fieldtype": "Select",
+   "label": "Litter Condition",
+   "options": "\nDry\nFriable\nDamp\nWet\nCaked"
+  },
+  {
+   "fieldname": "light_hours",
+   "fieldtype": "Float",
+   "label": "Light Hours"
+  },
+  {
+   "fieldname": "sec_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes and Alerts"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_alert",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Has Alert",
+   "read_only": 1
+  },
+  {
+   "depends_on": "has_alert",
+   "fieldname": "alert_message",
+   "fieldtype": "Small Text",
+   "label": "Alert Message",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sec_ref",
+   "fieldtype": "Section Break",
+   "label": "References"
+  },
+  {
+   "fieldname": "feed_stock_entry",
+   "fieldtype": "Link",
+   "label": "Feed Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mortality_stock_entry",
+   "fieldtype": "Link",
+   "label": "Mortality Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "egg_stock_entry",
+   "fieldtype": "Link",
+   "label": "Egg Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Flock Entry",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-03 12:04:51.196255",
+ "modified_by": "Administrator",
+ "module": "Poultry Management",
+ "name": "Daily Flock Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Supervisor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Veterinarian",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Poultry Accounts",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "flock,posting_date,farm",
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
