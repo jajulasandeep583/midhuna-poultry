@@ -61,25 +61,46 @@ def tile(inner, colour, solid):
 	)
 
 
-def install():
-	g = glyphs()
-	base = frappe.get_app_path("poultry", "public", "icons", "desktop_icons")
-	for variant in ("solid", "subtle"):
-		os.makedirs(os.path.join(base, variant), exist_ok=True)
+def write_tile_files():
+	"""Regenerate the tile SVGs from the sprite - build-time convenience only.
 
+	The generated files are COMMITTED to the repo, so a deployed site never
+	needs this to run. That matters: on Frappe Cloud the app tree is not
+	writable at runtime, and when this ran FIRST inside install() the
+	open()-for-write raised, aborted the rest of setup, and the Desktop Icon
+	records were never made - the desk then showed letter tiles. Best-effort:
+	skip files whose content already matches, swallow filesystem errors.
+	"""
 	written = 0
-	for label, (symbol, colour) in TILES.items():
-		inner = g.get(symbol)
-		if not inner:
-			print(f"  ! no glyph for {symbol}")
-			continue
-		fname = frappe.scrub(label) + ".svg"
-		for variant, solid in (("solid", True), ("subtle", False)):
-			with open(os.path.join(base, variant, fname), "w", encoding="utf-8") as fh:
-				fh.write(tile(inner, colour, solid))
-		written += 1
-	print(f"  + desktop icon files: {written} x 2 variants")
+	try:
+		g = glyphs()
+		base = frappe.get_app_path("poultry", "public", "icons", "desktop_icons")
+		for variant in ("solid", "subtle"):
+			os.makedirs(os.path.join(base, variant), exist_ok=True)
+		for label, (symbol, colour) in TILES.items():
+			inner = g.get(symbol)
+			if not inner:
+				print(f"  ! no glyph for {symbol}")
+				continue
+			fname = frappe.scrub(label) + ".svg"
+			for variant, solid in (("solid", True), ("subtle", False)):
+				target = os.path.join(base, variant, fname)
+				content = tile(inner, colour, solid)
+				if os.path.exists(target) and open(target, encoding="utf-8").read() == content:
+					continue
+				with open(target, "w", encoding="utf-8") as fh:
+					fh.write(content)
+				written += 1
+	except OSError as e:
+		print(f"  ! app tree not writable ({e}) - keeping the committed tile files")
+		return
+	print(f"  + desktop icon files refreshed: {written}")
 
+
+def install():
+	# Records first, files last: the records are what make the desk tiles and
+	# workspace header icons render, and the file write may legitimately fail
+	# on a read-only app tree (Frappe Cloud).
 	# a Desktop Icon record must exist, with app=poultry, for the lookup to fire
 	for label, (symbol, colour) in TILES.items():
 		if not frappe.db.exists("Workspace", label):
@@ -135,6 +156,8 @@ def install():
 	frappe.db.commit()
 	frappe.clear_cache()
 	print(f"  + desktop icon records: {len(TILES)}")
+
+	write_tile_files()
 
 
 run = install
