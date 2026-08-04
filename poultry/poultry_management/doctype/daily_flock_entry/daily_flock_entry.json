@@ -30,6 +30,7 @@
   "mortality_details",
   "sec_feed",
   "feed_details",
+  "sec_feed_totals",
   "total_feed_kg",
   "cb3",
   "cumulative_feed_kg",
@@ -43,6 +44,7 @@
   "uniformity_pct",
   "sec_eggs",
   "egg_details",
+  "sec_egg_totals",
   "total_eggs",
   "floor_eggs",
   "cb5",
@@ -218,6 +220,11 @@
    "options": "Flock Feed Detail"
   },
   {
+   "fieldname": "sec_feed_totals",
+   "fieldtype": "Section Break",
+   "label": "Feed Totals"
+  },
+  {
    "fieldname": "total_feed_kg",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -289,6 +296,11 @@
    "fieldtype": "Table",
    "label": "Eggs",
    "options": "Flock Egg Detail"
+  },
+  {
+   "fieldname": "sec_egg_totals",
+   "fieldtype": "Section Break",
+   "label": "Egg Totals"
   },
   {
    "fieldname": "total_eggs",

@@ -23,7 +23,7 @@
    "fieldname": "age_days",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Age (days)"
+   "label": "Age (d)"
   },
   {
    "columns": 2,

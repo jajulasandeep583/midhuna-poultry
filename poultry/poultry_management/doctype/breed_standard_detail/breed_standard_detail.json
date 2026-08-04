@@ -25,7 +25,7 @@
    "fieldname": "age_days",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Age (days)"
+   "label": "Age (d)"
   },
   {
    "fieldname": "age_weeks",
@@ -39,21 +39,21 @@
    "fieldname": "std_body_weight_g",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Body Weight (g)"
+   "label": "Body Wt (g)"
   },
   {
    "columns": 1,
    "fieldname": "std_daily_feed_g",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Daily Feed (g)"
+   "label": "Feed/Day (g)"
   },
   {
    "columns": 1,
    "fieldname": "std_cumulative_feed_g",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Cumulative Feed (g)"
+   "label": "Cum Feed (g)"
   },
   {
    "columns": 1,
@@ -68,14 +68,14 @@
    "fieldname": "std_cumulative_mortality_pct",
    "fieldtype": "Percent",
    "in_list_view": 1,
-   "label": "Cumulative Mortality %"
+   "label": "Cum Mort %"
   },
   {
    "columns": 1,
    "fieldname": "std_hd_production_pct",
    "fieldtype": "Percent",
    "in_list_view": 1,
-   "label": "HD Production %"
+   "label": "HDP %"
   },
   {
    "fieldname": "std_egg_weight_g",

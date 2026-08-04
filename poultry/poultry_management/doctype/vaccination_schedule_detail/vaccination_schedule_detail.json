@@ -20,7 +20,7 @@
    "fieldname": "age_days",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Age (days)"
+   "label": "Age (d)"
   },
   {
    "columns": 3,
@@ -43,7 +43,7 @@
    "fieldname": "dose_per_bird",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Dose"
+   "label": "Dose/Bird"
   },
   {
    "columns": 1,

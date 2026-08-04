@@ -39,7 +39,7 @@
    "label": "Bags"
   },
   {
-   "columns": 1,
+   "columns": 2,
    "fieldname": "bag_weight_kg",
    "fieldtype": "Float",
    "in_list_view": 1,
