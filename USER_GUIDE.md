@@ -21,7 +21,7 @@ Three rules worth knowing, because they explain most of the behaviour:
 
 | Rule | What it means for you |
 |---|---|
-| **Derived, never entered** | Age, closing count, FCR, EEF, HDP are greyed out. You cannot type them, and you never need to. |
+| **Derived, never entered** | Age, closing count, FCR, EEF, HDP are greyed out. You cannot type them, and you never need to. Every derived field carries **its formula in small print underneath it** — e.g. FCR = feed kg ÷ live weight kg, EEF = livability % × weight kg ÷ (age × FCR) × 100, HDP = eggs today ÷ hens alive × 100 — so "how is this calculated?" is always answered on the screen itself. |
 | **Recomputed, never incremented** | Totals are re-added from the daily entries each time. Cancel or amend a wrong day and every total corrects itself. |
 | **Standards are snapshotted** | The breed standard is frozen onto the flock at placement. Editing the master later never rewrites history. |
 
@@ -113,7 +113,8 @@ placement date, bird item, and the number placed. Optionally record
 behave differently, and this is often the field that explains an otherwise
 unexplained result.
 
-Save, then run **Place Flock**. In one step this:
+Save, then press the **Place Flock** button at the top right of the form
+(it appears once the flock is saved and still Draft). In one step this:
 
 - creates the ERPNext **Batch** named after the flock,
 - **snapshots the breed standard** onto the flock,

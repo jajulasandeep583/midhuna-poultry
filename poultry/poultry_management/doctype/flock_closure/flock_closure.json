@@ -145,7 +145,8 @@
    "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Livability %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Livability % = Birds Accounted ÷ Birds Placed × 100 (100 − mortality)"
   },
   {
    "fieldname": "age_days",
@@ -186,14 +187,16 @@
    "in_list_view": 1,
    "label": "FCR",
    "precision": "3",
-   "read_only": 1
+   "read_only": 1,
+   "description": "FCR (Feed Conversion Ratio) = Total Feed kg ÷ Total Live Weight kg. Lower is better."
   },
   {
    "fieldname": "adg_g",
    "fieldtype": "Float",
    "label": "ADG (g/day)",
    "precision": "1",
-   "read_only": 1
+   "read_only": 1,
+   "description": "ADG (Average Daily Gain) = Avg Sale Weight g ÷ Age Days"
   },
   {
    "fieldname": "eef",
@@ -201,7 +204,8 @@
    "in_list_view": 1,
    "label": "EEF",
    "precision": "1",
-   "read_only": 1
+   "read_only": 1,
+   "description": "EEF (European Efficiency Factor) = Livability % × Avg Weight kg ÷ (Age Days × FCR) × 100"
   },
   {
    "fieldname": "cumulative_eggs",
@@ -224,13 +228,15 @@
    "fieldname": "cost_per_bird",
    "fieldtype": "Currency",
    "label": "Cost per Bird",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Cost per Bird = Total Cost ÷ Birds Placed"
   },
   {
    "fieldname": "cost_per_kg_live",
    "fieldtype": "Currency",
    "label": "Cost per kg Live",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Cost per kg Live = Total Cost ÷ Total Live Weight Sold kg"
   },
   {
    "fieldname": "cb4",
@@ -245,7 +251,8 @@
    "fieldname": "margin",
    "fieldtype": "Currency",
    "label": "Margin",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Margin = Total Revenue − Total Cost"
   },
   {
    "fieldname": "sec_notes",

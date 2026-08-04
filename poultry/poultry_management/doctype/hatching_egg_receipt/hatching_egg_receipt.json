@@ -151,7 +151,8 @@
    "fieldname": "settable_pct",
    "fieldtype": "Percent",
    "label": "Settable %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Settable % = Settable Eggs ÷ Eggs Received × 100 (after door grading)."
   },
   {
    "fieldname": "sec_handling",
@@ -220,7 +221,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "Hatchability falls about a point a day past the first week",
+   "description": "Days in the egg store. Hatchability falls ~1% per day beyond 7 days.",
    "fieldname": "storage_days",
    "fieldtype": "Int",
    "label": "Days in Store",

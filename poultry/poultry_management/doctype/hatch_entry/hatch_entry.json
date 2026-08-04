@@ -154,13 +154,15 @@
    "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Hatchability of Set %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Hatchability of Set % = Chicks Hatched ÷ Eggs Set × 100. The commercial number."
   },
   {
    "fieldname": "hatchability_fertile_pct",
    "fieldtype": "Percent",
    "label": "Hatchability of Fertile %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Hatchability of Fertile % = Chicks Hatched ÷ Fertile Eggs × 100. Judges the machine and handling."
   },
   {
    "fieldname": "cb3",
@@ -170,7 +172,8 @@
    "fieldname": "saleable_pct",
    "fieldtype": "Percent",
    "label": "Saleable Chick %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Saleable Chick % = Healthy Saleable Chicks ÷ Chicks Hatched × 100"
   },
   {
    "fieldname": "avg_chick_weight_g",
@@ -236,7 +239,7 @@
    "label": "Hatcher Humidity %"
   },
   {
-   "description": "A good chick is 67-70% of the egg it came from",
+   "description": "Chick : Egg Weight % = Avg Chick Weight ÷ Avg Fresh Egg Weight × 100. Good hatch = 67–70%.",
    "fieldname": "chick_yield_pct",
    "fieldtype": "Percent",
    "label": "Chick : Egg Weight %",

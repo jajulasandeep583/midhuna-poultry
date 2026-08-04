@@ -99,14 +99,16 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Fertile Eggs",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Fertile = Eggs Set − Clear − Dead Germ − Contaminated"
   },
   {
    "fieldname": "fertility_pct",
    "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Fertility %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Fertility % = Fertile Eggs ÷ Eggs Set × 100"
   },
   {
    "fieldname": "sec_notes",

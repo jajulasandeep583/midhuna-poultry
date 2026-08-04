@@ -165,14 +165,16 @@
    "fieldname": "fertile_eggs",
    "fieldtype": "Int",
    "label": "Fertile Eggs",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Fertile Eggs = Eggs Set − Clears/Dead removed at candling."
   },
   {
    "fieldname": "fertility_pct",
    "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Fertility %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Fertility % = Fertile Eggs ÷ Eggs Set × 100. A breeder-flock number, not a machine number."
   },
   {
    "fieldname": "cb4",
@@ -188,13 +190,15 @@
    "fieldname": "hatchability_set_pct",
    "fieldtype": "Percent",
    "label": "Hatchability of Set %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Hatchability of Set % = Chicks Hatched ÷ Eggs Set × 100. The commercial number."
   },
   {
    "fieldname": "hatchability_fertile_pct",
    "fieldtype": "Percent",
    "label": "Hatchability of Fertile %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Hatchability of Fertile % = Chicks Hatched ÷ Fertile Eggs × 100. Judges the machine and handling."
   },
   {
    "default": "Set",

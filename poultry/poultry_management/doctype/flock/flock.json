@@ -240,7 +240,8 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Birds Alive",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Birds alive now = Placed − Died − Culled − Sold."
   },
   {
    "fieldname": "cumulative_mortality",
@@ -269,19 +270,22 @@
    "fieldname": "age_days",
    "fieldtype": "Int",
    "label": "Age (days)",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Days since placement. Placement day = day 1."
   },
   {
    "fieldname": "mortality_pct",
    "fieldtype": "Percent",
    "label": "Mortality %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Mortality % = (Died + Culled) ÷ Birds Placed × 100"
   },
   {
    "fieldname": "livability_pct",
    "fieldtype": "Percent",
    "label": "Livability %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Livability % = 100 − Mortality % (birds still alive, as % of placed)"
   },
   {
    "fieldname": "cumulative_feed_kg",
@@ -304,17 +308,19 @@
    "fieldtype": "Float",
    "label": "FCR",
    "precision": "3",
-   "read_only": 1
+   "read_only": 1,
+   "description": "FCR (Feed Conversion Ratio) = Total Feed kg ÷ Total Live Weight kg. Lower is better; broilers 1.5–1.8."
   },
   {
    "fieldname": "adg_g",
    "fieldtype": "Float",
    "label": "ADG (g/day)",
    "precision": "1",
-   "read_only": 1
+   "read_only": 1,
+   "description": "ADG (Average Daily Gain) = Avg Body Weight g ÷ Age Days"
   },
   {
-   "description": "Below 250 poor, 300 average, 350+ good, 400+ excellent",
+   "description": "EEF (European Efficiency Factor) = Livability % × Avg Weight kg ÷ (Age Days × FCR) × 100. Under 250 poor, 300 average, 350+ good.",
    "fieldname": "eef",
    "fieldtype": "Float",
    "label": "EEF",
@@ -336,7 +342,8 @@
    "fieldname": "hd_production_pct",
    "fieldtype": "Percent",
    "label": "HD Production %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "HDP (Hen-Day Production) % = Eggs Laid Today ÷ Hens Alive Today × 100"
   },
   {
    "fieldname": "cb5",
@@ -346,14 +353,16 @@
    "fieldname": "peak_production_pct",
    "fieldtype": "Percent",
    "label": "Peak Production %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Highest HDP % this flock has reached."
   },
   {
    "fieldname": "eggs_per_bird_housed",
    "fieldtype": "Float",
    "label": "Eggs per Bird Housed",
    "precision": "2",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Eggs per Hen Housed = Total Eggs ÷ Birds Placed"
   },
   {
    "fieldname": "sec_cost",
@@ -394,13 +403,15 @@
    "fieldname": "cost_per_bird",
    "fieldtype": "Currency",
    "label": "Cost per Bird",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Cost per Bird = Total Cost ÷ Birds Alive"
   },
   {
    "fieldname": "cost_per_kg_live",
    "fieldtype": "Currency",
    "label": "Cost per kg Live",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Cost per kg Live = Total Cost ÷ Total Live Weight kg"
   },
   {
    "fieldname": "sec_std",
@@ -452,7 +463,8 @@
    "fieldname": "margin",
    "fieldtype": "Currency",
    "label": "Margin",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Margin = Total Revenue − Total Cost"
   }
  ],
  "grid_page_length": 50,

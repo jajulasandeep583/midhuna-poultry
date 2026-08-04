@@ -195,7 +195,8 @@
    "fieldname": "doa_pct",
    "fieldtype": "Percent",
    "label": "DOA %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "DOA % = Dead On Arrival ÷ Chicks Dispatched × 100"
   }
  ],
  "grid_page_length": 50,

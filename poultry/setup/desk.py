@@ -118,9 +118,25 @@ def make_charts():
 		doc.update(c)
 		doc.is_public = 1
 		doc.module = MODULE
+		# Dashboard Chart defaults currency to the company currency, which
+		# renders bird / egg / kg counts as rupees. None of these charts are
+		# money, so clear it the same way the number cards do.
+		doc.currency = None
 		doc.flags.ignore_permissions = True
 		doc.save()
+		frappe.db.set_value("Dashboard Chart", doc.name, "currency", None,
+		                    update_modified=False)
 	print("  + charts:", len(CHARTS))
+
+
+def clear_chart_currency():
+	"""One-off repair for sites built before make_charts cleared currency."""
+	for name in frappe.get_all(
+		"Dashboard Chart", filters={"module": MODULE}, pluck="name"
+	):
+		frappe.db.set_value("Dashboard Chart", name, "currency", None, update_modified=False)
+	frappe.db.commit()
+	print("  + chart currency cleared")
 
 
 # ------------------------------------------------------------------ helpers

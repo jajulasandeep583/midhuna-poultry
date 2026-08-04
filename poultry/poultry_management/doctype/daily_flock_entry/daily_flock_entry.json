@@ -99,7 +99,8 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Age (days)",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Days since placement. Placement day = day 1."
   },
   {
    "fieldname": "cb1",
@@ -154,7 +155,8 @@
    "fieldname": "opening_qty",
    "fieldtype": "Int",
    "label": "Opening Qty",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Birds alive at the start of the day (read from the stock ledger)."
   },
   {
    "fieldname": "mortality_qty",
@@ -175,20 +177,23 @@
    "fieldname": "closing_qty",
    "fieldtype": "Int",
    "label": "Closing Qty",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Closing = Opening − Mortality − Culls"
   },
   {
    "fieldname": "mortality_pct_today",
    "fieldtype": "Percent",
    "label": "Mortality % Today",
    "precision": "3",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Mortality % Today = (Mortality + Culls) ÷ Opening Qty × 100"
   },
   {
    "fieldname": "cumulative_mortality_pct",
    "fieldtype": "Percent",
    "label": "Cumulative Mortality %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Cumulative Mortality % = All Losses To Date ÷ Birds Placed × 100"
   },
   {
    "fieldname": "sec_mort_detail",
@@ -234,7 +239,8 @@
    "fieldtype": "Float",
    "label": "Feed per Bird (g)",
    "precision": "1",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Feed per Bird = Feed kg × 1000 ÷ Birds Alive. Over 250 g/day raises a warning."
   },
   {
    "fieldname": "sec_water",
@@ -251,7 +257,8 @@
    "fieldtype": "Float",
    "label": "Water : Feed",
    "precision": "2",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Water : Feed = Water Litres ÷ Feed kg. Healthy birds drink 1.6–2.0× their feed."
   },
   {
    "fieldname": "cb4",
@@ -303,7 +310,8 @@
    "fieldname": "hd_production_pct",
    "fieldtype": "Percent",
    "label": "HD Production %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "HDP (Hen-Day Production) % = Eggs Today ÷ Hens Alive × 100"
   },
   {
    "fieldname": "avg_egg_weight_g",

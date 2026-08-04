@@ -124,7 +124,8 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Avg Body Weight (g)",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Average of the weighed sample, in grams."
   },
   {
    "fieldname": "cv_pct",
@@ -141,7 +142,8 @@
    "fieldname": "std_body_weight_g",
    "fieldtype": "Float",
    "label": "Standard Weight (g)",
-   "read_only": 1
+   "read_only": 1,
+   "description": "The breed standard's target weight for this age."
   },
   {
    "fieldname": "cb3",
@@ -152,7 +154,8 @@
    "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Variance %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Variance % = (Actual − Standard) ÷ Standard × 100. Negative = under target."
   },
   {
    "fieldname": "sec_notes",

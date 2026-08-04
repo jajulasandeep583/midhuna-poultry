@@ -135,13 +135,15 @@
    "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Infertile %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Infertile % of eggs opened. Mostly infertile → breeder flock (males, mating ratio, age)."
   },
   {
    "fieldname": "early_dead_pct",
    "fieldtype": "Percent",
    "label": "Early Dead %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Early Dead (day 1–7) % of eggs opened. Mostly early dead → egg storage or handling."
   },
   {
    "fieldname": "cb3",
@@ -151,13 +153,15 @@
    "fieldname": "late_dead_pct",
    "fieldtype": "Percent",
    "label": "Late Dead %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Late Dead (day 15–18) % of eggs opened. Mostly late dead → setter temperature."
   },
   {
    "fieldname": "contamination_pct",
    "fieldtype": "Percent",
    "label": "Contamination %",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Contaminated % of eggs opened. → hygiene and fumigation."
   },
   {
    "fieldname": "sec_find",
